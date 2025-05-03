@@ -1,0 +1,157 @@
+{% extends "layout.html" %}
+
+{% block title %}Dashboard Admin | EcoShop{% endblock %}
+
+{% block content %}
+<div class="row mb-4">
+    <div class="col-md-12">
+        <h2>Dashboard del Administrador</h2>
+    </div>
+</div>
+
+<div class="row mb-4">
+    <div class="col-md-4">
+        <div class="card bg-primary text-white h-100">
+            <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                        <h5 class="card-title">Productos</h5>
+                        <h2 class="display-4">{{ total_productos }}</h2>
+                    </div>
+                    <i class="fas fa-box fa-3x opacity-50"></i>
+                </div>
+            </div>
+            <div class="card-footer bg-transparent border-0">
+                <a href="{{ url_for('admin.productos') }}" class="text-white text-decoration-none">
+                    Ver Detalles <i class="fas fa-arrow-right ms-2"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card bg-success text-white h-100">
+            <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                        <h5 class="card-title">Clientes</h5>
+                        <h2 class="display-4">{{ total_clientes }}</h2>
+                    </div>
+                    <i class="fas fa-users fa-3x opacity-50"></i>
+                </div>
+            </div>
+            <div class="card-footer bg-transparent border-0">
+                <a href="#" class="text-white text-decoration-none">
+                    Ver Detalles <i class="fas fa-arrow-right ms-2"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card bg-info text-white h-100">
+            <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                        <h5 class="card-title">Pedidos</h5>
+                        <h2 class="display-4">{{ total_pedidos }}</h2>
+                    </div>
+                    <i class="fas fa-shopping-bag fa-3x opacity-50"></i>
+                </div>
+            </div>
+            <div class="card-footer bg-transparent border-0">
+                <a href="{{ url_for('admin.pedidos') }}" class="text-white text-decoration-none">
+                    Ver Detalles <i class="fas fa-arrow-right ms-2"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-8">
+        <div class="card shadow-sm mb-4">
+            <div class="card-header bg-white d-flex justify-content-between align-items-center">
+                <h5 class="mb-0">Últimos Pedidos</h5>
+                <a href="{{ url_for('admin.pedidos') }}" class="btn btn-sm btn-outline-primary">Ver Todos</a>
+            </div>
+            <div class="card-body p-0">
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Cliente</th>
+                                <th>Fecha</th>
+                                <th>Total</th>
+                                <th>Estado</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for pedido in ultimos_pedidos %}
+                            <tr>
+                                <td>{{ pedido._id|truncate(8, True, '') }}</td>
+                                <td>{{ pedido.cliente_nombre }}</td>
+                                <td>{{ pedido.fecha_creacion.strftime('%d/%m/%Y') }}</td>
+                                <td>${{ pedido.total }}</td>
+                                <td>
+                                    {% if pedido.estado == 'pendiente' %}
+                                    <span class="badge bg-warning text-dark">Pendiente</span>
+                                    {% elif pedido.estado == 'pagado' %}
+                                    <span class="badge bg-info">Pagado</span>
+                                    {% elif pedido.estado == 'enviado' %}
+                                    <span class="badge bg-primary">Enviado</span>
+                                    {% elif pedido.estado == 'entregado' %}
+                                    <span class="badge bg-success">Entregado</span>
+                                    {% elif pedido.estado == 'cancelado' %}
+                                    <span class="badge bg-danger">Cancelado</span>
+                                    {% endif %}
+                                </td>
+                                <td>
+                                    <a href="{{ url_for('admin.detalle_pedido', pedido_id=pedido._id) }}" class="btn btn-sm btn-outline-primary">
+                                        <i class="fas fa-eye"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card shadow-sm mb-4">
+            <div class="card-header bg-white d-flex justify-content-between align-items-center">
+                <h5 class="mb-0">Productos con Bajo Inventario</h5>
+                <a href="{{ url_for('admin.productos') }}" class="btn btn-sm btn-outline-primary">Ver Todos</a>
+            </div>
+            <div class="card-body p-0">
+                <ul class="list-group list-group-flush">
+                    {% for producto in productos_bajo_inventario %}
+                    <li class="list-group-item">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div>
+                                <h6 class="mb-0">{{ producto.nombre }}</h6>
+                                <small class="text-danger">
+                                    {% if producto.existencias == 0 %}
+                                    <i class="fas fa-exclamation-circle me-1"></i>Agotado
+                                    {% else %}
+                                    <i class="fas fa-exclamation-triangle me-1"></i>{{ producto.existencias }} unidades
+                                    {% endif %}
+                                </small>
+                            </div>
+                            <a href="{{ url_for('admin.editar_producto', producto_id=producto._id) }}" class="btn btn-sm btn-outline-primary">
+                                <i class="fas fa-edit"></i>
+                            </a>
+                        </div>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

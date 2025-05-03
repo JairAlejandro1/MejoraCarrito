@@ -1,0 +1,374 @@
+{% extends "layout.html" %}
+
+{% block title %}Gestión de Inventario | Proveedor | EcoShop{% endblock %}
+
+{% block content %}
+<div class="container">
+    <nav aria-label="breadcrumb" class="my-3">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{{ url_for('proveedor.dashboard') }}">Dashboard</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Inventario</li>
+        </ol>
+    </nav>
+
+    <div class="row mb-4">
+        <div class="col-md-8">
+            <h2>Gestión de Inventario</h2>
+        </div>
+        <div class="col-md-4 text-end">
+            <a href="{{ url_for('proveedor.nuevo_producto') }}" class="btn btn-primary">
+                <i class="fas fa-plus me-2"></i>Nuevo Producto
+            </a>
+        </div>
+    </div>
+
+    <div class="row mb-4">
+        <div class="col-md-4">
+            <div class="card bg-danger text-white h-100">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                            <h5 class="card-title">Agotados</h5>
+                            <h2 class="display-4">{{ productos_agotados|length }}</h2>
+                        </div>
+                        <i class="fas fa-exclamation-triangle fa-3x opacity-50"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card bg-warning text-dark h-100">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                            <h5 class="card-title">Bajo Inventario</h5>
+                            <h2 class="display-4">{{ productos_bajo_inventario|length }}</h2>
+                        </div>
+                        <i class="fas fa-layer-group fa-3x opacity-50"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card bg-success text-white h-100">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                            <h5 class="card-title">Stock Normal</h5>
+                            <h2 class="display-4">{{ productos_normal|length }}</h2>
+                        </div>
+                        <i class="fas fa-check-circle fa-3x opacity-50"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <ul class="nav nav-tabs mb-4" id="inventarioTab" role="tablist">
+        <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="todos-tab" data-bs-toggle="tab" data-bs-target="#todos" type="button" role="tab" aria-controls="todos" aria-selected="true">Todos</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="agotados-tab" data-bs-toggle="tab" data-bs-target="#agotados" type="button" role="tab" aria-controls="agotados" aria-selected="false">Agotados</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="bajo-tab" data-bs-toggle="tab" data-bs-target="#bajo" type="button" role="tab" aria-controls="bajo" aria-selected="false">Bajo Inventario</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="normal-tab" data-bs-toggle="tab" data-bs-target="#normal" type="button" role="tab" aria-controls="normal" aria-selected="false">Stock Normal</button>
+        </li>
+    </ul>
+
+    <div class="tab-content" id="inventarioTabContent">
+        <div class="tab-pane fade show active" id="todos" role="tabpanel" aria-labelledby="todos-tab">
+            <div class="card shadow-sm">
+                <div class="card-header bg-white d-flex justify-content-between align-items-center">
+                    <h5 class="mb-0">Todos los Productos</h5>
+                    <div class="input-group input-group-sm" style="width: 300px;">
+                        <input type="text" id="buscarProducto" class="form-control" placeholder="Buscar producto...">
+                        <button class="btn btn-outline-secondary" type="button">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="card-body p-0">
+                    <div class="table-responsive">
+                        <table class="table table-hover" id="tablaProductos">
+                            <thead>
+                                <tr>
+                                    <th>Producto</th>
+                                    <th>Categoría</th>
+                                    <th>Precio</th>
+                                    <th>Existencias</th>
+                                    <th>Estado</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% set todos_productos = productos_agotados + productos_bajo_inventario + productos_normal %}
+                                {% for producto in todos_productos %}
+                                <tr>
+                                    <td>
+                                        <div class="d-flex align-items-center">
+                                            {% if producto.imagen_url %}
+                                            <img src="{{ producto.imagen_url }}" alt="{{ producto.nombre }}" class="me-2" style="width: 40px; height: 40px; object-fit: cover; border-radius: 4px;">
+                                            {% else %}
+                                            <img src="{{ url_for('static', filename='img/producto-default.jpg') }}" alt="{{ producto.nombre }}" class="me-2" style="width: 40px; height: 40px; object-fit: cover; border-radius: 4px;">
+                                            {% endif %}
+                                            {{ producto.nombre }}
+                                        </div>
+                                    </td>
+                                    <td>{{ producto.categoria }}</td>
+                                    <td>${{ producto.precio }}</td>
+                                    <td>{{ producto.existencias }}</td>
+                                    <td>
+                                        {% if producto.existencias > 10 %}
+                                        <span class="badge bg-success">En Stock</span>
+                                        {% elif producto.existencias > 0 %}
+                                        <span class="badge bg-warning text-dark">Bajo Stock</span>
+                                        {% else %}
+                                        <span class="badge bg-danger">Agotado</span>
+                                        {% endif %}
+                                    </td>
+                                    <td>
+                                        <div class="btn-group">
+                                            <a href="{{ url_for('proveedor.actualizar_inventario', producto_id=producto._id) }}" class="btn btn-sm btn-outline-primary">
+                                                <i class="fas fa-plus-circle"></i>
+                                            </a>
+                                            <a href="{{ url_for('proveedor.editar_producto', producto_id=producto._id) }}" class="btn btn-sm btn-outline-secondary">
+                                                <i class="fas fa-edit"></i>
+                                            </a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="tab-pane fade" id="agotados" role="tabpanel" aria-labelledby="agotados-tab">
+            <div class="card shadow-sm border-danger">
+                <div class="card-header bg-white text-danger">
+                    <h5 class="mb-0"><i class="fas fa-exclamation-triangle me-2"></i>Productos Agotados</h5>
+                </div>
+                <div class="card-body p-0">
+                    {% if productos_agotados|length > 0 %}
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Producto</th>
+                                    <th>Categoría</th>
+                                    <th>Precio</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for producto in productos_agotados %}
+                                <tr>
+                                    <td>
+                                        <div class="d-flex align-items-center">
+                                            {% if producto.imagen_url %}
+                                            <img src="{{ producto.imagen_url }}" alt="{{ producto.nombre }}" class="me-2" style="width: 40px; height: 40px; object-fit: cover; border-radius: 4px;">
+                                            {% else %}
+                                            <img src="{{ url_for('static', filename='img/producto-default.jpg') }}" alt="{{ producto.nombre }}" class="me-2" style="width: 40px; height: 40px; object-fit: cover; border-radius: 4px;">
+                                            {% endif %}
+                                            {{ producto.nombre }}
+                                        </div>
+                                    </td>
+                                    <td>{{ producto.categoria }}</td>
+                                    <td>${{ producto.precio }}</td>
+                                    <td>
+                                        <a href="{{ url_for('proveedor.actualizar_inventario', producto_id=producto._id) }}" class="btn btn-danger btn-sm">
+                                            <i class="fas fa-plus-circle me-1"></i>Reponer Stock
+                                        </a>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                    {% else %}
+                    <div class="text-center p-4">
+                        <i class="fas fa-check-circle fa-3x text-success mb-3"></i>
+                        <h5>No hay productos agotados</h5>
+                        <p>¡Todos tus productos tienen existencias disponibles!</p>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+
+        <div class="tab-pane fade" id="bajo" role="tabpanel" aria-labelledby="bajo-tab">
+            <div class="card shadow-sm border-warning">
+                <div class="card-header bg-white text-warning">
+                    <h5 class="mb-0"><i class="fas fa-layer-group me-2"></i>Productos con Bajo Inventario</h5>
+                </div>
+                <div class="card-body p-0">
+                    {% if productos_bajo_inventario|length > 0 %}
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Producto</th>
+                                    <th>Categoría</th>
+                                    <th>Precio</th>
+                                    <th>Existencias</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for producto in productos_bajo_inventario %}
+                                <tr>
+                                    <td>
+                                        <div class="d-flex align-items-center">
+                                            {% if producto.imagen_url %}
+                                            <img src="{{ producto.imagen_url }}" alt="{{ producto.nombre }}" class="me-2" style="width: 40px; height: 40px; object-fit: cover; border-radius: 4px;">
+                                            {% else %}
+                                            <img src="{{ url_for('static', filename='img/producto-default.jpg') }}" alt="{{ producto.nombre }}" class="me-2" style="width: 40px; height: 40px; object-fit: cover; border-radius: 4px;">
+                                            {% endif %}
+                                            {{ producto.nombre }}
+                                        </div>
+                                    </td>
+                                    <td>{{ producto.categoria }}</td>
+                                    <td>${{ producto.precio }}</td>
+                                    <td>
+                                        <span class="badge bg-warning text-dark">{{ producto.existencias }} unidades</span>
+                                    </td>
+                                    <td>
+                                        <a href="{{ url_for('proveedor.actualizar_inventario', producto_id=producto._id) }}" class="btn btn-warning btn-sm text-dark">
+                                            <i class="fas fa-plus-circle me-1"></i>Aumentar Stock
+                                        </a>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                    {% else %}
+                    <div class="text-center p-4">
+                        <i class="fas fa-check-circle fa-3x text-success mb-3"></i>
+                        <h5>No hay productos con bajo inventario</h5>
+                        <p>¡Todos tus productos tienen niveles de inventario adecuados!</p>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+
+        <div class="tab-pane fade" id="normal" role="tabpanel" aria-labelledby="normal-tab">
+            <div class="card shadow-sm border-success">
+                <div class="card-header bg-white text-success">
+                    <h5 class="mb-0"><i class="fas fa-check-circle me-2"></i>Productos con Stock Normal</h5>
+                </div>
+                <div class="card-body p-0">
+                    {% if productos_normal|length > 0 %}
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Producto</th>
+                                    <th>Categoría</th>
+                                    <th>Precio</th>
+                                    <th>Existencias</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for producto in productos_normal %}
+                                <tr>
+                                    <td>
+                                        <div class="d-flex align-items-center">
+                                            {% if producto.imagen_url %}
+                                            <img src="{{ producto.imagen_url }}" alt="{{ producto.nombre }}" class="me-2" style="width: 40px; height: 40px; object-fit: cover; border-radius: 4px;">
+                                            {% else %}
+                                            <img src="{{ url_for('static', filename='img/producto-default.jpg') }}" alt="{{ producto.nombre }}" class="me-2" style="width: 40px; height: 40px; object-fit: cover; border-radius: 4px;">
+                                            {% endif %}
+                                            {{ producto.nombre }}
+                                        </div>
+                                    </td>
+                                    <td>{{ producto.categoria }}</td>
+                                    <td>${{ producto.precio }}</td>
+                                    <td>
+                                        <span class="badge bg-success">{{ producto.existencias }} unidades</span>
+                                    </td>
+                                    <td>
+                                        <div class="btn-group">
+                                            <a href="{{ url_for('proveedor.actualizar_inventario', producto_id=producto._id) }}" class="btn btn-sm btn-outline-primary">
+                                                <i class="fas fa-sync-alt"></i>
+                                            </a>
+                                            <a href="{{ url_for('proveedor.editar_producto', producto_id=producto._id) }}" class="btn btn-sm btn-outline-secondary">
+                                                <i class="fas fa-edit"></i>
+                                            </a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                    {% else %}
+                    <div class="text-center p-4">
+                        <i class="fas fa-exclamation-triangle fa-3x text-warning mb-3"></i>
+                        <h5>No hay productos con stock normal</h5>
+                        <p>Todos tus productos están agotados o con niveles bajos de inventario.</p>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Búsqueda en tabla de productos
+        const buscarInput = document.getElementById('buscarProducto');
+        const tabla = document.getElementById('tablaProductos');
+        const filas = tabla.getElementsByTagName('tbody')[0].getElementsByTagName('tr');
+
+        buscarInput.addEventListener('keyup', function() {
+            const termino = buscarInput.value.toLowerCase();
+
+            for (let i = 0; i < filas.length; i++) {
+                const nombre = filas[i].getElementsByTagName('td')[0].textContent.toLowerCase();
+                const categoria = filas[i].getElementsByTagName('td')[1].textContent.toLowerCase();
+
+                if (nombre.indexOf(termino) > -1 || categoria.indexOf(termino) > -1) {
+                    filas[i].style.display = '';
+                } else {
+                    filas[i].style.display = 'none';
+                }
+            }
+        });
+
+        // Activar tabs según el parámetro de la URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const tab = urlParams.get('tab');
+
+        if (tab) {
+            const targetTab = document.getElementById(tab + '-tab');
+            if (targetTab) {
+                const tabTrigger = new bootstrap.Tab(targetTab);
+                tabTrigger.show();
+            }
+        }
+
+        // Configurar eventos de click en los tabs para actualizar la URL
+        const tabs = document.querySelectorAll('button[data-bs-toggle="tab"]');
+        tabs.forEach(function(tab) {
+            tab.addEventListener('shown.bs.tab', function(event) {
+                const id = event.target.id.replace('-tab', '');
+                history.replaceState(null, null, '?tab=' + id);
+            });
+        });
+    });
+</script>
+{% endblock %}

@@ -1,0 +1,138 @@
+{% extends "layout.html" %}
+
+{% block title %}Checkout | EcoShop{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-12 mb-4">
+        <h2>Finalizar Compra</h2>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-8">
+        <div class="card shadow-sm mb-4">
+            <div class="card-header bg-white">
+                <h5 class="mb-0">Información de Envío</h5>
+            </div>
+            <div class="card-body">
+                <form action="{{ url_for('cliente.checkout') }}" method="post">
+                    <div class="mb-3">
+                        <label for="direccion_entrega" class="form-label">Dirección de Entrega</label>
+                        <textarea class="form-control" id="direccion_entrega" name="direccion_entrega" rows="3" required>{{ usuario.direccion }}</textarea>
+                    </div>
+
+                    <div class="card shadow-sm mb-4">
+                        <div class="card-header bg-white">
+                            <h5 class="mb-0">Método de Pago</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="form-check mb-2">
+                                <input class="form-check-input" type="radio" name="metodo_pago" id="tarjeta" value="tarjeta" checked>
+                                <label class="form-check-label" for="tarjeta">
+                                    <i class="fas fa-credit-card me-2"></i>Tarjeta de Crédito/Débito
+                                </label>
+                            </div>
+
+                            <div id="tarjeta-details" class="ps-4 mb-3">
+                                <div class="row">
+                                    <div class="col-md-6 mb-2">
+                                        <label for="card_number" class="form-label">Número de Tarjeta</label>
+                                        <input type="text" class="form-control" id="card_number" placeholder="XXXX XXXX XXXX XXXX">
+                                    </div>
+                                    <div class="col-md-3 mb-2">
+                                        <label for="card_expiry" class="form-label">Fecha Exp.</label>
+                                        <input type="text" class="form-control" id="card_expiry" placeholder="MM/AA">
+                                    </div>
+                                    <div class="col-md-3 mb-2">
+                                        <label for="card_cvv" class="form-label">CVV</label>
+                                        <input type="text" class="form-control" id="card_cvv" placeholder="XXX">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-check mb-2">
+                                <input class="form-check-input" type="radio" name="metodo_pago" id="paypal" value="paypal">
+                                <label class="form-check-label" for="paypal">
+                                    <i class="fab fa-paypal me-2"></i>PayPal
+                                </label>
+                            </div>
+
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="metodo_pago" id="transferencia" value="transferencia">
+                                <label class="form-check-label" for="transferencia">
+                                    <i class="fas fa-university me-2"></i>Transferencia Bancaria
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="d-grid gap-2">
+                        <button type="submit" class="btn btn-success">
+                            <i class="fas fa-lock me-2"></i>Confirmar Pedido
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card shadow-sm mb-4">
+            <div class="card-header bg-white">
+                <h5 class="mb-0">Resumen del Pedido</h5>
+            </div>
+            <div class="card-body p-0">
+                <ul class="list-group list-group-flush">
+                    {% for item in items %}
+                    <li class="list-group-item py-3">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div>
+                                <h6 class="mb-0">{{ item.producto.nombre }}</h6>
+                                <small class="text-muted">Cantidad: {{ item.cantidad }}</small>
+                            </div>
+                            <span>${{ item.subtotal }}</span>
+                        </div>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="card-footer">
+                <div class="d-flex justify-content-between mb-2">
+                    <span>Subtotal:</span>
+                    <span>${{ total }}</span>
+                </div>
+                <div class="d-flex justify-content-between mb-2">
+                    <span>Envío:</span>
+                    <span>Gratis</span>
+                </div>
+                <hr>
+                <div class="d-flex justify-content-between">
+                    <strong>Total:</strong>
+                    <strong>${{ total }}</strong>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    // Mostrar/ocultar detalles de tarjeta de crédito
+    document.addEventListener('DOMContentLoaded', function() {
+        const metodoPagoInputs = document.querySelectorAll('input[name="metodo_pago"]');
+        const tarjetaDetails = document.getElementById('tarjeta-details');
+
+        metodoPagoInputs.forEach(function(input) {
+            input.addEventListener('change', function() {
+                if (this.value === 'tarjeta') {
+                    tarjetaDetails.style.display = 'block';
+                } else {
+                    tarjetaDetails.style.display = 'none';
+                }
+            });
+        });
+    });
+</script>
+{% endblock %}

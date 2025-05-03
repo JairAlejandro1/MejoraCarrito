@@ -1,0 +1,152 @@
+{% extends "layout.html" %}
+
+{% block title %}Detalle de Pedido | EcoShop{% endblock %}
+
+{% block content %}
+<div class="container">
+    <nav aria-label="breadcrumb" class="my-3">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{{ url_for('main.index') }}">Inicio</a></li>
+            <li class="breadcrumb-item"><a href="{{ url_for('cliente.mis_pedidos') }}">Mis Pedidos</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Pedido #{{ pedido._id|truncate(8, True, '') }}</li>
+        </ol>
+    </nav>
+
+    <div class="row mb-4">
+        <div class="col-md-8">
+            <h2>Detalle de Pedido</h2>
+        </div>
+        <div class="col-md-4 text-end">
+            <a href="{{ url_for('cliente.mis_pedidos') }}" class="btn btn-outline-primary">
+                <i class="fas fa-arrow-left me-2"></i>Volver a Mis Pedidos
+            </a>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-8">
+            <div class="card shadow-sm mb-4">
+                <div class="card-header bg-white">
+                    <h5 class="mb-0">Productos</h5>
+                </div>
+                <div class="card-body p-0">
+                    <div class="table-responsive">
+                        <table class="table mb-0">
+                            <thead>
+                                <tr>
+                                    <th>Producto</th>
+                                    <th class="text-center">Cantidad</th>
+                                    <th class="text-end">Precio</th>
+                                    <th class="text-end">Subtotal</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for item in pedido.productos %}
+                                <tr>
+                                    <td>{{ item.nombre }}</td>
+                                    <td class="text-center">{{ item.cantidad }}</td>
+                                    <td class="text-end">${{ item.precio_unitario }}</td>
+                                    <td class="text-end">${{ item.precio_unitario * item.cantidad }}</td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                            <tfoot class="table-group-divider">
+                                <tr>
+                                    <th colspan="3" class="text-end">Total:</th>
+                                    <th class="text-end">${{ pedido.total }}</th>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card shadow-sm mb-4">
+                <div class="card-header bg-white">
+                    <h5 class="mb-0">Información del Pedido</h5>
+                </div>
+                <div class="card-body">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item d-flex justify-content-between">
+                            <span>Número de Pedido:</span>
+                            <span>{{ pedido._id|truncate(8, True, '') }}</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between">
+                            <span>Fecha:</span>
+                            <span>{{ pedido.fecha_creacion.strftime('%d/%m/%Y %H:%M') }}</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between">
+                            <span>Estado:</span>
+                            <span>
+                                {% if pedido.estado == 'pendiente' %}
+                                <span class="badge bg-warning text-dark">Pendiente</span>
+                                {% elif pedido.estado == 'pagado' %}
+                                <span class="badge bg-info">Pagado</span>
+                                {% elif pedido.estado == 'enviado' %}
+                                <span class="badge bg-primary">Enviado</span>
+                                {% elif pedido.estado == 'entregado' %}
+                                <span class="badge bg-success">Entregado</span>
+                                {% elif pedido.estado == 'cancelado' %}
+                                <span class="badge bg-danger">Cancelado</span>
+                                {% endif %}
+                            </span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between">
+                            <span>Método de Pago:</span>
+                            <span>{{ pedido.metodo_pago|title }}</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card shadow-sm mb-4">
+                <div class="card-header bg-white">
+                    <h5 class="mb-0">Dirección de Entrega</h5>
+                </div>
+                <div class="card-body">
+                    <p class="mb-0">{{ pedido.direccion_entrega }}</p>
+                </div>
+            </div>
+
+            {% if pedido.estado == 'pendiente' %}
+            <div class="card shadow-sm mb-4 border-warning">
+                <div class="card-body">
+                    <h5 class="text-warning"><i class="fas fa-clock me-2"></i>Pedido en Proceso</h5>
+                    <p class="mb-0">Tu pedido está siendo procesado. Recibirás una actualización cuando sea enviado.</p>
+                </div>
+            </div>
+            {% elif pedido.estado == 'pagado' %}
+            <div class="card shadow-sm mb-4 border-info">
+                <div class="card-body">
+                    <h5 class="text-info"><i class="fas fa-credit-card me-2"></i>Pago Confirmado</h5>
+                    <p class="mb-0">Tu pago ha sido confirmado. El pedido está siendo preparado para su envío.</p>
+                </div>
+            </div>
+            {% elif pedido.estado == 'enviado' %}
+            <div class="card shadow-sm mb-4 border-primary">
+                <div class="card-body">
+                    <h5 class="text-primary"><i class="fas fa-shipping-fast me-2"></i>Pedido Enviado</h5>
+                    <p class="mb-0">Tu pedido ha sido enviado. Pronto llegará a tu dirección.</p>
+                </div>
+            </div>
+            {% elif pedido.estado == 'entregado' %}
+            <div class="card shadow-sm mb-4 border-success">
+                <div class="card-body">
+                    <h5 class="text-success"><i class="fas fa-check-circle me-2"></i>Pedido Entregado</h5>
+                    <p class="mb-0">Tu pedido ha sido entregado. ¡Gracias por tu compra!</p>
+                </div>
+            </div>
+            {% elif pedido.estado == 'cancelado' %}
+            <div class="card shadow-sm mb-4 border-danger">
+                <div class="card-body">
+                    <h5 class="text-danger"><i class="fas fa-times-circle me-2"></i>Pedido Cancelado</h5>
+                    <p class="mb-0">Este pedido ha sido cancelado.</p>
+                </div>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}

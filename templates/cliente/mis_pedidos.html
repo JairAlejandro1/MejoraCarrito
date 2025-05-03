@@ -1,0 +1,223 @@
+{% extends "layout.html" %}
+
+{% block title %}Mis Pedidos | EcoShop{% endblock %}
+
+{% block content %}
+<div class="container">
+    <nav aria-label="breadcrumb" class="my-3">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{{ url_for('main.index') }}">Inicio</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Mis Pedidos</li>
+        </ol>
+    </nav>
+
+    <div class="row mb-4">
+        <div class="col-md-12">
+            <h2>Mis Pedidos</h2>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card shadow-sm">
+                <div class="card-header bg-white">
+                    <ul class="nav nav-tabs card-header-tabs" id="pedidosTabs" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="todos-tab" data-bs-toggle="tab" data-bs-target="#todos" type="button" role="tab" aria-controls="todos" aria-selected="true">Todos</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="pendientes-tab" data-bs-toggle="tab" data-bs-target="#pendientes" type="button" role="tab" aria-controls="pendientes" aria-selected="false">Pendientes</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="completados-tab" data-bs-toggle="tab" data-bs-target="#completados" type="button" role="tab" aria-controls="completados" aria-selected="false">Completados</button>
+                        </li>
+                    </ul>
+                </div>
+                <div class="card-body">
+                    <div class="tab-content" id="pedidosTabsContent">
+                        <div class="tab-pane fade show active" id="todos" role="tabpanel" aria-labelledby="todos-tab">
+                            {% if pedidos|length > 0 %}
+                            <div class="table-responsive">
+                                <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>Pedido</th>
+                                            <th>Fecha</th>
+                                            <th>Estado</th>
+                                            <th>Total</th>
+                                            <th>Acciones</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% for pedido in pedidos %}
+                                        <tr>
+                                            <td>#{{ pedido._id|truncate(8, True, '') }}</td>
+                                            <td>{{ pedido.fecha_creacion.strftime('%d/%m/%Y') }}</td>
+                                            <td>
+                                                {% if pedido.estado == 'pendiente' %}
+                                                <span class="badge bg-warning text-dark">Pendiente</span>
+                                                {% elif pedido.estado == 'pagado' %}
+                                                <span class="badge bg-info">Pagado</span>
+                                                {% elif pedido.estado == 'enviado' %}
+                                                <span class="badge bg-primary">Enviado</span>
+                                                {% elif pedido.estado == 'entregado' %}
+                                                <span class="badge bg-success">Entregado</span>
+                                                {% elif pedido.estado == 'cancelado' %}
+                                                <span class="badge bg-danger">Cancelado</span>
+                                                {% endif %}
+                                            </td>
+                                            <td>${{ pedido.total }}</td>
+                                            <td>
+                                                <a href="{{ url_for('cliente.detalle_pedido', pedido_id=pedido._id) }}" class="btn btn-sm btn-outline-primary">
+                                                    <i class="fas fa-eye"></i> Ver
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                            {% else %}
+                            <div class="text-center p-5">
+                                <i class="fas fa-shopping-bag fa-4x text-muted mb-3"></i>
+                                <h4>No tienes pedidos</h4>
+                                <p class="mb-4">Parece que aún no has realizado ningún pedido en nuestra tienda.</p>
+                                <a href="{{ url_for('main.productos') }}" class="btn btn-primary">
+                                    <i class="fas fa-shopping-cart me-2"></i>Explorar Productos
+                                </a>
+                            </div>
+                            {% endif %}
+                        </div>
+                        <div class="tab-pane fade" id="pendientes" role="tabpanel" aria-labelledby="pendientes-tab">
+                            {% set pedidos_pendientes = pedidos|selectattr('estado', 'in', ['pendiente', 'pagado', 'enviado'])|list %}
+                            {% if pedidos_pendientes|length > 0 %}
+                            <div class="table-responsive">
+                                <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>Pedido</th>
+                                            <th>Fecha</th>
+                                            <th>Estado</th>
+                                            <th>Total</th>
+                                            <th>Acciones</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% for pedido in pedidos_pendientes %}
+                                        <tr>
+                                            <td>#{{ pedido._id|truncate(8, True, '') }}</td>
+                                            <td>{{ pedido.fecha_creacion.strftime('%d/%m/%Y') }}</td>
+                                            <td>
+                                                {% if pedido.estado == 'pendiente' %}
+                                                <span class="badge bg-warning text-dark">Pendiente</span>
+                                                {% elif pedido.estado == 'pagado' %}
+                                                <span class="badge bg-info">Pagado</span>
+                                                {% elif pedido.estado == 'enviado' %}
+                                                <span class="badge bg-primary">Enviado</span>
+                                                {% endif %}
+                                            </td>
+                                            <td>${{ pedido.total }}</td>
+                                            <td>
+                                                <a href="{{ url_for('cliente.detalle_pedido', pedido_id=pedido._id) }}" class="btn btn-sm btn-outline-primary">
+                                                    <i class="fas fa-eye"></i> Ver
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                            {% else %}
+                            <div class="text-center p-5">
+                                <i class="fas fa-check-circle fa-4x text-success mb-3"></i>
+                                <h4>No tienes pedidos pendientes</h4>
+                                <p class="mb-4">Todos tus pedidos han sido completados o cancelados.</p>
+                                <a href="{{ url_for('main.productos') }}" class="btn btn-primary">
+                                    <i class="fas fa-shopping-cart me-2"></i>Realizar Nuevo Pedido
+                                </a>
+                            </div>
+                            {% endif %}
+                        </div>
+                        <div class="tab-pane fade" id="completados" role="tabpanel" aria-labelledby="completados-tab">
+                            {% set pedidos_completados = pedidos|selectattr('estado', 'in', ['entregado', 'cancelado'])|list %}
+                            {% if pedidos_completados|length > 0 %}
+                            <div class="table-responsive">
+                                <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>Pedido</th>
+                                            <th>Fecha</th>
+                                            <th>Estado</th>
+                                            <th>Total</th>
+                                            <th>Acciones</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% for pedido in pedidos_completados %}
+                                        <tr>
+                                            <td>#{{ pedido._id|truncate(8, True, '') }}</td>
+                                            <td>{{ pedido.fecha_creacion.strftime('%d/%m/%Y') }}</td>
+                                            <td>
+                                                {% if pedido.estado == 'entregado' %}
+                                                <span class="badge bg-success">Entregado</span>
+                                                {% elif pedido.estado == 'cancelado' %}
+                                                <span class="badge bg-danger">Cancelado</span>
+                                                {% endif %}
+                                            </td>
+                                            <td>${{ pedido.total }}</td>
+                                            <td>
+                                                <a href="{{ url_for('cliente.detalle_pedido', pedido_id=pedido._id) }}" class="btn btn-sm btn-outline-primary">
+                                                    <i class="fas fa-eye"></i> Ver
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                            {% else %}
+                            <div class="text-center p-5">
+                                <i class="fas fa-hourglass-half fa-4x text-info mb-3"></i>
+                                <h4>No tienes pedidos completados</h4>
+                                <p class="mb-4">Tus pedidos están en proceso. Pronto serán entregados.</p>
+                                <a href="{{ url_for('main.productos') }}" class="btn btn-primary">
+                                    <i class="fas fa-shopping-cart me-2"></i>Seguir Comprando
+                                </a>
+                            </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    // Activar tabs según el estado del pedido
+    document.addEventListener('DOMContentLoaded', function() {
+        // Obtener parámetro de la URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const tab = urlParams.get('tab');
+
+        if (tab) {
+            const targetTab = document.getElementById(tab + '-tab');
+            if (targetTab) {
+                const tabTrigger = new bootstrap.Tab(targetTab);
+                tabTrigger.show();
+            }
+        }
+
+        // Configurar eventos de click en los tabs para actualizar la URL
+        const tabs = document.querySelectorAll('button[data-bs-toggle="tab"]');
+        tabs.forEach(function(tab) {
+            tab.addEventListener('shown.bs.tab', function(event) {
+                const id = event.target.id.replace('-tab', '');
+                history.replaceState(null, null, '?tab=' + id);
+            });
+        });
+    });
+</script>
+{% endblock %}

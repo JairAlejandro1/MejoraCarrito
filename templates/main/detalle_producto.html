@@ -1,0 +1,93 @@
+{% extends "layout.html" %}
+
+{% block title %}{{ producto.nombre }} | EcoShop{% endblock %}
+
+{% block content %}
+<div class="container">
+    <nav aria-label="breadcrumb" class="my-3">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{{ url_for('main.index') }}">Inicio</a></li>
+            <li class="breadcrumb-item"><a href="{{ url_for('main.productos') }}">Productos</a></li>
+            <li class="breadcrumb-item active" aria-current="page">{{ producto.nombre }}</li>
+        </ol>
+    </nav>
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card shadow-sm mb-4">
+                {% if producto.imagen_url %}
+                <img src="{{ producto.imagen_url }}" class="card-img-top" alt="{{ producto.nombre }}">
+                {% else %}
+                <img src="{{ url_for('static', filename='img/producto-default.jpg') }}" class="card-img-top" alt="{{ producto.nombre }}">
+                {% endif %}
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <h2 class="mb-3">{{ producto.nombre }}</h2>
+            <p class="text-muted mb-2">Categoría: {{ producto.categoria }}</p>
+
+            <div class="mb-3">
+                <h3 class="text-primary">${{ producto.precio }}</h3>
+            </div>
+
+            <div class="mb-4">
+                <p>{{ producto.descripcion }}</p>
+            </div>
+
+            {% if producto.existencias > 0 %}
+            <div class="mb-3">
+                <span class="badge bg-success me-2">En Stock</span>
+                <small class="text-muted">{{ producto.existencias }} unidades disponibles</small>
+            </div>
+
+            {% if es_cliente() %}
+            <form action="{{ url_for('cliente.agregar_al_carrito', producto_id=producto._id) }}" method="post">
+                <div class="d-flex align-items-center mb-4">
+                    <div class="input-group me-3" style="width: 130px;">
+                        <span class="input-group-text">Cantidad</span>
+                        <input type="number" class="form-control" name="cantidad" value="1" min="1" max="{{ producto.existencias }}">
+                    </div>
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-cart-plus me-2"></i>Agregar al Carrito
+                    </button>
+                </div>
+            </form>
+            {% elif not session.get('usuario_id') %}
+            <div class="alert alert-info" role="alert">
+                <i class="fas fa-info-circle me-2"></i>Debes <a href="{{ url_for('auth.login') }}">iniciar sesión</a> para comprar este producto.
+            </div>
+            {% endif %}
+
+            {% else %}
+            <div class="mb-3">
+                <span class="badge bg-danger me-2">Agotado</span>
+                <small class="text-muted">Este producto no está disponible actualmente.</small>
+            </div>
+            {% endif %}
+
+            <div class="card shadow-sm mt-4">
+                <div class="card-header bg-white">
+                    <h5 class="mb-0">Detalles del Producto</h5>
+                </div>
+                <div class="card-body">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item d-flex justify-content-between">
+                            <span>Categoría:</span>
+                            <span>{{ producto.categoria }}</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between">
+                            <span>Código:</span>
+                            <span>{{ producto._id }}</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between">
+                            <span>Fecha de Agregado:</span>
+                            <span>{{ producto.fecha_creacion.strftime('%d/%m/%Y') }}</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

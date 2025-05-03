@@ -1,0 +1,143 @@
+{% extends "layout.html" %}
+
+{% block title %}Actualizar Inventario | Proveedor | EcoShop{% endblock %}
+
+{% block content %}
+<div class="container">
+    <nav aria-label="breadcrumb" class="my-3">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{{ url_for('proveedor.dashboard') }}">Dashboard</a></li>
+            <li class="breadcrumb-item"><a href="{{ url_for('proveedor.inventario') }}">Inventario</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Actualizar Inventario</li>
+        </ol>
+    </nav>
+
+    <div class="row mb-4">
+        <div class="col-md-6">
+            <h2>Actualizar Inventario</h2>
+        </div>
+        <div class="col-md-6 text-end">
+            <a href="{{ url_for('proveedor.inventario') }}" class="btn btn-outline-primary">
+                <i class="fas fa-arrow-left me-2"></i>Volver al Inventario
+            </a>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-8 mx-auto">
+            <div class="card shadow-sm">
+                <div class="card-header bg-white">
+                    <h5 class="mb-0">Información del Producto</h5>
+                </div>
+                <div class="card-body">
+                    <div class="row mb-4">
+                        <div class="col-md-4">
+                            {% if producto.imagen_url %}
+                            <img src="{{ producto.imagen_url }}" alt="{{ producto.nombre }}" class="img-fluid rounded">
+                            {% else %}
+                            <img src="{{ url_for('static', filename='img/producto-default.jpg') }}" alt="{{ producto.nombre }}" class="img-fluid rounded">
+                            {% endif %}
+                        </div>
+                        <div class="col-md-8">
+                            <h4>{{ producto.nombre }}</h4>
+                            <p class="text-muted mb-2">Categoría: {{ producto.categoria }}</p>
+                            <p class="mb-1">Precio: <span class="text-primary fw-bold">${{ producto.precio }}</span></p>
+                            <p class="mb-0">
+                                Existencias Actuales:
+                                {% if producto.existencias > 10 %}
+                                <span class="badge bg-success">{{ producto.existencias }} unidades</span>
+                                {% elif producto.existencias > 0 %}
+                                <span class="badge bg-warning text-dark">{{ producto.existencias }} unidades</span>
+                                {% else %}
+                                <span class="badge bg-danger">Agotado</span>
+                                {% endif %}
+                            </p>
+                        </div>
+                    </div>
+
+                    <form action="{{ url_for('proveedor.actualizar_inventario', producto_id=producto._id) }}" method="post" class="needs-validation" novalidate>
+                        <div class="mb-4">
+                            <label for="existencias" class="form-label">Nueva Cantidad en Inventario</label>
+                            <div class="input-group">
+                                <input type="number" class="form-control form-control-lg" id="existencias" name="existencias" value="{{ producto.existencias }}" min="0" required>
+                                <span class="input-group-text">unidades</span>
+                            </div>
+                            <div class="invalid-feedback">
+                                Por favor ingresa un valor válido para las existencias.
+                            </div>
+                        </div>
+
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-sync-alt me-2"></i>Actualizar Inventario
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="card shadow-sm mt-4">
+                <div class="card-header bg-white">
+                    <h5 class="mb-0">Historial de Movimientos</h5>
+                </div>
+                <div class="card-body p-0">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Fecha</th>
+                                    <th>Tipo</th>
+                                    <th>Cantidad</th>
+                                    <th>Realizado por</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for movimiento in historial %}
+                                <tr>
+                                    <td>{{ movimiento.fecha.strftime('%d/%m/%Y %H:%M') }}</td>
+                                    <td>
+                                        {% if movimiento.tipo == 'entrada' %}
+                                        <span class="badge bg-success">Entrada</span>
+                                        {% elif movimiento.tipo == 'salida' %}
+                                        <span class="badge bg-danger">Salida</span>
+                                        {% elif movimiento.tipo == 'ajuste' %}
+                                        <span class="badge bg-warning text-dark">Ajuste</span>
+                                        {% endif %}
+                                    </td>
+                                    <td>{{ movimiento.cantidad }}</td>
+                                    <td>{{ movimiento.usuario }}</td>
+                                </tr>
+                                {% endfor %}
+
+                                {% if historial|length == 0 %}
+                                <tr>
+                                    <td colspan="4" class="text-center">No hay movimientos registrados para este producto.</td>
+                                </tr>
+                                {% endif %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    // Validación del formulario
+    document.addEventListener('DOMContentLoaded', function() {
+        const form = document.querySelector('.needs-validation');
+
+        form.addEventListener('submit', function(event) {
+            if (!form.checkValidity()) {
+                event.preventDefault();
+                event.stopPropagation();
+            }
+
+            form.classList.add('was-validated');
+        });
+    });
+</script>
+{% endblock %}

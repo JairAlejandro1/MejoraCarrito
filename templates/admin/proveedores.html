@@ -1,0 +1,150 @@
+{% extends "layout.html" %}
+
+{% block title %}Gestión de Proveedores | Admin | EcoShop{% endblock %}
+
+{% block content %}
+<div class="container">
+    <nav aria-label="breadcrumb" class="my-3">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{{ url_for('admin.dashboard') }}">Dashboard</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Proveedores</li>
+        </ol>
+    </nav>
+
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2>Gestión de Proveedores</h2>
+        <a href="{{ url_for('admin.nuevo_proveedor') }}" class="btn btn-primary">
+            <i class="fas fa-plus me-2"></i>Nuevo Proveedor
+        </a>
+    </div>
+
+    <div class="card shadow-sm">
+        <div class="card-header bg-white d-flex justify-content-between align-items-center">
+            <h5 class="mb-0">Lista de Proveedores</h5>
+            <div class="input-group input-group-sm" style="width: 300px;">
+                <input type="text" id="buscarProveedor" class="form-control" placeholder="Buscar proveedor...">
+                <button class="btn btn-outline-secondary" type="button">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+        </div>
+        <div class="card-body p-0">
+            <div class="table-responsive">
+                <table class="table table-hover" id="tablaProveedores">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Categoría</th>
+                            <th>Email</th>
+                            <th>Teléfono</th>
+                            <th>Productos</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for proveedor in proveedores %}
+                        <tr>
+                            <td>{{ proveedor.nombre }}</td>
+                            <td>{{ proveedor.categoria_productos }}</td>
+                            <td>{{ proveedor.email }}</td>
+                            <td>{{ proveedor.telefono }}</td>
+                            <td>
+                                <span class="badge bg-primary rounded-pill">{{ proveedor.total_productos }}</span>
+                            </td>
+                            <td>
+                                <div class="btn-group">
+                                    <a href="{{ url_for('admin.ver_proveedor', proveedor_id=proveedor._id) }}" class="btn btn-sm btn-outline-primary">
+                                        <i class="fas fa-eye"></i>
+                                    </a>
+                                    <a href="{{ url_for('admin.editar_proveedor', proveedor_id=proveedor._id) }}" class="btn btn-sm btn-outline-secondary">
+                                        <i class="fas fa-edit"></i>
+                                    </a>
+                                    <button type="button" class="btn btn-sm btn-outline-danger" data-bs-toggle="modal" data-bs-target="#eliminarProveedorModal" data-proveedor-id="{{ proveedor._id }}" data-proveedor-nombre="{{ proveedor.nombre }}">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+
+            {% if proveedores|length == 0 %}
+            <div class="text-center py-5">
+                <i class="fas fa-truck fa-4x text-muted mb-3"></i>
+                <h4>No hay proveedores registrados</h4>
+                <p class="mb-4">Comienza agregando tu primer proveedor.</p>
+                <a href="{{ url_for('admin.nuevo_proveedor') }}" class="btn btn-primary">
+                    <i class="fas fa-plus me-2"></i>Agregar Proveedor
+                </a>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+<!-- Modal Eliminar Proveedor -->
+<div class="modal fade" id="eliminarProveedorModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Confirmar Eliminación</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>¿Estás seguro de que deseas eliminar al proveedor <span id="proveedorNombre"></span>?</p>
+                <div class="alert alert-danger" role="alert">
+                    <i class="fas fa-exclamation-triangle me-2"></i>
+                    <strong>Advertencia:</strong> Esta acción no se puede deshacer. Los productos asociados a este proveedor quedarán sin proveedor asignado.
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <form action="{{ url_for('admin.eliminar_proveedor') }}" method="post" id="formEliminarProveedor">
+                    <input type="hidden" name="proveedor_id" id="proveedorIdEliminar">
+                    <button type="submit" class="btn btn-danger">Eliminar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Búsqueda en tabla de proveedores
+        const buscarInput = document.getElementById('buscarProveedor');
+        const tabla = document.getElementById('tablaProveedores');
+        const filas = tabla.getElementsByTagName('tbody')[0].getElementsByTagName('tr');
+
+        buscarInput.addEventListener('keyup', function() {
+            const termino = buscarInput.value.toLowerCase();
+
+            for (let i = 0; i < filas.length; i++) {
+                const nombre = filas[i].getElementsByTagName('td')[0].textContent.toLowerCase();
+                const categoria = filas[i].getElementsByTagName('td')[1].textContent.toLowerCase();
+                const email = filas[i].getElementsByTagName('td')[2].textContent.toLowerCase();
+
+                if (nombre.indexOf(termino) > -1 || categoria.indexOf(termino) > -1 || email.indexOf(termino) > -1) {
+                    filas[i].style.display = '';
+                } else {
+                    filas[i].style.display = 'none';
+                }
+            }
+        });
+
+        // Modal para eliminar proveedor
+        const eliminarModal = document.getElementById('eliminarProveedorModal');
+        eliminarModal.addEventListener('show.bs.modal', function(event) {
+            const button = event.relatedTarget;
+            const proveedorId = button.getAttribute('data-proveedor-id');
+            const proveedorNombre = button.getAttribute('data-proveedor-nombre');
+
+            document.getElementById('proveedorNombre').textContent = proveedorNombre;
+            document.getElementById('proveedorIdEliminar').value = proveedorId;
+        });
+    });
+</script>
+{% endblock %}

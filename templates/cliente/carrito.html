@@ -1,0 +1,115 @@
+{% extends "layout.html" %}
+
+{% block title %}Carrito de Compra | EcoShop{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-12 mb-4">
+        <h2>Tu Carrito de Compras</h2>
+    </div>
+</div>
+
+{% if items|length > 0 %}
+<div class="row">
+    <div class="col-md-8">
+        <div class="card shadow-sm mb-4">
+            <div class="card-header bg-white">
+                <h5 class="mb-0">Productos en el Carrito</h5>
+            </div>
+            <div class="card-body p-0">
+                <ul class="list-group list-group-flush">
+                    {% for item in items %}
+                    <li class="list-group-item py-3">
+                        <div class="row align-items-center">
+                            <div class="col-2">
+                                {% if item.producto.imagen_url %}
+                                <img src="{{ item.producto.imagen_url }}" alt="{{ item.producto.nombre }}" class="img-fluid rounded">
+                                {% else %}
+                                <img src="{{ url_for('static', filename='img/producto-default.jpg') }}" alt="{{ item.producto.nombre }}" class="img-fluid rounded">
+                                {% endif %}
+                            </div>
+                            <div class="col-4">
+                                <h6 class="mb-1">{{ item.producto.nombre }}</h6>
+                                <p class="text-muted small mb-0">Precio: ${{ item.producto.precio }}</p>
+                            </div>
+                            <div class="col-3">
+                                <form action="{{ url_for('cliente.actualizar_carrito') }}" method="post">
+                                    <input type="hidden" name="producto_id" value="{{ item.producto._id }}">
+                                    <div class="input-group input-group-sm">
+                                        <input type="number" class="form-control" name="cantidad" value="{{ item.cantidad }}" min="1" max="{{ item.producto.existencias }}">
+                                        <button class="btn btn-outline-secondary" type="submit">
+                                            <i class="fas fa-sync-alt"></i>
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="col-2 text-end">
+                                <span class="fw-bold">${{ item.subtotal }}</span>
+                            </div>
+                            <div class="col-1 text-end">
+                                <a href="{{ url_for('cliente.eliminar_del_carrito', producto_id=item.producto._id) }}" class="text-danger">
+                                    <i class="fas fa-trash"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+
+        <div class="d-flex justify-content-between mb-4">
+            <a href="{{ url_for('main.productos') }}" class="btn btn-outline-primary">
+                <i class="fas fa-arrow-left me-2"></i>Seguir Comprando
+            </a>
+            <a href="{{ url_for('cliente.checkout') }}" class="btn btn-success">
+                <i class="fas fa-shopping-bag me-2"></i>Proceder al Pago
+            </a>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card shadow-sm">
+            <div class="card-header bg-white">
+                <h5 class="mb-0">Resumen de Compra</h5>
+            </div>
+            <div class="card-body">
+                <div class="d-flex justify-content-between mb-2">
+                    <span>Subtotal:</span>
+                    <span>${{ total }}</span>
+                </div>
+                <div class="d-flex justify-content-between mb-2">
+                    <span>Envío:</span>
+                    <span>Gratis</span>
+                </div>
+                <hr>
+                <div class="d-flex justify-content-between mb-3">
+                    <strong>Total:</strong>
+                    <strong>${{ total }}</strong>
+                </div>
+                <div class="d-grid gap-2">
+                    <a href="{{ url_for('cliente.checkout') }}" class="btn btn-primary">
+                        Finalizar Compra
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% else %}
+<div class="row">
+    <div class="col-md-12">
+        <div class="card shadow-sm text-center p-5">
+            <div class="card-body">
+                <i class="fas fa-shopping-cart fa-4x text-muted mb-3"></i>
+                <h3>Tu carrito está vacío</h3>
+                <p class="mb-4">Parece que no has agregado productos a tu carrito todavía.</p>
+                <a href="{{ url_for('main.productos') }}" class="btn btn-primary">
+                    Explorar Productos
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}
+{% endblock %}

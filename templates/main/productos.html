@@ -1,0 +1,253 @@
+{% extends "layout.html" %}
+
+{% block title %}Productos | EcoShop{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row mb-4">
+        <div class="col-md-8">
+            <h2>Nuestros Productos</h2>
+        </div>
+        <div class="col-md-4">
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" id="buscarProducto" placeholder="Buscar productos...">
+                <button class="btn btn-outline-secondary" type="button" id="btnBuscar">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mb-4">
+        <div class="col-md-3">
+            <div class="card shadow-sm mb-4">
+                <div class="card-header bg-white">
+                    <h5 class="mb-0">Categorías</h5>
+                </div>
+                <div class="card-body p-0">
+                    <div class="list-group list-group-flush" id="categoriasFiltro">
+                        <a href="#" class="list-group-item list-group-item-action active" data-categoria="todas">Todas</a>
+                        {% for categoria in categorias %}
+                        <a href="#" class="list-group-item list-group-item-action" data-categoria="{{ categoria }}">{{ categoria }}</a>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+
+            <div class="card shadow-sm">
+                <div class="card-header bg-white">
+                    <h5 class="mb-0">Filtros</h5>
+                </div>
+                <div class="card-body">
+                    <h6>Precio</h6>
+                    <div class="mb-3">
+                        <label for="precioMin" class="form-label">Mínimo</label>
+                        <input type="range" class="form-range" id="precioMin" min="0" max="1000" value="0">
+                        <div class="d-flex justify-content-between">
+                            <span>$0</span>
+                            <span id="precioMinValor">$0</span>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="precioMax" class="form-label">Máximo</label>
+                        <input type="range" class="form-range" id="precioMax" min="0" max="1000" value="1000">
+                        <div class="d-flex justify-content-between">
+                            <span>$0</span>
+                            <span id="precioMaxValor">$1000</span>
+                        </div>
+                    </div>
+
+                    <h6 class="mt-4">Disponibilidad</h6>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="enStock" checked>
+                        <label class="form-check-label" for="enStock">
+                            En stock
+                        </label>
+                    </div>
+
+                    <div class="d-grid gap-2 mt-4">
+                        <button class="btn btn-primary" id="aplicarFiltros">
+                            <i class="fas fa-filter me-2"></i>Aplicar Filtros
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-9">
+            <div class="row" id="listaProductos">
+                {% if productos|length > 0 %}
+                {% for producto in productos %}
+                <div class="col-md-4 mb-4 producto-item"
+                     data-categoria="{{ producto.categoria }}"
+                     data-precio="{{ producto.precio }}"
+                     data-stock="{{ producto.existencias > 0 }}">
+                    <div class="card h-100 shadow-hover">
+                        {% if producto.imagen_url %}
+                        <img src="{{ producto.imagen_url }}" class="card-img-top" alt="{{ producto.nombre }}" style="height: 200px; object-fit: cover;">
+                        {% else %}
+                        <img src="{{ url_for('static', filename='img/producto-default.jpg') }}" class="card-img-top" alt="{{ producto.nombre }}" style="height: 200px; object-fit: cover;">
+                        {% endif %}
+                        <div class="card-body">
+                            <h5 class="card-title">{{ producto.nombre }}</h5>
+                            <p class="card-text text-muted small">{{ producto.categoria }}</p>
+                            <p class="card-text">{{ producto.descripcion|truncate(100) }}</p>
+                        </div>
+                        <div class="card-footer bg-white">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="text-primary fw-bold">${{ producto.precio }}</span>
+                                <a href="{{ url_for('main.detalle_producto', producto_id=producto._id) }}" class="btn btn-outline-primary btn-sm">Ver Detalles</a>
+                            </div>
+                            {% if producto.existencias == 0 %}
+                            <div class="mt-2">
+                                <span class="badge bg-danger w-100">Agotado</span>
+                            </div>
+                            {% elif producto.existencias < 5 %}
+                            <div class="mt-2">
+                                <span class="badge bg-warning text-dark w-100">¡Últimas unidades!</span>
+                            </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+                {% else %}
+                <div class="col-12 text-center py-5">
+                    <i class="fas fa-box-open fa-4x text-muted mb-3"></i>
+                    <h4>No hay productos disponibles</h4>
+                    <p>Lo sentimos, no hemos encontrado productos que mostrar.</p>
+                </div>
+                {% endif %}
+            </div>
+
+            <div id="sinResultados" class="text-center py-5" style="display: none;">
+                <i class="fas fa-search fa-4x text-muted mb-3"></i>
+                <h4>No se encontraron resultados</h4>
+                <p>No hemos encontrado productos que coincidan con tu búsqueda.</p>
+                <button class="btn btn-primary" id="limpiarFiltros">
+                    <i class="fas fa-undo me-2"></i>Limpiar Filtros
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Variables
+        const buscarInput = document.getElementById('buscarProducto');
+        const btnBuscar = document.getElementById('btnBuscar');
+        const categoriasFiltro = document.getElementById('categoriasFiltro');
+        const precioMin = document.getElementById('precioMin');
+        const precioMax = document.getElementById('precioMax');
+        const precioMinValor = document.getElementById('precioMinValor');
+        const precioMaxValor = document.getElementById('precioMaxValor');
+        const enStock = document.getElementById('enStock');
+        const aplicarFiltros = document.getElementById('aplicarFiltros');
+        const limpiarFiltros = document.getElementById('limpiarFiltros');
+        const listaProductos = document.getElementById('listaProductos');
+        const sinResultados = document.getElementById('sinResultados');
+        const productos = document.querySelectorAll('.producto-item');
+
+        // Actualizar valores de precio
+        precioMin.addEventListener('input', function() {
+            precioMinValor.textContent = '$' + this.value;
+        });
+
+        precioMax.addEventListener('input', function() {
+            precioMaxValor.textContent = '$' + this.value;
+        });
+
+        // Filtrar por categoría
+        categoriasFiltro.addEventListener('click', function(e) {
+            if (e.target.tagName === 'A') {
+                e.preventDefault();
+
+                // Quitar clase active de todos los elementos
+                document.querySelectorAll('#categoriasFiltro a').forEach(function(el) {
+                    el.classList.remove('active');
+                });
+
+                // Añadir clase active al elemento clickeado
+                e.target.classList.add('active');
+
+                // Aplicar filtros
+                aplicarFiltros.click();
+            }
+        });
+
+        // Buscar productos
+        function buscarProductos() {
+            const textoBusqueda = buscarInput.value.toLowerCase();
+            const categoriaActiva = document.querySelector('#categoriasFiltro a.active').getAttribute('data-categoria');
+            const minPrecio = parseInt(precioMin.value);
+            const maxPrecio = parseInt(precioMax.value);
+            const soloEnStock = enStock.checked;
+
+            let productosVisibles = 0;
+
+            productos.forEach(function(producto) {
+                const nombre = producto.querySelector('.card-title').textContent.toLowerCase();
+                const descripcion = producto.querySelector('.card-text:not(.text-muted)').textContent.toLowerCase();
+                const categoria = producto.getAttribute('data-categoria');
+                const precio = parseFloat(producto.getAttribute('data-precio'));
+                const stock = producto.getAttribute('data-stock') === 'True';
+
+                // Verificar condiciones de filtrado
+                const coincideTexto = nombre.includes(textoBusqueda) || descripcion.includes(textoBusqueda);
+                const coincideCategoria = categoriaActiva === 'todas' || categoria === categoriaActiva;
+                const coincidePrecio = precio >= minPrecio && precio <= maxPrecio;
+                const coincideStock = !soloEnStock || stock;
+
+                // Mostrar u ocultar producto
+                if (coincideTexto && coincideCategoria && coincidePrecio && coincideStock) {
+                    producto.style.display = '';
+                    productosVisibles++;
+                } else {
+                    producto.style.display = 'none';
+                }
+            });
+
+            // Mostrar mensaje si no hay resultados
+            if (productosVisibles === 0) {
+                listaProductos.style.display = 'none';
+                sinResultados.style.display = 'block';
+            } else {
+                listaProductos.style.display = 'flex';
+                sinResultados.style.display = 'none';
+            }
+        }
+
+        // Eventos de búsqueda y filtrado
+        btnBuscar.addEventListener('click', buscarProductos);
+        buscarInput.addEventListener('keyup', function(e) {
+            if (e.key === 'Enter') {
+                buscarProductos();
+            }
+        });
+
+        aplicarFiltros.addEventListener('click', buscarProductos);
+
+        limpiarFiltros.addEventListener('click', function() {
+            // Resetear inputs
+            buscarInput.value = '';
+            precioMin.value = 0;
+            precioMax.value = 1000;
+            precioMinValor.textContent = '$0';
+            precioMaxValor.textContent = '$1000';
+            enStock.checked = true;
+
+            // Resetear categoría
+            document.querySelectorAll('#categoriasFiltro a').forEach(function(el) {
+                el.classList.remove('active');
+            });
+            document.querySelector('#categoriasFiltro a[data-categoria="todas"]').classList.add('active');
+
+            // Aplicar filtros
+            buscarProductos();
+        });
+    });
+</script>
+{% endblock %}

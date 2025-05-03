@@ -1,0 +1,262 @@
+{% extends "layout.html" %}
+
+{% block title %}Dashboard Proveedor | EcoShop{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row mb-4">
+        <div class="col-md-12">
+            <h2>Dashboard del Proveedor</h2>
+        </div>
+    </div>
+
+    <div class="row mb-4">
+        <div class="col-md-4">
+            <div class="card bg-primary text-white h-100">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                            <h5 class="card-title">Mis Productos</h5>
+                            <h2 class="display-4">{{ total_productos }}</h2>
+                        </div>
+                        <i class="fas fa-box fa-3x opacity-50"></i>
+                    </div>
+                </div>
+                <div class="card-footer bg-transparent border-0">
+                    <a href="{{ url_for('proveedor.productos') }}" class="text-white text-decoration-none">
+                        Ver Detalles <i class="fas fa-arrow-right ms-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card bg-danger text-white h-100">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                            <h5 class="card-title">Productos Agotados</h5>
+                            <h2 class="display-4">{{ productos_agotados }}</h2>
+                        </div>
+                        <i class="fas fa-exclamation-triangle fa-3x opacity-50"></i>
+                    </div>
+                </div>
+                <div class="card-footer bg-transparent border-0">
+                    <a href="{{ url_for('proveedor.inventario') }}" class="text-white text-decoration-none">
+                        Ver Detalles <i class="fas fa-arrow-right ms-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card bg-warning text-dark h-100">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                            <h5 class="card-title">Bajo Inventario</h5>
+                            <h2 class="display-4">{{ productos_bajo_inventario }}</h2>
+                        </div>
+                        <i class="fas fa-layer-group fa-3x opacity-50"></i>
+                    </div>
+                </div>
+                <div class="card-footer bg-transparent border-0">
+                    <a href="{{ url_for('proveedor.inventario') }}" class="text-dark text-decoration-none">
+                        Ver Detalles <i class="fas fa-arrow-right ms-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-8">
+            <div class="card shadow-sm mb-4">
+                <div class="card-header bg-white d-flex justify-content-between align-items-center">
+                    <h5 class="mb-0">Pedidos Recientes</h5>
+                    <a href="{{ url_for('proveedor.pedidos') }}" class="btn btn-sm btn-outline-primary">Ver Todos</a>
+                </div>
+                <div class="card-body p-0">
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Cliente</th>
+                                    <th>Fecha</th>
+                                    <th>Estado</th>
+                                    <th>Total</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for pedido in pedidos_recientes %}
+                                <tr>
+                                    <td>{{ pedido._id|truncate(8, True, '') }}</td>
+                                    <td>{{ pedido.cliente_nombre }}</td>
+                                    <td>{{ pedido.fecha_creacion.strftime('%d/%m/%Y') }}</td>
+                                    <td>
+                                        {% if pedido.estado == 'pendiente' %}
+                                        <span class="badge bg-warning text-dark">Pendiente</span>
+                                        {% elif pedido.estado == 'pagado' %}
+                                        <span class="badge bg-info">Pagado</span>
+                                        {% elif pedido.estado == 'enviado' %}
+                                        <span class="badge bg-primary">Enviado</span>
+                                        {% elif pedido.estado == 'entregado' %}
+                                        <span class="badge bg-success">Entregado</span>
+                                        {% elif pedido.estado == 'cancelado' %}
+                                        <span class="badge bg-danger">Cancelado</span>
+                                        {% endif %}
+                                    </td>
+                                    <td>${{ pedido.total }}</td>
+                                    <td>
+                                        <a href="{{ url_for('proveedor.detalle_pedido', pedido_id=pedido._id) }}" class="btn btn-sm btn-outline-primary">
+                                            <i class="fas fa-eye"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+
+                                {% if pedidos_recientes|length == 0 %}
+                                <tr>
+                                    <td colspan="6" class="text-center py-3">No hay pedidos recientes.</td>
+                                </tr>
+                                {% endif %}
+                            {% if pedidos_recientes|length == 0 %}
+                                <tr>
+                                    <td colspan="6" class="text-center py-3">No hay pedidos recientes.</td>
+                                </tr>
+                                {% endif %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card shadow-sm mb-4">
+                <div class="card-header bg-white d-flex justify-content-between align-items-center">
+                    <h5 class="mb-0">Actividad Reciente</h5>
+                </div>
+                <div class="card-body p-0">
+                    <div class="list-group list-group-flush">
+                        {% for actividad in actividades_recientes %}
+                        <div class="list-group-item">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h6 class="mb-1">{{ actividad.titulo }}</h6>
+                                <small class="text-muted">{{ actividad.fecha.strftime('%d/%m/%Y %H:%M') }}</small>
+                            </div>
+                            <p class="mb-1">{{ actividad.descripcion }}</p>
+                            {% if actividad.tipo == 'pedido' %}
+                            <small>
+                                <a href="{{ url_for('proveedor.detalle_pedido', pedido_id=actividad.id_referencia) }}">
+                                    Ver pedido
+                                </a>
+                            </small>
+                            {% elif actividad.tipo == 'producto' %}
+                            <small>
+                                <a href="{{ url_for('proveedor.editar_producto', producto_id=actividad.id_referencia) }}">
+                                    Ver producto
+                                </a>
+                            </small>
+                            {% elif actividad.tipo == 'inventario' %}
+                            <small>
+                                <a href="{{ url_for('proveedor.inventario') }}">
+                                    Ver inventario
+                                </a>
+                            </small>
+                            {% endif %}
+                        </div>
+                        {% endfor %}
+
+                        {% if actividades_recientes|length == 0 %}
+                        <div class="list-group-item text-center py-3">
+                            <p class="mb-0">No hay actividades recientes.</p>
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card shadow-sm mb-4">
+                <div class="card-header bg-white">
+                    <h5 class="mb-0">Mi Perfil</h5>
+                </div>
+                <div class="card-body text-center">
+                    <div class="mb-3">
+                        <i class="fas fa-user-circle fa-5x text-primary"></i>
+                    </div>
+                    <h4>{{ proveedor.nombre }}</h4>
+                    <p class="text-muted mb-3">{{ proveedor.email }}</p>
+                    <div class="d-grid gap-2">
+                        <a href="{{ url_for('proveedor.perfil') }}" class="btn btn-outline-primary">
+                            <i class="fas fa-user-edit me-2"></i>Editar Perfil
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card shadow-sm mb-4">
+                <div class="card-header bg-white">
+                    <h5 class="mb-0">Productos con Bajo Inventario</h5>
+                </div>
+                <div class="card-body p-0">
+                    <ul class="list-group list-group-flush">
+                        {% for producto in productos_criticos %}
+                        <li class="list-group-item">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <h6 class="mb-0">{{ producto.nombre }}</h6>
+                                    <small class="text-danger">
+                                        {% if producto.existencias == 0 %}
+                                        <i class="fas fa-exclamation-circle me-1"></i>Agotado
+                                        {% else %}
+                                        <i class="fas fa-exclamation-triangle me-1"></i>{{ producto.existencias }} unidades
+                                        {% endif %}
+                                    </small>
+                                </div>
+                                <a href="{{ url_for('proveedor.actualizar_inventario', producto_id=producto._id) }}" class="btn btn-sm btn-outline-warning">
+                                    <i class="fas fa-plus-circle"></i>
+                                </a>
+                            </div>
+                        </li>
+                        {% endfor %}
+
+                        {% if productos_criticos|length == 0 %}
+                        <li class="list-group-item text-center py-3">
+                            <i class="fas fa-check-circle text-success fa-2x mb-2"></i>
+                            <p class="mb-0">No hay productos con bajo inventario.</p>
+                        </li>
+                        {% endif %}
+                    </ul>
+                </div>
+                <div class="card-footer bg-white text-center">
+                    <a href="{{ url_for('proveedor.inventario') }}" class="text-decoration-none">
+                        Ver todo el inventario <i class="fas fa-arrow-right ms-1"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="card shadow-sm">
+                <div class="card-header bg-white">
+                    <h5 class="mb-0">Acciones Rápidas</h5>
+                </div>
+                <div class="card-body">
+                    <div class="d-grid gap-2">
+                        <a href="{{ url_for('proveedor.nuevo_producto') }}" class="btn btn-primary">
+                            <i class="fas fa-plus me-2"></i>Agregar Nuevo Producto
+                        </a>
+                        <a href="{{ url_for('proveedor.inventario') }}" class="btn btn-outline-primary">
+                            <i class="fas fa-layer-group me-2"></i>Gestionar Inventario
+                        </a>
+                        <a href="{{ url_for('proveedor.pedidos') }}" class="btn btn-outline-primary">
+                            <i class="fas fa-shopping-bag me-2"></i>Ver Pedidos
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

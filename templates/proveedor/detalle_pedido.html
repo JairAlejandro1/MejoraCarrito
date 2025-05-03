@@ -1,0 +1,228 @@
+{% extends "layout.html" %}
+
+{% block title %}Detalle de Pedido | Proveedor | EcoShop{% endblock %}
+
+{% block content %}
+<div class="container">
+    <nav aria-label="breadcrumb" class="my-3">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{{ url_for('proveedor.dashboard') }}">Dashboard</a></li>
+            <li class="breadcrumb-item"><a href="{{ url_for('proveedor.pedidos') }}">Pedidos</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Pedido #{{ pedido._id|truncate(8, True, '') }}</li>
+        </ol>
+    </nav>
+
+    <div class="row mb-4">
+        <div class="col-md-8">
+            <h2>Detalle de Pedido</h2>
+        </div>
+        <div class="col-md-4 text-end">
+            <a href="{{ url_for('proveedor.pedidos') }}" class="btn btn-outline-primary">
+                <i class="fas fa-arrow-left me-2"></i>Volver a Pedidos
+            </a>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-8">
+            <div class="card shadow-sm mb-4">
+                <div class="card-header bg-white">
+                    <h5 class="mb-0">Productos de tu Catálogo</h5>
+                    <p class="text-muted small mb-0">Solo se muestran los productos que provees</p>
+                </div>
+                <div class="card-body p-0">
+                    <div class="table-responsive">
+                        <table class="table mb-0">
+                            <thead>
+                                <tr>
+                                    <th>Producto</th>
+                                    <th class="text-center">Cantidad</th>
+                                    <th class="text-end">Precio</th>
+                                    <th class="text-end">Subtotal</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for item in productos %}
+                                <tr>
+                                    <td>
+                                        <div class="d-flex align-items-center">
+                                            {% if item.producto.imagen_url %}
+                                            <img src="{{ item.producto.imagen_url }}" alt="{{ item.producto.nombre }}" class="me-2" style="width: 50px; height: 50px; object-fit: cover; border-radius: 4px;">
+                                            {% else %}
+                                            <img src="{{ url_for('static', filename='img/producto-default.jpg') }}" alt="{{ item.producto.nombre }}" class="me-2" style="width: 50px; height: 50px; object-fit: cover; border-radius: 4px;">
+                                            {% endif %}
+                                            <div>
+                                                <h6 class="mb-0">{{ item.producto.nombre }}</h6>
+                                                <small class="text-muted">{{ item.producto.categoria }}</small>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="text-center">{{ item.cantidad }}</td>
+                                    <td class="text-end">${{ item.precio_unitario }}</td>
+                                    <td class="text-end">${{ item.subtotal }}</td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                            <tfoot class="table-group-divider">
+                                <tr>
+                                    <th colspan="3" class="text-end">Total:</th>
+                                    <th class="text-end">${{ total_proveedor }}</th>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card shadow-sm mb-4">
+                <div class="card-header bg-white">
+                    <h5 class="mb-0">Estado del Pedido</h5>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="position-relative mb-4">
+                                <div class="progress" style="height: 4px;">
+                                    {% if pedido.estado == 'pendiente' %}
+                                    <div class="progress-bar bg-warning" role="progressbar" style="width: 25%"></div>
+                                    {% elif pedido.estado == 'pagado' %}
+                                    <div class="progress-bar bg-info" role="progressbar" style="width: 50%"></div>
+                                    {% elif pedido.estado == 'enviado' %}
+                                    <div class="progress-bar bg-primary" role="progressbar" style="width: 75%"></div>
+                                    {% elif pedido.estado == 'entregado' %}
+                                    <div class="progress-bar bg-success" role="progressbar" style="width: 100%"></div>
+                                    {% elif pedido.estado == 'cancelado' %}
+                                    <div class="progress-bar bg-danger" role="progressbar" style="width: 100%"></div>
+                                    {% endif %}
+                                </div>
+
+                                <div class="d-flex justify-content-between position-absolute w-100" style="top: -10px;">
+                                    <div class="text-center" style="width: 25%;">
+                                        <div class="milestone-circle {% if pedido.estado in ['pendiente', 'pagado', 'enviado', 'entregado'] %}active{% endif %}">
+                                            <i class="fas fa-clipboard-check"></i>
+                                        </div>
+                                        <div class="mt-1 small">Pendiente</div>
+                                    </div>
+                                    <div class="text-center" style="width: 25%;">
+                                        <div class="milestone-circle {% if pedido.estado in ['pagado', 'enviado', 'entregado'] %}active{% endif %}">
+                                            <i class="fas fa-credit-card"></i>
+                                        </div>
+                                        <div class="mt-1 small">Pagado</div>
+                                    </div>
+                                    <div class="text-center" style="width: 25%;">
+                                        <div class="milestone-circle {% if pedido.estado in ['enviado', 'entregado'] %}active{% endif %}">
+                                            <i class="fas fa-shipping-fast"></i>
+                                        </div>
+                                        <div class="mt-1 small">Enviado</div>
+                                    </div>
+                                    <div class="text-center" style="width: 25%;">
+                                        <div class="milestone-circle {% if pedido.estado == 'entregado' %}active{% endif %}">
+                                            <i class="fas fa-box-open"></i>
+                                        </div>
+                                        <div class="mt-1 small">Entregado</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {% if pedido.estado == 'cancelado' %}
+                            <div class="alert alert-danger text-center">
+                                <i class="fas fa-times-circle fa-2x mb-2"></i>
+                                <h5>Pedido Cancelado</h5>
+                                <p class="mb-0">Este pedido ha sido cancelado.</p>
+                            </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card shadow-sm mb-4">
+                <div class="card-header bg-white">
+                    <h5 class="mb-0">Información del Pedido</h5>
+                </div>
+                <div class="card-body">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item d-flex justify-content-between">
+                            <span>Número de Pedido:</span>
+                            <span>{{ pedido._id|truncate(8, True, '') }}</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between">
+                            <span>Fecha:</span>
+                            <span>{{ pedido.fecha_creacion.strftime('%d/%m/%Y %H:%M') }}</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between">
+                            <span>Estado:</span>
+                            <span>
+                                {% if pedido.estado == 'pendiente' %}
+                                <span class="badge bg-warning text-dark">Pendiente</span>
+                                {% elif pedido.estado == 'pagado' %}
+                                <span class="badge bg-info">Pagado</span>
+                                {% elif pedido.estado == 'enviado' %}
+                                <span class="badge bg-primary">Enviado</span>
+                                {% elif pedido.estado == 'entregado' %}
+                                <span class="badge bg-success">Entregado</span>
+                                {% elif pedido.estado == 'cancelado' %}
+                                <span class="badge bg-danger">Cancelado</span>
+                                {% endif %}
+                            </span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between">
+                            <span>Total del Pedido:</span>
+                            <span>${{ pedido.total }}</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between">
+                            <span>Productos que provees:</span>
+                            <span>{{ productos|length }}</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between">
+                            <span>Total productos que provees:</span>
+                            <span>${{ total_proveedor }}</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            {% if pedido.estado in ['pagado', 'enviado'] %}
+            <div class="card shadow-sm mb-4 border-primary">
+                <div class="card-body">
+                    <h5 class="text-primary"><i class="fas fa-info-circle me-2"></i>Acción Requerida</h5>
+                    <p>Este pedido incluye productos de tu catálogo y está listo para ser enviado.</p>
+                    <p>Por favor asegúrate de preparar los productos para su envío a la brevedad.</p>
+                </div>
+            </div>
+            {% endif %}
+
+            <div class="card shadow-sm mb-4">
+                <div class="card-header bg-white">
+                    <h5 class="mb-0">Dirección de Entrega</h5>
+                </div>
+                <div class="card-body">
+                    <p class="mb-0">{{ pedido.direccion_entrega }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+.milestone-circle {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: #f8f9fa;
+    border: 2px solid #dee2e6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.milestone-circle.active {
+    background-color: #e9ecef;
+    border-color: #0d6efd;
+    color: #0d6efd;
+}
+</style>
+{% endblock %}

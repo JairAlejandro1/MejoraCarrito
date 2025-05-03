@@ -1,0 +1,80 @@
+{% extends "layout.html" %}
+
+{% block title %}Inicio | EcoShop{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<div class="bg-light p-5 rounded-lg mb-4">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <h1 class="display-4">Bienvenido a EcoShop</h1>
+                <p class="lead">Descubre productos de calidad al mejor precio, con envío rápido y seguro.</p>
+                <a href="{{ url_for('main.productos') }}" class="btn btn-primary btn-lg">Ver Productos</a>
+            </div>
+            <div class="col-md-6">
+                <img src="{{ url_for('static', filename='img/hero-image.jpg') }}" alt="EcoShop" class="img-fluid rounded">
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Featured Products -->
+<section class="mb-5">
+    <h2 class="mb-4">Productos Destacados</h2>
+    <div class="row">
+        {% for producto in productos %}
+        <div class="col-md-4 mb-4">
+            <div class="card h-100">
+                {% if producto.imagen_url %}
+                <img src="{{ producto.imagen_url }}" class="card-img-top" alt="{{ producto.nombre }}">
+                {% else %}
+                <img src="{{ url_for('static', filename='img/producto-default.jpg') }}" class="card-img-top" alt="{{ producto.nombre }}">
+                {% endif %}
+                <div class="card-body">
+                    <h5 class="card-title">{{ producto.nombre }}</h5>
+                    <p class="card-text">{{ producto.descripcion|truncate(100) }}</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <span class="text-primary fw-bold">${{ producto.precio }}</span>
+                        <a href="{{ url_for('main.detalle_producto', producto_id=producto._id) }}" class="btn btn-outline-primary">Ver Detalles</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
+<!-- Features -->
+<section class="mb-5">
+    <div class="row text-center">
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 border-0 shadow-sm">
+                <div class="card-body">
+                    <i class="fas fa-truck fa-3x text-primary mb-3"></i>
+                    <h4>Envío Rápido</h4>
+                    <p>Entrega en 24-48 horas a todo el país</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 border-0 shadow-sm">
+                <div class="card-body">
+                    <i class="fas fa-lock fa-3x text-primary mb-3"></i>
+                    <h4>Pago Seguro</h4>
+                    <p>Múltiples opciones de pago seguras</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 border-0 shadow-sm">
+                <div class="card-body">
+                    <i class="fas fa-headset fa-3x text-primary mb-3"></i>
+                    <h4>Soporte 24/7</h4>
+                    <p>Estamos aquí para ayudarte en todo momento</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

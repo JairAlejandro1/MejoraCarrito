@@ -1,0 +1,132 @@
+{% extends "layout.html" %}
+
+{% block title %}Editar Perfil | EcoShop{% endblock %}
+
+{% block content %}
+<div class="container">
+    <nav aria-label="breadcrumb" class="my-3">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{{ url_for('main.index') }}">Inicio</a></li>
+            <li class="breadcrumb-item"><a href="{{ url_for('cliente.perfil') }}">Mi Perfil</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Editar Perfil</li>
+        </ol>
+    </nav>
+
+    <div class="row mb-4">
+        <div class="col-md-8">
+            <h2>Editar Perfil</h2>
+        </div>
+        <div class="col-md-4 text-end">
+            <a href="{{ url_for('cliente.perfil') }}" class="btn btn-outline-primary">
+                <i class="fas fa-arrow-left me-2"></i>Volver a Mi Perfil
+            </a>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-8 mx-auto">
+            <div class="card shadow-sm">
+                <div class="card-header bg-white">
+                    <h5 class="mb-0">Información Personal</h5>
+                </div>
+                <div class="card-body">
+                    <form action="{{ url_for('cliente.editar_perfil') }}" method="post" class="needs-validation" novalidate>
+                        <div class="mb-3">
+                            <label for="nombre" class="form-label">Nombre Completo</label>
+                            <input type="text" class="form-control" id="nombre" name="nombre" value="{{ usuario.nombre }}" required>
+                            <div class="invalid-feedback">
+                                Por favor ingresa tu nombre completo.
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Correo Electrónico</label>
+                            <input type="email" class="form-control" id="email" value="{{ usuario.email }}" readonly>
+                            <small class="text-muted">El correo electrónico no puede ser modificado.</small>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="telefono" class="form-label">Teléfono</label>
+                            <input type="tel" class="form-control" id="telefono" name="telefono" value="{{ usuario.telefono }}" required>
+                            <div class="invalid-feedback">
+                                Por favor ingresa un número de teléfono válido.
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="direccion" class="form-label">Dirección</label>
+                            <textarea class="form-control" id="direccion" name="direccion" rows="3" required>{{ usuario.direccion }}</textarea>
+                            <div class="invalid-feedback">
+                                Por favor ingresa tu dirección.
+                            </div>
+                        </div>
+
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-save me-2"></i>Guardar Cambios
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="card shadow-sm mt-4">
+                <div class="card-header bg-white">
+                    <h5 class="mb-0">Cambiar Contraseña</h5>
+                </div>
+                <div class="card-body">
+                    <form action="{{ url_for('cliente.cambiar_password') }}" method="post" class="needs-validation" novalidate>
+                        <div class="mb-3">
+                            <label for="password_actual" class="form-label">Contraseña Actual</label>
+                            <input type="password" class="form-control" id="password_actual" name="password_actual" required>
+                            <div class="invalid-feedback">
+                                Por favor ingresa tu contraseña actual.
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="password_nueva" class="form-label">Nueva Contraseña</label>
+                            <input type="password" class="form-control" id="password_nueva" name="password_nueva" required>
+                            <div class="invalid-feedback">
+                                Por favor ingresa una nueva contraseña.
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="password_confirmacion" class="form-label">Confirmar Nueva Contraseña</label>
+                            <input type="password" class="form-control" id="password_confirmacion" name="password_confirmacion" required>
+                            <div class="invalid-feedback">
+                                Por favor confirma tu nueva contraseña.
+                            </div>
+                        </div>
+
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-warning">
+                                <i class="fas fa-lock me-2"></i>Cambiar Contraseña
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    // Validación del formulario
+    document.addEventListener('DOMContentLoaded', function() {
+        const form = document.querySelector('.needs-validation');
+
+        form.addEventListener('submit', function(event) {
+            if (!form.checkValidity()) {
+                event.preventDefault();
+                event.stopPropagation();
+            }
+
+            form.classList.add('was-validated');
+        });
+    });
+</script>
+{% endblock %}

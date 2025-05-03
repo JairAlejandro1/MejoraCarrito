@@ -1,0 +1,137 @@
+{% extends "layout.html" %}
+
+{% block title %}Gestión de Productos | EcoShop{% endblock %}
+
+{% block content %}
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h2>Gestión de Productos</h2>
+    <a href="{{ url_for('admin.nuevo_producto') }}" class="btn btn-primary">
+        <i class="fas fa-plus me-2"></i>Nuevo Producto
+    </a>
+</div>
+
+<div class="card shadow-sm">
+    <div class="card-header bg-white d-flex justify-content-between align-items-center">
+        <h5 class="mb-0">Lista de Productos</h5>
+        <div class="input-group input-group-sm" style="width: 300px;">
+            <input type="text" id="buscarProducto" class="form-control" placeholder="Buscar producto...">
+            <button class="btn btn-outline-secondary" type="button">
+                <i class="fas fa-search"></i>
+            </button>
+        </div>
+    </div>
+    <div class="card-body p-0">
+        <div class="table-responsive">
+            <table class="table table-hover" id="tablaProductos">
+                <thead>
+                    <tr>
+                        <th>Imagen</th>
+                        <th>Nombre</th>
+                        <th>Categoría</th>
+                        <th>Precio</th>
+                        <th>Existencias</th>
+                        <th>Estado</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for producto in productos %}
+                    <tr>
+                        <td>
+                            {% if producto.imagen_url %}
+                            <img src="{{ producto.imagen_url }}" alt="{{ producto.nombre }}" width="50" height="50" class="rounded">
+                            {% else %}
+                            <img src="{{ url_for('static', filename='img/producto-default.jpg') }}" alt="{{ producto.nombre }}" width="50" height="50" class="rounded">
+                            {% endif %}
+                        </td>
+                        <td>{{ producto.nombre }}</td>
+                        <td>{{ producto.categoria }}</td>
+                        <td>${{ producto.precio }}</td>
+                        <td>{{ producto.existencias }}</td>
+                        <td>
+                            {% if producto.existencias > 10 %}
+                            <span class="badge bg-success">En Stock</span>
+                            {% elif producto.existencias > 0 %}
+                            <span class="badge bg-warning text-dark">Bajo Stock</span>
+                            {% else %}
+                            <span class="badge bg-danger">Agotado</span>
+                            {% endif %}
+                        </td>
+                        <td>
+                            <div class="btn-group">
+                                <a href="{{ url_for('admin.editar_producto', producto_id=producto._id) }}" class="btn btn-sm btn-outline-primary">
+                                    <i class="fas fa-edit"></i>
+                                </a>
+                                <button type="button" class="btn btn-sm btn-outline-danger" data-bs-toggle="modal" data-bs-target="#eliminarProductoModal" data-producto-id="{{ producto._id }}" data-producto-nombre="{{ producto.nombre }}">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Eliminar Producto -->
+<div class="modal fade" id="eliminarProductoModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Confirmar Eliminación</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>¿Estás seguro de que deseas eliminar el producto <span id="productoNombre"></span>?</p>
+                <p class="text-danger">Esta acción no se puede deshacer.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <form action="{{ url_for('admin.eliminar_producto') }}" method="post" id="formEliminarProducto">
+                    <input type="hidden" name="producto_id" id="productoIdEliminar">
+                    <button type="submit" class="btn btn-danger">Eliminar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    // Búsqueda en tabla de productos
+    document.addEventListener('DOMContentLoaded', function() {
+        const buscarInput = document.getElementById('buscarProducto');
+        const tabla = document.getElementById('tablaProductos');
+        const filas = tabla.getElementsByTagName('tbody')[0].getElementsByTagName('tr');
+
+        buscarInput.addEventListener('keyup', function() {
+            const termino = buscarInput.value.toLowerCase();
+
+            for (let i = 0; i < filas.length; i++) {
+                const nombre = filas[i].getElementsByTagName('td')[1].textContent.toLowerCase();
+                const categoria = filas[i].getElementsByTagName('td')[2].textContent.toLowerCase();
+
+                if (nombre.indexOf(termino) > -1 || categoria.indexOf(termino) > -1) {
+                    filas[i].style.display = '';
+                } else {
+                    filas[i].style.display = 'none';
+                }
+            }
+        });
+
+        // Modal para eliminar producto
+        const eliminarModal = document.getElementById('eliminarProductoModal');
+        eliminarModal.addEventListener('show.bs.modal', function(event) {
+            const button = event.relatedTarget;
+            const productoId = button.getAttribute('data-producto-id');
+            const productoNombre = button.getAttribute('data-producto-nombre');
+
+            document.getElementById('productoNombre').textContent = productoNombre;
+            document.getElementById('productoIdEliminar').value = productoId;
+        });
+    });
+</script>
+{% endblock %}

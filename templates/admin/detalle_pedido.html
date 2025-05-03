@@ -1,0 +1,276 @@
+{% extends "layout.html" %}
+
+{% block title %}Detalle de Pedido | Admin | EcoShop{% endblock %}
+
+{% block content %}
+<div class="container">
+    <nav aria-label="breadcrumb" class="my-3">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{{ url_for('admin.dashboard') }}">Dashboard</a></li>
+            <li class="breadcrumb-item"><a href="{{ url_for('admin.pedidos') }}">Pedidos</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Pedido #{{ pedido._id|truncate(8, True, '') }}</li>
+        </ol>
+    </nav>
+
+    <div class="row mb-4">
+        <div class="col-md-6">
+            <h2>Detalle de Pedido</h2>
+        </div>
+        <div class="col-md-6 text-end">
+            <a href="{{ url_for('admin.pedidos') }}" class="btn btn-outline-primary me-2">
+                <i class="fas fa-arrow-left me-2"></i>Volver a Pedidos
+            </a>
+            {% if pedido.estado != 'entregado' and pedido.estado != 'cancelado' %}
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#actualizarEstadoModal">
+                <i class="fas fa-edit me-2"></i>Actualizar Estado
+            </button>
+            {% endif %}
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-8">
+            <div class="card shadow-sm mb-4">
+                <div class="card-header bg-white">
+                    <h5 class="mb-0">Productos</h5>
+                </div>
+                <div class="card-body p-0">
+                    <div class="table-responsive">
+                        <table class="table mb-0">
+                            <thead>
+                                <tr>
+                                    <th>Producto</th>
+                                    <th class="text-center">Cantidad</th>
+                                    <th class="text-end">Precio</th>
+                                    <th class="text-end">Subtotal</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for item in pedido.productos %}
+                                <tr>
+                                    <td>{{ item.nombre }}</td>
+                                    <td class="text-center">{{ item.cantidad }}</td>
+                                    <td class="text-end">${{ item.precio_unitario }}</td>
+                                    <td class="text-end">${{ item.precio_unitario * item.cantidad }}</td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                            <tfoot class="table-group-divider">
+                                <tr>
+                                    <th colspan="3" class="text-end">Total:</th>
+                                    <th class="text-end">${{ pedido.total }}</th>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card shadow-sm mb-4">
+                <div class="card-header bg-white">
+                    <h5 class="mb-0">Historial del Pedido</h5>
+                </div>
+                <div class="card-body p-0">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            <div class="d-flex">
+                                <div class="flex-shrink-0">
+                                    <span class="badge rounded-pill bg-success">
+                                        <i class="fas fa-check"></i>
+                                    </span>
+                                </div>
+                                <div class="ms-3">
+                                    <div class="fw-bold">Pedido Creado</div>
+                                    <div class="text-muted small">{{ pedido.fecha_creacion.strftime('%d/%m/%Y %H:%M') }}</div>
+                                </div>
+                            </div>
+                        </li>
+
+                        {% if pedido.estado != 'pendiente' %}
+                        <li class="list-group-item">
+                            <div class="d-flex">
+                                <div class="flex-shrink-0">
+                                    <span class="badge rounded-pill bg-info">
+                                        <i class="fas fa-credit-card"></i>
+                                    </span>
+                                </div>
+                                <div class="ms-3">
+                                    <div class="fw-bold">Pago Confirmado</div>
+                                    <div class="text-muted small">{{ (pedido.fecha_creacion + datetime.timedelta(hours=1)).strftime('%d/%m/%Y %H:%M') }}</div>
+                                </div>
+                            </div>
+                        </li>
+                        {% endif %}
+
+                        {% if pedido.estado == 'enviado' or pedido.estado == 'entregado' %}
+                        <li class="list-group-item">
+                            <div class="d-flex">
+                                <div class="flex-shrink-0">
+                                    <span class="badge rounded-pill bg-primary">
+                                        <i class="fas fa-shipping-fast"></i>
+                                    </span>
+                                </div>
+                                <div class="ms-3">
+                                    <div class="fw-bold">Pedido Enviado</div>
+                                    <div class="text-muted small">{{ (pedido.fecha_creacion + datetime.timedelta(days=1)).strftime('%d/%m/%Y %H:%M') }}</div>
+                                </div>
+                            </div>
+                        </li>
+                        {% endif %}
+
+                        {% if pedido.estado == 'entregado' %}
+                        <li class="list-group-item">
+                            <div class="d-flex">
+                                <div class="flex-shrink-0">
+                                    <span class="badge rounded-pill bg-success">
+                                        <i class="fas fa-box-open"></i>
+                                    </span>
+                                </div>
+                                <div class="ms-3">
+                                    <div class="fw-bold">Pedido Entregado</div>
+                                    <div class="text-muted small">{{ (pedido.fecha_creacion + datetime.timedelta(days=3)).strftime('%d/%m/%Y %H:%M') }}</div>
+                                </div>
+                            </div>
+                        </li>
+                        {% endif %}
+
+                        {% if pedido.estado == 'cancelado' %}
+                        <li class="list-group-item">
+                            <div class="d-flex">
+                                <div class="flex-shrink-0">
+                                    <span class="badge rounded-pill bg-danger">
+                                        <i class="fas fa-times"></i>
+                                    </span>
+                                </div>
+                                <div class="ms-3">
+                                    <div class="fw-bold">Pedido Cancelado</div>
+                                    <div class="text-muted small">{{ pedido.fecha_actualizacion.strftime('%d/%m/%Y %H:%M') }}</div>
+                                </div>
+                            </div>
+                        </li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card shadow-sm mb-4">
+                <div class="card-header bg-white">
+                    <h5 class="mb-0">Información del Pedido</h5>
+                </div>
+                <div class="card-body">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item d-flex justify-content-between">
+                            <span>Número de Pedido:</span>
+                            <span>{{ pedido._id|truncate(8, True, '') }}</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between">
+                            <span>Fecha:</span>
+                            <span>{{ pedido.fecha_creacion.strftime('%d/%m/%Y %H:%M') }}</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between">
+                            <span>Estado:</span>
+                            <span>
+                                {% if pedido.estado == 'pendiente' %}
+                                <span class="badge bg-warning text-dark">Pendiente</span>
+                                {% elif pedido.estado == 'pagado' %}
+                                <span class="badge bg-info">Pagado</span>
+                                {% elif pedido.estado == 'enviado' %}
+                                <span class="badge bg-primary">Enviado</span>
+                                {% elif pedido.estado == 'entregado' %}
+                                <span class="badge bg-success">Entregado</span>
+                                {% elif pedido.estado == 'cancelado' %}
+                                <span class="badge bg-danger">Cancelado</span>
+                                {% endif %}
+                            </span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between">
+                            <span>Método de Pago:</span>
+                            <span>{{ pedido.metodo_pago|title }}</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card shadow-sm mb-4">
+                <div class="card-header bg-white">
+                    <h5 class="mb-0">Información del Cliente</h5>
+                </div>
+                <div class="card-body">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item d-flex justify-content-between">
+                            <span>Nombre:</span>
+                            <span>{{ cliente.nombre }}</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between">
+                            <span>Email:</span>
+                            <span>{{ cliente.email }}</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between">
+                            <span>Teléfono:</span>
+                            <span>{{ cliente.telefono }}</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card shadow-sm mb-4">
+                <div class="card-header bg-white">
+                    <h5 class="mb-0">Dirección de Entrega</h5>
+                </div>
+                <div class="card-body">
+                    <p class="mb-0">{{ pedido.direccion_entrega }}</p>
+                </div>
+            </div>
+
+            {% if pedido.estado == 'pendiente' %}
+            <div class="card shadow-sm mb-4 border-warning">
+                <div class="card-body">
+                    <h5 class="text-warning"><i class="fas fa-exclamation-triangle me-2"></i>Acción Requerida</h5>
+                    <p class="mb-2">Este pedido está pendiente. Confirma el pago para continuar el proceso.</p>
+                    <button type="button" class="btn btn-warning w-100" data-bs-toggle="modal" data-bs-target="#actualizarEstadoModal">
+                        Confirmar Pago
+                    </button>
+                </div>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+<!-- Modal Actualizar Estado -->
+<div class="modal fade" id="actualizarEstadoModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Actualizar Estado del Pedido</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form action="{{ url_for('admin.actualizar_estado_pedido', pedido_id=pedido._id) }}" method="post">
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="estado" class="form-label">Nuevo Estado</label>
+                        <select class="form-select" id="estado" name="estado" required>
+                            <option value="">Selecciona un estado</option>
+                            <option> value="pendiente" {% if pedido.estado == 'pendiente' %}selected{% endif %}>Pendiente</option>
+                            <option> value="pagado" {% if pedido.estado == 'pagado' %}selected{% endif %}>Pagado</option>
+                            <option> value="enviado" {% if pedido.estado == 'enviado' %}selected{% endif %}>Enviado</option>
+                            <option> value="entregado" {% if pedido.estado == 'entregado' %}selected{% endif %}>Entregado</option>
+                            <option> value="cancelado" {% if pedido.estado == 'cancelado' %}selected{% endif %}>Cancelado</option>
+                        </select>
+                    </div>
+                    <div class="alert alert-warning" role="alert">
+                        <i class="fas fa-exclamation-triangle me-2"></i>
+                        <small>Al cambiar el estado a "Cancelado", se revertirán las existencias de los productos.</small>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
