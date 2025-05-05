@@ -30,7 +30,7 @@
                     <h5 class="mb-0">Información del Producto</h5>
                 </div>
                 <div class="card-body">
-                    <form action="{{ url_for('admin.nuevo_producto') }}" method="post" class="needs-validation" novalidate>
+                    <form action="{{ url_for('admin.nuevo_producto') }}" method="post" class="needs-validation" enctype="multipart/form-data" novalidate>
                         <div class="row">
                             <div class="col-md-6 mb-3">
                                 <label for="nombre" class="form-label">Nombre del Producto</label>
@@ -78,16 +78,18 @@
 
                         <div class="row">
                             <div class="col-md-6 mb-3">
-                                <label for="imagen_url" class="form-label">URL de la Imagen</label>
-                                <input type="url" class="form-control" id="imagen_url" name="imagen_url">
-                                <div class="form-text">Deja en blanco para usar una imagen por defecto.</div>
+                                <label for="imagen" class="form-label">Imagen del Producto</label>
+                                <input type="file" class="form-control" id="imagen" name="imagen" accept="image/*">
+                                <div class="form-text">Selecciona una imagen para el producto.</div>
                             </div>
                             <div class="col-md-6 mb-3">
                                 <label for="proveedor_id" class="form-label">Proveedor</label>
                                 <select class="form-select" id="proveedor_id" name="proveedor_id" required>
                                     <option value="">Selecciona un proveedor</option>
                                     {% for proveedor in proveedores %}
-                                    <option value="{{ proveedor._id }}">{{ proveedor.nombre }}</option>
+                                    <option value="{{ proveedor._id }}">
+                                        {{ proveedor.nombre }} ({{ proveedor.categoria_productos }})
+                                    </option>
                                     {% endfor %}
                                 </select>
                                 <div class="invalid-feedback">
@@ -112,7 +114,7 @@
                 <div class="card-body text-center" id="imagenPreviewContainer">
                     <div id="sinImagen">
                         <i class="fas fa-image fa-5x text-muted mb-3"></i>
-                        <p class="text-muted">Ingresa una URL de imagen para ver la vista previa</p>
+                        <p class="text-muted">Selecciona una imagen para ver la vista previa</p>
                     </div>
                     <img src="" alt="Vista previa" id="imagenPreview" class="img-fluid rounded" style="max-height: 300px; display: none;">
                 </div>
@@ -124,8 +126,8 @@
 
 {% block extra_js %}
 <script>
-    // Validación del formulario
     document.addEventListener('DOMContentLoaded', function() {
+        // Validación del formulario
         const form = document.querySelector('.needs-validation');
 
         form.addEventListener('submit', function(event) {
@@ -138,32 +140,24 @@
         });
 
         // Vista previa de la imagen
-        const imagenUrl = document.getElementById('imagen_url');
+        const imagenInput = document.getElementById('imagen');
         const imagenPreview = document.getElementById('imagenPreview');
         const sinImagen = document.getElementById('sinImagen');
 
-        imagenUrl.addEventListener('input', function() {
-            const url = this.value.trim();
+        imagenInput.addEventListener('change', function() {
+            if (this.files && this.files[0]) {
+                const reader = new FileReader();
 
-            if (url) {
-                imagenPreview.src = url;
-                imagenPreview.style.display = 'block';
-                sinImagen.style.display = 'none';
-
-                // Si la imagen no carga, mostrar el mensaje de error
-                imagenPreview.onerror = function() {
-                    imagenPreview.style.display = 'none';
-                    sinImagen.style.display = 'block';
-                    sinImagen.innerHTML = '<i class="fas fa-exclamation-triangle fa-5x text-warning mb-3"></i><p class="text-muted">La URL de la imagen no es válida</p>';
-                };
-
-                imagenPreview.onload = function() {
+                reader.onload = function(e) {
+                    imagenPreview.src = e.target.result;
+                    imagenPreview.style.display = 'block';
                     sinImagen.style.display = 'none';
-                };
+                }
+
+                reader.readAsDataURL(this.files[0]);
             } else {
                 imagenPreview.style.display = 'none';
                 sinImagen.style.display = 'block';
-                sinImagen.innerHTML = '<i class="fas fa-image fa-5x text-muted mb-3"></i><p class="text-muted">Ingresa una URL de imagen para ver la vista previa</p>';
             }
         });
     });

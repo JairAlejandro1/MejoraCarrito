@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 
-{% block title %}Nuevo Proveedor | Admin | EcoShop{% endblock %}
+{% block title %}Editar Proveedor | Admin | EcoShop{% endblock %}
 
 {% block content %}
 <div class="container">
@@ -8,13 +8,13 @@
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="{{ url_for('admin.dashboard') }}">Dashboard</a></li>
             <li class="breadcrumb-item"><a href="{{ url_for('admin.proveedores') }}">Proveedores</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Nuevo Proveedor</li>
+            <li class="breadcrumb-item active" aria-current="page">Editar Proveedor</li>
         </ol>
     </nav>
 
     <div class="row mb-4">
         <div class="col-md-6">
-            <h2>Agregar Nuevo Proveedor</h2>
+            <h2>Editar Proveedor</h2>
         </div>
         <div class="col-md-6 text-end">
             <a href="{{ url_for('admin.proveedores') }}" class="btn btn-outline-primary">
@@ -30,18 +30,18 @@
                     <h5 class="mb-0">Información del Proveedor</h5>
                 </div>
                 <div class="card-body">
-                    <form action="{{ url_for('admin.nuevo_proveedor') }}" method="post" class="needs-validation" novalidate>
+                    <form action="{{ url_for('admin.editar_proveedor', proveedor_id=proveedor._id) }}" method="post" class="needs-validation" novalidate>
                         <div class="row">
                             <div class="col-md-6 mb-3">
                                 <label for="nombre" class="form-label">Nombre de la Empresa</label>
-                                <input type="text" class="form-control" id="nombre" name="nombre" required>
+                                <input type="text" class="form-control" id="nombre" name="nombre" value="{{ proveedor.nombre }}" required>
                                 <div class="invalid-feedback">
                                     Por favor ingresa el nombre de la empresa.
                                 </div>
                             </div>
                             <div class="col-md-6 mb-3">
                                 <label for="categoria_productos" class="form-label">Categoría de Productos</label>
-                                <input type="text" class="form-control" id="categoria_productos" name="categoria_productos" required>
+                                <input type="text" class="form-control" id="categoria_productos" name="categoria_productos" value="{{ proveedor.categoria_productos }}" required>
                                 <div class="invalid-feedback">
                                     Por favor ingresa la categoría de productos.
                                 </div>
@@ -51,14 +51,14 @@
                         <div class="row">
                             <div class="col-md-6 mb-3">
                                 <label for="email" class="form-label">Correo Electrónico</label>
-                                <input type="email" class="form-control" id="email" name="email" required>
+                                <input type="email" class="form-control" id="email" name="email" value="{{ proveedor.email }}" required>
                                 <div class="invalid-feedback">
                                     Por favor ingresa un correo electrónico válido.
                                 </div>
                             </div>
                             <div class="col-md-6 mb-3">
                                 <label for="telefono" class="form-label">Teléfono</label>
-                                <input type="tel" class="form-control" id="telefono" name="telefono" required>
+                                <input type="tel" class="form-control" id="telefono" name="telefono" value="{{ proveedor.telefono }}" required>
                                 <div class="invalid-feedback">
                                     Por favor ingresa un número de teléfono.
                                 </div>
@@ -67,7 +67,7 @@
 
                         <div class="mb-3">
                             <label for="direccion" class="form-label">Dirección</label>
-                            <textarea class="form-control" id="direccion" name="direccion" rows="3" required></textarea>
+                            <textarea class="form-control" id="direccion" name="direccion" rows="3" required>{{ proveedor.direccion }}</textarea>
                             <div class="invalid-feedback">
                                 Por favor ingresa la dirección.
                             </div>
@@ -75,7 +75,7 @@
 
                         <div class="d-grid gap-2">
                             <button type="submit" class="btn btn-primary">
-                                <i class="fas fa-plus me-2"></i>Agregar Proveedor
+                                <i class="fas fa-save me-2"></i>Guardar Cambios
                             </button>
                         </div>
                     </form>
@@ -97,6 +97,7 @@
                 event.preventDefault();
                 event.stopPropagation();
             }
+
             form.classList.add('was-validated');
         });
     });

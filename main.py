@@ -1,8 +1,10 @@
-from flask import Flask, session, redirect, url_for, render_template
+from flask import Flask, session, redirect, url_for, render_template, g
 from app.services.database import get_db
 from config.config import Config
 from bson.objectid import ObjectId
 import datetime
+import os
+from pyngrok import ngrok
 
 # Importar Blueprints
 from app.auth.auth import auth_bp
@@ -25,10 +27,32 @@ def create_app(config_class=Config):
 
     # Inicializar la base de datos
     with app.app_context():
-        db = get_db()
-        # Crear índices si es necesario
-        db.usuarios.create_index('email', unique=True)
-        db.productos.create_index([('nombre', 'text'), ('descripcion', 'text')])
+        try:
+            db = get_db()
+            # Crear índices si es necesario
+            db.usuarios.create_index('email', unique=True)
+            db.productos.create_index([('nombre', 'text'), ('descripcion', 'text')])
+        except Exception as e:
+            print(f"Error al inicializar la base de datos: {str(e)}")
+
+    @app.errorhandler(Exception)
+    def handle_exception(e):
+        # Manejar excepciones genéricas
+        app.logger.error(f"Uncaught exception: {str(e)}")
+        return render_template('error.html',
+                               error=str(e),
+                               title="Error",
+                               message="Ha ocurrido un error inesperado"), 500
+
+    @app.errorhandler(404)
+    def page_not_found(e):
+        return render_template('404.html', title="Página no encontrada"), 404
+
+    @app.errorhandler(500)
+    def internal_server_error(e):
+        return render_template('error.html',
+                               title="Error interno del servidor",
+                               message="Ha ocurrido un error en el servidor."), 500
 
     @app.context_processor
     def utility_processor():
@@ -69,14 +93,6 @@ def create_app(config_class=Config):
             datetime=datetime
         )
 
-    @app.errorhandler(404)
-    def page_not_found(e):
-        return render_template('404.html'), 404
-
-    @app.errorhandler(500)
-    def internal_server_error(e):
-        return render_template('500.html'), 500
-
     @app.route('/')
     def index():
         return redirect(url_for('main.index'))
@@ -86,4 +102,39 @@ def create_app(config_class=Config):
 
 if __name__ == '__main__':
     app = create_app()
+
+    # Obtener número de administradores
+    from app.models.usuario import Usuario
+    from bson.objectid import ObjectId
+
+    # Verificar si existen administradores
+    with app.app_context():
+        admin_count = len(list(Usuario.obtener_todos_por_rol('admin')))
+
+    # Crear enlaces útiles
+    local_url = "http://127.0.0.1:5000"
+
+    print("\n" + "=" * 50)
+    print("EcoShop - Sistema de Comercio Electrónico")
+    print("=" * 50)
+
+    # Solo mostrar los 3 enlaces solicitados
+    if admin_count == 0:
+        print(f"[1] Crear Administrador: {local_url}/registrar-admin")
+
+    print(f"[2] Abrir localmente: {local_url}")
+
+    # Configurar ngrok si está disponible
+    try:
+        public_url = ngrok.connect(5000)
+        print(f"[3] Abrir globalmente con ngrok: {public_url}")
+    except:
+        print("[3] Abrir globalmente con ngrok: ngrok no está disponible")
+
+    print("=" * 50 + "\n")
+
+    # Configuración para evitar el error de socket en Windows
+    if os.name == 'nt':  # Si es Windows
+        app.config['WERKZEUG_RUN_MAIN'] = 'true'
+
     app.run(debug=True)

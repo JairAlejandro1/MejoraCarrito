@@ -49,14 +49,14 @@
                             <td>{{ proveedor.email }}</td>
                             <td>{{ proveedor.telefono }}</td>
                             <td>
-                                <span class="badge bg-primary rounded-pill">{{ proveedor.total_productos }}</span>
+                                <span class="badge bg-primary rounded-pill">{{ proveedor.total_productos if proveedor.total_productos else 0 }}</span>
                             </td>
                             <td>
                                 <div class="btn-group">
-                                    <a href="{{ url_for('admin.ver_proveedor', proveedor_id=proveedor._id) }}" class="btn btn-sm btn-outline-primary">
-                                        <i class="fas fa-eye"></i>
+                                    <a href="{{ url_for('admin.productos_proveedor', proveedor_id=proveedor._id) }}" class="btn btn-sm btn-outline-info">
+                                        <i class="fas fa-box"></i> Ver Productos
                                     </a>
-                                    <a href="{{ url_for('admin.editar_proveedor', proveedor_id=proveedor._id) }}" class="btn btn-sm btn-outline-secondary">
+                                    <a href="{{ url_for('admin.editar_proveedor', proveedor_id=proveedor._id) }}" class="btn btn-sm btn-outline-primary">
                                         <i class="fas fa-edit"></i>
                                     </a>
                                     <button type="button" class="btn btn-sm btn-outline-danger" data-bs-toggle="modal" data-bs-target="#eliminarProveedorModal" data-proveedor-id="{{ proveedor._id }}" data-proveedor-nombre="{{ proveedor.nombre }}">

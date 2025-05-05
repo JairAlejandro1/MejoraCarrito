@@ -1,0 +1,95 @@
+{% extends "layout.html" %}
+
+{% block title %}Productos de Proveedor | Admin | EcoShop{% endblock %}
+
+{% block content %}
+<div class="container">
+    <nav aria-label="breadcrumb" class="my-3">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{{ url_for('admin.dashboard') }}">Dashboard</a></li>
+            <li class="breadcrumb-item"><a href="{{ url_for('admin.proveedores') }}">Proveedores</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Productos de {{ proveedor.nombre }}</li>
+        </ol>
+    </nav>
+
+    <div class="row mb-4">
+        <div class="col-md-8">
+            <h2>Productos de {{ proveedor.nombre }}</h2>
+            <p class="text-muted">Categoría: {{ proveedor.categoria_productos }}</p>
+        </div>
+        <div class="col-md-4 text-end">
+            <a href="{{ url_for('admin.proveedores') }}" class="btn btn-outline-primary me-2">
+                <i class="fas fa-arrow-left me-2"></i>Volver a Proveedores
+            </a>
+            <a href="{{ url_for('admin.nuevo_producto') }}" class="btn btn-primary">
+                <i class="fas fa-plus me-2"></i>Nuevo Producto
+            </a>
+        </div>
+    </div>
+
+    <div class="card shadow-sm">
+        <div class="card-header bg-white">
+            <h5 class="mb-0">Lista de Productos</h5>
+        </div>
+        <div class="card-body p-0">
+            {% if productos|length > 0 %}
+            <div class="table-responsive">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Imagen</th>
+                            <th>Nombre</th>
+                            <th>Categoría</th>
+                            <th>Precio</th>
+                            <th>Existencias</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for producto in productos %}
+                        <tr>
+                            <td>
+                                {% if producto.imagen_url %}
+                                <img src="{{ producto.imagen_url }}" alt="{{ producto.nombre }}" width="50" height="50" class="img-thumbnail">
+                                {% else %}
+                                <img src="{{ url_for('static', filename='img/producto-default.jpg') }}" alt="{{ producto.nombre }}" width="50" height="50" class="img-thumbnail">
+                                {% endif %}
+                            </td>
+                            <td>{{ producto.nombre }}</td>
+                            <td>{{ producto.categoria }}</td>
+                            <td>${{ producto.precio }}</td>
+                            <td>
+                                {% if producto.existencias > 10 %}
+                                <span class="badge bg-success">{{ producto.existencias }}</span>
+                                {% elif producto.existencias > 0 %}
+                                <span class="badge bg-warning text-dark">{{ producto.existencias }}</span>
+                                {% else %}
+                                <span class="badge bg-danger">Agotado</span>
+                                {% endif %}
+                            </td>
+                            <td>
+                                <div class="btn-group">
+                                    <a href="{{ url_for('admin.editar_producto', producto_id=producto._id) }}" class="btn btn-sm btn-outline-primary">
+                                        <i class="fas fa-edit"></i>
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            {% else %}
+            <div class="text-center py-5">
+                <i class="fas fa-box-open fa-4x text-muted mb-3"></i>
+                <h4>No hay productos para este proveedor</h4>
+                <p class="mb-4">Comienza agregando productos a este proveedor.</p>
+                <a href="{{ url_for('admin.nuevo_producto') }}" class="btn btn-primary">
+                    <i class="fas fa-plus me-2"></i>Agregar Producto
+                </a>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}

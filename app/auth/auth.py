@@ -1,5 +1,6 @@
-from flask import Blueprint, request, session, redirect, url_for, render_template, flash
+from flask import Blueprint, request, session, redirect, url_for, render_template, flash, current_app as app
 from app.models.usuario import Usuario
+from app.services.database import get_db
 from functools import wraps
 
 auth_bp = Blueprint('auth', __name__)
@@ -59,6 +60,9 @@ def login():
                 session['email'] = usuario.email
                 session['rol'] = usuario.rol
 
+                if usuario.rol == 'proveedor':
+                    session['proveedor_id'] = str(user_data.get('proveedor_id', ''))
+
                 flash(f'Bienvenido de nuevo, {usuario.nombre}!', 'success')
 
                 # Redirigir según el rol
@@ -105,6 +109,44 @@ def registro():
         return redirect(url_for('auth.login'))
 
     return render_template('auth/registro.html')
+
+
+@auth_bp.route('/setup-admin', methods=['GET', 'POST'])
+def setup_admin():
+    # Verificar si ya existe un administrador
+    admin_exists = Usuario.obtener_por_rol('admin')
+
+    if admin_exists and len(list(admin_exists)) > 0:
+        flash('Ya existe un administrador en el sistema', 'warning')
+        return redirect(url_for('auth.login'))
+
+    if request.method == 'POST':
+        nombre = request.form['nombre']
+        email = request.form['email']
+        password = request.form['password']
+        telefono = request.form['telefono']
+        direccion = request.form.get('direccion', 'Administración Central')
+
+        # Verificar si el email ya está registrado
+        if Usuario.obtener_por_email(email):
+            flash('Este email ya está registrado. Por favor usa otro.', 'danger')
+            return render_template('auth/setup_admin.html')
+
+        # Crear el usuario administrador
+        usuario = Usuario(
+            nombre=nombre,
+            email=email,
+            password=password,
+            rol='admin',  # Asignar rol de administrador
+            direccion=direccion,
+            telefono=telefono
+        )
+
+        usuario.guardar()
+        flash('¡Administrador creado con éxito! Ahora puedes iniciar sesión.', 'success')
+        return redirect(url_for('auth.login'))
+
+    return render_template('auth/setup_admin.html')
 
 
 @auth_bp.route('/logout')

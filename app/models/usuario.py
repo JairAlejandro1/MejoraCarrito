@@ -55,3 +55,21 @@ class Usuario:
     @classmethod
     def obtener_por_id(cls, usuario_id):
         return get_db().usuarios.find_one({"_id": usuario_id, "activo": True})
+
+    @classmethod
+    def obtener_todos(cls):
+        return list(get_db().usuarios.find({"activo": True}))
+
+    @classmethod
+    def obtener_todos_por_rol(cls, rol):
+        return get_db().usuarios.find({"rol": rol, "activo": True})
+
+    @classmethod
+    def eliminar(cls, usuario_id):
+        """
+        Eliminación lógica de un usuario
+        """
+        get_db().usuarios.update_one(
+            {"_id": usuario_id},
+            {"$set": {"activo": False}}
+        )

@@ -177,11 +177,11 @@
                 <h5 class="modal-title">Actualizar Estado del Pedido</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <form action="{{ url_for('admin.actualizar_estado_pedido') }}" method="post">
+            <form id="formActualizarEstado" method="post">
                 <div class="modal-body">
                     <input type="hidden" name="pedido_id" id="pedidoIdModal">
                     <div class="mb-3">
-                        <label for="estado" class="form-label">Nuevo Estado</label>
+                        <label for="estadoModal" class="form-label">Nuevo Estado</label>
                         <select class="form-select" id="estadoModal" name="estado" required>
                             <option value="">Selecciona un estado</option>
                             <option value="pendiente">Pendiente</option>
@@ -230,8 +230,8 @@
             });
         }
 
-        btnBuscar.addEventListener('click', buscarPedidos);
-        buscarInput.addEventListener('keyup', function(e) {
+        if (btnBuscar) btnBuscar.addEventListener('click', buscarPedidos);
+        if (buscarInput) buscarInput.addEventListener('keyup', function(e) {
             if (e.key === 'Enter') {
                 buscarPedidos();
             }
@@ -239,6 +239,7 @@
 
         // Actualizar estado modal
         const botonesActualizar = document.querySelectorAll('.actualizar-estado');
+        const formActualizarEstado = document.getElementById('formActualizarEstado');
         const pedidoIdModal = document.getElementById('pedidoIdModal');
         const estadoModal = document.getElementById('estadoModal');
 
@@ -247,8 +248,13 @@
                 const pedidoId = this.getAttribute('data-pedido-id');
                 const pedidoEstado = this.getAttribute('data-pedido-estado');
 
-                pedidoIdModal.value = pedidoId;
-                estadoModal.value = pedidoEstado;
+                // Configurar el formulario con la URL correcta que incluye el ID del pedido
+                if (formActualizarEstado) {
+                    formActualizarEstado.action = `/admin/pedido/actualizar_estado/${pedidoId}`;
+                }
+
+                if (pedidoIdModal) pedidoIdModal.value = pedidoId;
+                if (estadoModal) estadoModal.value = pedidoEstado;
             });
         });
 
@@ -259,8 +265,12 @@
         if (tab) {
             const targetTab = document.getElementById(tab + '-tab');
             if (targetTab) {
-                const tabTrigger = new bootstrap.Tab(targetTab);
-                tabTrigger.show();
+                try {
+                    const tabTrigger = new bootstrap.Tab(targetTab);
+                    tabTrigger.show();
+                } catch (error) {
+                    console.error("Error al activar la pestaña:", error);
+                }
             }
         }
 
