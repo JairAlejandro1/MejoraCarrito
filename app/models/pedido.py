@@ -8,6 +8,12 @@ class Pedido:
     def __init__(self, cliente_id, productos, estado="pendiente",
                  direccion_entrega=None, metodo_pago=None, _id=None):
         self.cliente_id = cliente_id
+
+        # Asegurar que los IDs de producto sean string para evitar el error de len()
+        for producto in productos:
+            if 'producto_id' in producto and isinstance(producto['producto_id'], ObjectId):
+                producto['producto_id'] = str(producto['producto_id'])
+
         self.productos = productos  # Lista de {producto_id, nombre, cantidad, precio_unitario}
         self.estado = estado  # pendiente, pagado, enviado, entregado, cancelado
         self.direccion_entrega = direccion_entrega
@@ -75,7 +81,12 @@ class Pedido:
             total_proveedor = 0
 
             for item in pedido.get("productos", []):
-                if str(item.get("producto_id")) in ids_productos:
+                # Obtener producto_id y convertir a string si es necesario
+                item_producto_id = item.get("producto_id")
+                if isinstance(item_producto_id, ObjectId):
+                    item_producto_id = str(item_producto_id)
+
+                if item_producto_id in ids_productos:
                     productos_proveedor_en_pedido += 1
                     total_proveedor += item.get("precio_unitario", 0) * item.get("cantidad", 0)
 
@@ -100,7 +111,11 @@ class Pedido:
             # Revertir las existencias (aumentarlas nuevamente)
             for item in pedido['productos']:
                 try:
-                    producto_id = ObjectId(item['producto_id'])
+                    # Convierte producto_id a ObjectId si es string
+                    producto_id = item['producto_id']
+                    if isinstance(producto_id, str):
+                        producto_id = ObjectId(producto_id)
+
                     cantidad = item['cantidad']
                     Producto.actualizar_existencias(producto_id, cantidad)  # Aumenta las existencias
                 except Exception as e:

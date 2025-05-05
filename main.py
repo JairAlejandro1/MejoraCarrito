@@ -6,6 +6,8 @@ import datetime
 import os
 from werkzeug.utils import secure_filename
 from pyngrok import ngrok
+# Importar función de debug
+from app.debug_utils import setup_debugging
 
 # Importar Blueprints
 from app.auth.auth import auth_bp
@@ -116,6 +118,9 @@ def create_app(config_class=Config):
 
 if __name__ == '__main__':
     app = create_app()
+
+    # Configurar herramientas de debugging
+    setup_debugging(app)
 
     # Obtener número de administradores
     from app.models.usuario import Usuario

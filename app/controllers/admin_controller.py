@@ -36,8 +36,11 @@ def dashboard():
     # Obtener últimos pedidos
     ultimos_pedidos = Pedido.obtener_todos()[:5]
 
-    # Para cada pedido, obtener información del cliente
+    # Para cada pedido, convertir ObjectId a string para que funcione el filtro truncate
     for pedido in ultimos_pedidos:
+        # Convertir _id a string para el template
+        pedido['_id_str'] = str(pedido['_id'])
+
         cliente = Usuario.obtener_por_id(pedido['cliente_id'])
         if cliente:
             pedido['cliente_nombre'] = cliente['nombre']
@@ -169,21 +172,28 @@ def eliminar_producto():
 @admin_bp.route('/pedidos')
 @role_required(['admin'])
 def pedidos():
-    pedidos = []
     try:
-        pedidos = Pedido.obtener_todos()
+        pedidos_data = Pedido.obtener_todos()
 
-        # Para cada pedido, obtener información del cliente
-        for pedido in pedidos:
-            cliente = Usuario.obtener_por_id(pedido['cliente_id'])
-            if cliente:
-                pedido['cliente_nombre'] = cliente['nombre']
-            else:
+        # Para cada pedido, obtener información del cliente y convertir ObjectId a string
+        for pedido in pedidos_data:
+            # Convertir _id a string para el template
+            pedido['_id_str'] = str(pedido['_id'])
+
+            try:
+                cliente = Usuario.obtener_por_id(pedido['cliente_id'])
+                if cliente:
+                    pedido['cliente_nombre'] = cliente['nombre']
+                else:
+                    pedido['cliente_nombre'] = "Cliente desconocido"
+            except Exception as e:
+                print(f"Error al obtener cliente para pedido: {e}")
                 pedido['cliente_nombre'] = "Cliente desconocido"
+
+        return render_template('admin/pedidos.html', pedidos=pedidos_data)
     except Exception as e:
         flash(f'Error al obtener pedidos: {str(e)}', 'danger')
-
-    return render_template('admin/pedidos.html', pedidos=pedidos)
+        return redirect(url_for('admin.dashboard'))
 
 
 @admin_bp.route('/pedido/<pedido_id>')
@@ -191,14 +201,34 @@ def pedidos():
 def detalle_pedido(pedido_id):
     try:
         pedido = Pedido.obtener_por_id(ObjectId(pedido_id))
+        if not pedido:
+            flash('Pedido no encontrado', 'danger')
+            return redirect(url_for('admin.pedidos'))
+
+        # Añadir _id_str para el template
+        pedido['_id_str'] = str(pedido['_id'])
 
         # Obtener información del cliente
-        cliente = Usuario.obtener_por_id(pedido['cliente_id'])
+        cliente = None
+        try:
+            # Asegurar que cliente_id sea un ObjectId para buscar en la base de datos
+            cliente_id = pedido['cliente_id']
+            if isinstance(cliente_id, str):
+                cliente_id = ObjectId(cliente_id)
+
+            cliente = Usuario.obtener_por_id(cliente_id)
+
+            if not cliente:
+                cliente = {"nombre": "Cliente desconocido", "email": "No disponible", "telefono": "No disponible"}
+        except Exception as e:
+            print(f"Error al obtener cliente para pedido {pedido_id}: {str(e)}")
+            cliente = {"nombre": "Cliente desconocido", "email": "No disponible", "telefono": "No disponible"}
 
         return render_template('admin/detalle_pedido.html',
                                pedido=pedido,
                                cliente=cliente)
     except Exception as e:
+        print(f"Error en detalle_pedido: {str(e)}")
         flash(f'Error al obtener detalle del pedido: {str(e)}', 'danger')
         return redirect(url_for('admin.pedidos'))
 
@@ -344,6 +374,10 @@ def ver_pedidos_cliente(cliente_id):
             return redirect(url_for('admin.clientes'))
 
         pedidos = Pedido.obtener_por_cliente(ObjectId(cliente_id))
+
+        # Añadir _id_str para cada pedido
+        for pedido in pedidos:
+            pedido['_id_str'] = str(pedido['_id'])
 
         return render_template('admin/pedidos_cliente.html',
                                cliente=cliente,

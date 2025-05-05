@@ -75,7 +75,7 @@
                     <h5 class="mb-0">Cambiar Contraseña</h5>
                 </div>
                 <div class="card-body">
-                    <form action="{{ url_for('cliente.cambiar_password') }}" method="post" class="needs-validation" novalidate>
+                    <form action="{{ url_for('cliente.cambiar_password') }}" method="post" class="needs-validation" novalidate id="passwordForm">
                         <div class="mb-3">
                             <label for="password_actual" class="form-label">Contraseña Actual</label>
                             <input type="password" class="form-control" id="password_actual" name="password_actual" required>
@@ -115,7 +115,7 @@
 
 {% block extra_js %}
 <script>
-    // Validación del formulario
+    // Validación de los formularios
     document.addEventListener('DOMContentLoaded', function() {
         const forms = document.querySelectorAll('.needs-validation');
 
@@ -129,6 +129,32 @@
                 form.classList.add('was-validated');
             }, false);
         });
+
+        // Validación adicional para el formulario de contraseña
+        const passwordForm = document.getElementById('passwordForm');
+        if (passwordForm) {
+            passwordForm.addEventListener('submit', function(event) {
+                const newPassword = document.getElementById('password_nueva').value;
+                const confirmPassword = document.getElementById('password_confirmacion').value;
+
+                if (newPassword !== confirmPassword) {
+                    event.preventDefault();
+                    event.stopPropagation();
+
+                    // Mostrar mensaje de error
+                    const confirmInput = document.getElementById('password_confirmacion');
+                    confirmInput.setCustomValidity('Las contraseñas no coinciden');
+
+                    // También podríamos usar una alerta personalizada
+                    // alert('Las contraseñas no coinciden');
+                }
+            }, false);
+
+            // Limpiar validación personalizada al cambiar
+            document.getElementById('password_confirmacion').addEventListener('input', function() {
+                this.setCustomValidity('');
+            });
+        }
     });
 </script>
 {% endblock %}

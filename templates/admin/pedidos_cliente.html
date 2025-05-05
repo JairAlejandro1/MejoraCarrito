@@ -44,7 +44,7 @@
                     <tbody>
                         {% for pedido in pedidos %}
                         <tr>
-                            <td>{{ pedido._id|truncate(8, True, '') }}</td>
+                            <td>{{ pedido._id_str|truncate(8, True, '') }}</td>
                             <td>{{ pedido.fecha_creacion.strftime('%d/%m/%Y %H:%M') }}</td>
                             <td>
                                 {% if pedido.estado == 'pendiente' %}

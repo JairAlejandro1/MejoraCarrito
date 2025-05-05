@@ -51,7 +51,7 @@
                                     <tbody>
                                         {% for pedido in pedidos %}
                                         <tr>
-                                            <td>#{{ pedido._id|truncate(8, True, '') }}</td>
+                                            <td>#{{ pedido._id_str|truncate(8, True, '') }}</td>
                                             <td>{{ pedido.fecha_creacion.strftime('%d/%m/%Y') }}</td>
                                             <td>
                                                 {% if pedido.estado == 'pendiente' %}
@@ -105,7 +105,7 @@
                                     <tbody>
                                         {% for pedido in pedidos_pendientes %}
                                         <tr>
-                                            <td>#{{ pedido._id|truncate(8, True, '') }}</td>
+                                            <td>#{{ pedido._id_str|truncate(8, True, '') }}</td>
                                             <td>{{ pedido.fecha_creacion.strftime('%d/%m/%Y') }}</td>
                                             <td>
                                                 {% if pedido.estado == 'pendiente' %}
@@ -155,7 +155,7 @@
                                     <tbody>
                                         {% for pedido in pedidos_completados %}
                                         <tr>
-                                            <td>#{{ pedido._id|truncate(8, True, '') }}</td>
+                                            <td>#{{ pedido._id_str|truncate(8, True, '') }}</td>
                                             <td>{{ pedido.fecha_creacion.strftime('%d/%m/%Y') }}</td>
                                             <td>
                                                 {% if pedido.estado == 'entregado' %}

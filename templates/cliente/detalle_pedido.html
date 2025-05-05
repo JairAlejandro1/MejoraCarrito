@@ -8,7 +8,7 @@
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="{{ url_for('main.index') }}">Inicio</a></li>
             <li class="breadcrumb-item"><a href="{{ url_for('cliente.mis_pedidos') }}">Mis Pedidos</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Pedido #{{ pedido._id|truncate(8, True, '') }}</li>
+            <li class="breadcrumb-item active" aria-current="page">Pedido #{{ pedido._id_str|truncate(8, True, '') }}</li>
         </ol>
     </nav>
 
@@ -71,7 +71,7 @@
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item d-flex justify-content-between">
                             <span>Número de Pedido:</span>
-                            <span>{{ pedido._id|truncate(8, True, '') }}</span>
+                            <span>{{ pedido._id_str|truncate(8, True, '') }}</span>
                         </li>
                         <li class="list-group-item d-flex justify-content-between">
                             <span>Fecha:</span>

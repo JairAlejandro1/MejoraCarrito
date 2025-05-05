@@ -91,7 +91,7 @@
                         <tbody>
                             {% for pedido in ultimos_pedidos %}
                             <tr>
-                                <td>{{ pedido._id|truncate(8, True, '') }}</td>
+                                <td>{{ pedido._id_str|truncate(8, True, '') }}</td>
                                 <td>{{ pedido.cliente_nombre }}</td>
                                 <td>{{ pedido.fecha_creacion.strftime('%d/%m/%Y') }}</td>
                                 <td>${{ pedido.total }}</td>
@@ -165,7 +165,7 @@
                 </ul>
             </div>
         </div>
-        
+
         <div class="card shadow-sm">
             <div class="card-header bg-white">
                 <h5 class="mb-0">Acciones Rápidas</h5>
