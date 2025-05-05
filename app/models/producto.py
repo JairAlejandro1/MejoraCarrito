@@ -1,6 +1,7 @@
 from datetime import datetime
 from app.services.database import get_db
 from bson.objectid import ObjectId
+from pymongo.errors import PyMongoError
 
 
 class Producto:
@@ -11,7 +12,7 @@ class Producto:
         self.precio = precio
         self.existencias = existencias
         self.categoria = categoria
-        self.proveedor_id = proveedor_id  # ID del proveedor que suministra este producto
+        self.proveedor_id = proveedor_id
         self.imagen_url = imagen_url
         self._id = _id
         self.fecha_creacion = datetime.now()
@@ -64,16 +65,30 @@ class Producto:
         return list(get_db().productos.find({"proveedor_id": proveedor_id, "activo": True}))
 
     @classmethod
-    def actualizar_existencias(cls, producto_id, cantidad_cambio):
+    def verificar_y_reservar(cls, producto_id, cantidad):
         """
-        Actualiza el inventario de un producto
-        Si cantidad_cambio es negativo, reduce el inventario
-        Si cantidad_cambio es positivo, aumenta el inventario
+        Verifica y actualiza el inventario atómicamente.
+        Retorna True si se actualizó con éxito, False si no hay suficientes existencias.
         """
-        get_db().productos.update_one(
-            {"_id": producto_id},
-            {"$inc": {"existencias": cantidad_cambio}}
-        )
+        try:
+            db = get_db()
+            # Operación atómica: busca y actualiza en un solo paso
+            result = db.productos.find_one_and_update(
+                {
+                    "_id": producto_id,
+                    "existencias": {"$gte": cantidad},  # Verifica si hay suficientes existencias
+                    "activo": True
+                },
+                {"$inc": {"existencias": -cantidad}},  # Reduce las existencias
+                return_document=True  # Retorna el documento después de la actualización
+            )
+
+            # Si result es None, significa que no se encontró un producto con suficientes existencias
+            return result is not None
+
+        except PyMongoError as e:
+            print(f"Error al actualizar inventario: {str(e)}")
+            return False
 
     @classmethod
     def actualizar_inventario(cls, producto_id, nueva_cantidad):
@@ -86,12 +101,14 @@ class Producto:
         )
 
     @classmethod
-    def verificar_existencias(cls, producto_id, cantidad):
+    def restituir_existencias(cls, producto_id, cantidad):
         """
-        Verifica si hay suficientes existencias del producto
+        Devuelve productos al inventario (por ejemplo, cuando se cancela un pedido)
         """
-        producto = cls.obtener_por_id(producto_id)
-        return producto and producto["existencias"] >= cantidad
+        get_db().productos.update_one(
+            {"_id": producto_id},
+            {"$inc": {"existencias": cantidad}}
+        )
 
     @classmethod
     def eliminar(cls, producto_id):

@@ -42,9 +42,8 @@
                 </div>
                 <div class="card-body p-0">
                     <div class="list-group list-group-flush">
-                        <a href="{{ url_for('cliente.mis_pedidos') }}" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
-                            <span><i class="fas fa-shopping-bag me-2"></i>Mis Pedidos</span>
-                            <span class="badge bg-primary rounded-pill">{{ total_pedidos }}</span>
+                        <a href="{{ url_for('cliente.mis_pedidos') }}" class="list-group-item list-group-item-action">
+                            <i class="fas fa-shopping-bag me-2"></i>Mis Pedidos
                         </a>
                         <a href="{{ url_for('cliente.carrito') }}" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
                             <span><i class="fas fa-shopping-cart me-2"></i>Mi Carrito</span>
@@ -111,7 +110,7 @@
                     <a href="{{ url_for('cliente.mis_pedidos') }}" class="btn btn-sm btn-outline-primary">Ver Todos</a>
                 </div>
                 <div class="card-body p-0">
-                    {% if pedidos_recientes %}
+                    {% if pedidos_recientes and pedidos_recientes|length > 0 %}
                     <div class="table-responsive">
                         <table class="table table-hover mb-0">
                             <thead>
