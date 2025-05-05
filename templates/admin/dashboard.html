@@ -41,7 +41,7 @@
                 </div>
             </div>
             <div class="card-footer bg-transparent border-0">
-                <a href="#" class="text-white text-decoration-none">
+                <a href="{{ url_for('admin.clientes') }}" class="text-white text-decoration-none">
                     Ver Detalles <i class="fas fa-arrow-right ms-2"></i>
                 </a>
             </div>
@@ -115,6 +115,12 @@
                                 </td>
                             </tr>
                             {% endfor %}
+                            
+                            {% if ultimos_pedidos|length == 0 %}
+                            <tr>
+                                <td colspan="6" class="text-center py-3">No hay pedidos recientes.</td>
+                            </tr>
+                            {% endif %}
                         </tbody>
                     </table>
                 </div>
@@ -149,7 +155,33 @@
                         </div>
                     </li>
                     {% endfor %}
+                    
+                    {% if productos_bajo_inventario|length == 0 %}
+                    <li class="list-group-item text-center py-3">
+                        <i class="fas fa-check-circle text-success fa-2x mb-2"></i>
+                        <p class="mb-0">No hay productos con bajo inventario.</p>
+                    </li>
+                    {% endif %}
                 </ul>
+            </div>
+        </div>
+        
+        <div class="card shadow-sm">
+            <div class="card-header bg-white">
+                <h5 class="mb-0">Acciones Rápidas</h5>
+            </div>
+            <div class="card-body">
+                <div class="d-grid gap-2">
+                    <a href="{{ url_for('admin.nuevo_producto') }}" class="btn btn-primary">
+                        <i class="fas fa-plus me-2"></i>Agregar Nuevo Producto
+                    </a>
+                    <a href="{{ url_for('admin.nuevo_proveedor') }}" class="btn btn-outline-primary">
+                        <i class="fas fa-truck me-2"></i>Agregar Nuevo Proveedor
+                    </a>
+                    <a href="{{ url_for('admin.pedidos') }}?tab=pendientes" class="btn btn-outline-primary">
+                        <i class="fas fa-clipboard-list me-2"></i>Ver Pedidos Pendientes
+                    </a>
+                </div>
             </div>
         </div>
     </div>

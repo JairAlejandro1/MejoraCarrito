@@ -1,9 +1,10 @@
-from flask import Flask, session, redirect, url_for, render_template, g
+from flask import Flask, session, redirect, url_for, render_template, flash, g, request, current_app
 from app.services.database import get_db
 from config.config import Config
 from bson.objectid import ObjectId
 import datetime
 import os
+from werkzeug.utils import secure_filename
 from pyngrok import ngrok
 
 # Importar Blueprints
@@ -13,10 +14,23 @@ from app.controllers.admin_controller import admin_bp
 from app.controllers.cliente_controller import cliente_bp
 from app.controllers.proveedor_controller import proveedor_bp
 
+# Definir constantes para la subida de archivos
+UPLOAD_FOLDER = 'static/uploads/productos'
+ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
+
+
+def allowed_file(filename):
+    return '.' in filename and \
+        filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
+
 
 def create_app(config_class=Config):
     app = Flask(__name__)
     app.config.from_object(config_class)
+
+    # Configurar la carpeta de subida de archivos
+    app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+    os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
     # Registrar blueprints
     app.register_blueprint(auth_bp)

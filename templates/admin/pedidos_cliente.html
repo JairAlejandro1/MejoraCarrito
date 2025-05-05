@@ -1,0 +1,156 @@
+{% extends "layout.html" %}
+
+{% block title %}Pedidos de Cliente | Admin | EcoShop{% endblock %}
+
+{% block content %}
+<div class="container">
+    <nav aria-label="breadcrumb" class="my-3">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{{ url_for('admin.dashboard') }}">Dashboard</a></li>
+            <li class="breadcrumb-item"><a href="{{ url_for('admin.clientes') }}">Clientes</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Pedidos de {{ cliente.nombre }}</li>
+        </ol>
+    </nav>
+
+    <div class="row mb-4">
+        <div class="col-md-8">
+            <h2>Pedidos de {{ cliente.nombre }}</h2>
+            <p class="text-muted">Email: {{ cliente.email }} | Teléfono: {{ cliente.telefono }}</p>
+        </div>
+        <div class="col-md-4 text-end">
+            <a href="{{ url_for('admin.clientes') }}" class="btn btn-outline-primary">
+                <i class="fas fa-arrow-left me-2"></i>Volver a Clientes
+            </a>
+        </div>
+    </div>
+
+    <div class="card shadow-sm">
+        <div class="card-header bg-white">
+            <h5 class="mb-0">Lista de Pedidos</h5>
+        </div>
+        <div class="card-body p-0">
+            {% if pedidos|length > 0 %}
+            <div class="table-responsive">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Fecha</th>
+                            <th>Estado</th>
+                            <th>Total</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for pedido in pedidos %}
+                        <tr>
+                            <td>{{ pedido._id|truncate(8, True, '') }}</td>
+                            <td>{{ pedido.fecha_creacion.strftime('%d/%m/%Y %H:%M') }}</td>
+                            <td>
+                                {% if pedido.estado == 'pendiente' %}
+                                <span class="badge bg-warning text-dark">Pendiente</span>
+                                {% elif pedido.estado == 'pagado' %}
+                                <span class="badge bg-info">Pagado</span>
+                                {% elif pedido.estado == 'enviado' %}
+                                <span class="badge bg-primary">Enviado</span>
+                                {% elif pedido.estado == 'entregado' %}
+                                <span class="badge bg-success">Entregado</span>
+                                {% elif pedido.estado == 'cancelado' %}
+                                <span class="badge bg-danger">Cancelado</span>
+                                {% endif %}
+                            </td>
+                            <td>${{ pedido.total }}</td>
+                            <td>
+                                <div class="btn-group">
+                                    <a href="{{ url_for('admin.detalle_pedido', pedido_id=pedido._id) }}" class="btn btn-sm btn-outline-primary">
+                                        <i class="fas fa-eye"></i> Ver
+                                    </a>
+                                    {% if pedido.estado != 'entregado' and pedido.estado != 'cancelado' %}
+                                    <button type="button" class="btn btn-sm btn-outline-success actualizar-estado"
+                                            data-bs-toggle="modal" data-bs-target="#actualizarEstadoModal"
+                                            data-pedido-id="{{ pedido._id }}"
+                                            data-pedido-estado="{{ pedido.estado }}">
+                                        <i class="fas fa-edit"></i>
+                                    </button>
+                                    {% endif %}
+                                </div>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            {% else %}
+            <div class="text-center py-5">
+                <i class="fas fa-shopping-bag fa-4x text-muted mb-3"></i>
+                <h4>No hay pedidos para este cliente</h4>
+                <p>Este cliente aún no ha realizado ningún pedido.</p>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+<!-- Modal Actualizar Estado -->
+<div class="modal fade" id="actualizarEstadoModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Actualizar Estado del Pedido</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form id="formActualizarEstado" method="post">
+                <div class="modal-body">
+                    <input type="hidden" name="pedido_id" id="pedidoIdModal">
+                    <div class="mb-3">
+                        <label for="estadoModal" class="form-label">Nuevo Estado</label>
+                        <select class="form-select" id="estadoModal" name="estado" required>
+                            <option value="">Selecciona un estado</option>
+                            <option value="pendiente">Pendiente</option>
+                            <option value="pagado">Pagado</option>
+                            <option value="enviado">Enviado</option>
+                            <option value="entregado">Entregado</option>
+                            <option value="cancelado">Cancelado</option>
+                        </select>
+                    </div>
+                    <div class="alert alert-warning" role="alert">
+                        <i class="fas fa-exclamation-triangle me-2"></i>
+                        <small>Al cambiar el estado a "Cancelado", se revertirán las existencias de los productos.</small>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Configurar el formulario de actualización de estado
+        const botonesActualizar = document.querySelectorAll('.actualizar-estado');
+        const formActualizarEstado = document.getElementById('formActualizarEstado');
+        const pedidoIdModal = document.getElementById('pedidoIdModal');
+        const estadoModal = document.getElementById('estadoModal');
+
+        botonesActualizar.forEach(function(boton) {
+            boton.addEventListener('click', function() {
+                const pedidoId = this.getAttribute('data-pedido-id');
+                const pedidoEstado = this.getAttribute('data-pedido-estado');
+
+                // Configurar el formulario con la URL correcta
+                if (formActualizarEstado) {
+                    formActualizarEstado.action = `/admin/pedido/actualizar_estado/${pedidoId}`;
+                }
+
+                if (pedidoIdModal) pedidoIdModal.value = pedidoId;
+                if (estadoModal) estadoModal.value = pedidoEstado;
+            });
+        });
+    });
+</script>
+{% endblock %}

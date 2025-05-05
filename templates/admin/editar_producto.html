@@ -136,6 +136,25 @@
 
             form.classList.add('was-validated');
         });
+
+        // Vista previa de la imagen nueva
+        const imagenInput = document.getElementById('imagen');
+        const imagenPreview = document.getElementById('imagenPreview');
+
+        if (imagenInput && imagenPreview) {
+            imagenInput.addEventListener('change', function() {
+                if (this.files && this.files[0]) {
+                    const reader = new FileReader();
+
+                    reader.onload = function(e) {
+                        imagenPreview.src = e.target.result;
+                        imagenPreview.style.display = 'block';
+                    }
+
+                    reader.readAsDataURL(this.files[0]);
+                }
+            });
+        }
     });
 </script>
 {% endblock %}

@@ -1,5 +1,6 @@
-from flask import Blueprint, render_template, session
+from flask import Blueprint, render_template, session, redirect, url_for, flash
 from app.models.producto import Producto
+from bson.objectid import ObjectId
 
 main_bp = Blueprint('main', __name__)
 
@@ -19,7 +20,14 @@ def productos():
 
 @main_bp.route('/producto/<producto_id>')
 def detalle_producto(producto_id):
-    producto = Producto.obtener_por_id(producto_id)
-    return render_template('main/detalle_producto.html',
-                          producto=producto,
-                          is_authenticated='usuario_id' in session)
+    try:
+        producto = Producto.obtener_por_id(ObjectId(producto_id))
+        if not producto:
+            flash('Producto no encontrado', 'danger')
+            return redirect(url_for('main.productos'))
+        return render_template('main/detalle_producto.html',
+                              producto=producto,
+                              is_authenticated='usuario_id' in session)
+    except Exception as e:
+        flash(f'Error al cargar el producto: {str(e)}', 'danger')
+        return redirect(url_for('main.productos'))

@@ -1,12 +1,23 @@
-from flask import Blueprint, render_template, request, redirect, url_for, flash, session
+from flask import Blueprint, render_template, request, redirect, url_for, flash, session, current_app
 from app.models.producto import Producto
 from app.models.proveedor import Proveedor
 from app.models.usuario import Usuario
 from app.models.pedido import Pedido
 from app.auth.auth import role_required
 from bson.objectid import ObjectId
+import os
+from werkzeug.utils import secure_filename
+import uuid
 
 admin_bp = Blueprint('admin', __name__, url_prefix='/admin')
+
+# Definir constantes para la subida de archivos
+ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
+
+
+def allowed_file(filename):
+    return '.' in filename and \
+        filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
 
 @admin_bp.route('/dashboard')
@@ -59,7 +70,22 @@ def nuevo_producto():
         existencias = int(request.form['existencias'])
         categoria = request.form['categoria']
         proveedor_id = request.form['proveedor_id']
-        imagen_url = request.form['imagen_url']
+
+        # Manejar la subida de archivos
+        imagen_url = None
+        if 'imagen' in request.files:
+            archivo = request.files['imagen']
+            if archivo.filename != '' and allowed_file(archivo.filename):
+                # Asegurar que el nombre del archivo sea seguro
+                filename = secure_filename(archivo.filename)
+                # Generar un nombre único para evitar colisiones
+                filename = f"{str(uuid.uuid4())}_{filename}"
+                # Guardar el archivo
+                upload_folder = os.path.join('static', 'uploads', 'productos')
+                os.makedirs(upload_folder, exist_ok=True)
+                archivo.save(os.path.join(upload_folder, filename))
+                # Construir la URL para acceder a la imagen
+                imagen_url = f"/static/uploads/productos/{filename}"
 
         producto = Producto(
             nombre=nombre,
@@ -92,7 +118,22 @@ def editar_producto(producto_id):
         existencias = int(request.form['existencias'])
         categoria = request.form['categoria']
         proveedor_id = request.form['proveedor_id']
-        imagen_url = request.form['imagen_url']
+
+        # Manejar la imagen
+        imagen_url = producto['imagen_url']  # Mantener la imagen actual por defecto
+        if 'imagen' in request.files:
+            archivo = request.files['imagen']
+            if archivo.filename != '' and allowed_file(archivo.filename):
+                # Asegurar que el nombre del archivo sea seguro
+                filename = secure_filename(archivo.filename)
+                # Generar un nombre único para evitar colisiones
+                filename = f"{str(uuid.uuid4())}_{filename}"
+                # Guardar el archivo
+                upload_folder = os.path.join('static', 'uploads', 'productos')
+                os.makedirs(upload_folder, exist_ok=True)
+                archivo.save(os.path.join(upload_folder, filename))
+                # Construir la URL para acceder a la imagen
+                imagen_url = f"/static/uploads/productos/{filename}"
 
         producto_actualizado = Producto(
             nombre=nombre,
@@ -181,6 +222,12 @@ def proveedores():
     proveedores = []
     try:
         proveedores = Proveedor.obtener_todos()
+
+        # Contar productos de cada proveedor
+        for proveedor in proveedores:
+            productos = Producto.obtener_por_proveedor(proveedor['_id'])
+            proveedor['total_productos'] = len(productos)
+
     except Exception as e:
         flash(f'Error al obtener proveedores: {str(e)}', 'danger')
 
@@ -262,6 +309,20 @@ def eliminar_proveedor():
     return redirect(url_for('admin.proveedores'))
 
 
+@admin_bp.route('/proveedor/productos/<proveedor_id>')
+@role_required(['admin'])
+def productos_proveedor(proveedor_id):
+    try:
+        proveedor = Proveedor.obtener_por_id(ObjectId(proveedor_id))
+        productos = Producto.obtener_por_proveedor(ObjectId(proveedor_id))
+        return render_template('admin/productos_proveedor.html',
+                               proveedor=proveedor,
+                               productos=productos)
+    except Exception as e:
+        flash(f'Error al obtener productos del proveedor: {str(e)}', 'danger')
+        return redirect(url_for('admin.proveedores'))
+
+
 @admin_bp.route('/clientes')
 @role_required(['admin'])
 def clientes():
@@ -271,3 +332,22 @@ def clientes():
     except Exception as e:
         flash(f'Error al obtener clientes: {str(e)}', 'danger')
         return redirect(url_for('admin.dashboard'))
+
+
+@admin_bp.route('/cliente/pedidos/<cliente_id>')
+@role_required(['admin'])
+def ver_pedidos_cliente(cliente_id):
+    try:
+        cliente = Usuario.obtener_por_id(ObjectId(cliente_id))
+        if not cliente or cliente['rol'] != 'cliente':
+            flash('Cliente no encontrado', 'danger')
+            return redirect(url_for('admin.clientes'))
+
+        pedidos = Pedido.obtener_por_cliente(ObjectId(cliente_id))
+
+        return render_template('admin/pedidos_cliente.html',
+                               cliente=cliente,
+                               pedidos=pedidos)
+    except Exception as e:
+        flash(f'Error al obtener pedidos del cliente: {str(e)}', 'danger')
+        return redirect(url_for('admin.clientes'))

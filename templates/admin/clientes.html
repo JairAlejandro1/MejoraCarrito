@@ -1,0 +1,117 @@
+{% extends "layout.html" %}
+
+{% block title %}Gestión de Clientes | Admin | EcoShop{% endblock %}
+
+{% block content %}
+<div class="container">
+    <nav aria-label="breadcrumb" class="my-3">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{{ url_for('admin.dashboard') }}">Dashboard</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Clientes</li>
+        </ol>
+    </nav>
+
+    <div class="row mb-4">
+        <div class="col-md-8">
+            <h2>Gestión de Clientes</h2>
+        </div>
+        <div class="col-md-4">
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" id="buscarCliente" placeholder="Buscar cliente...">
+                <button class="btn btn-outline-secondary" type="button" id="btnBuscar">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="card shadow-sm">
+        <div class="card-header bg-white">
+            <h5 class="mb-0">Lista de Clientes</h5>
+        </div>
+        <div class="card-body p-0">
+            {% if clientes|length > 0 %}
+            <div class="table-responsive">
+                <table class="table table-hover" id="tablaClientes">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Email</th>
+                            <th>Teléfono</th>
+                            <th>Dirección</th>
+                            <th>Fecha Registro</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for cliente in clientes %}
+                        <tr class="cliente-item">
+                            <td>{{ cliente.nombre }}</td>
+                            <td>{{ cliente.email }}</td>
+                            <td>{{ cliente.telefono }}</td>
+                            <td>{{ cliente.direccion }}</td>
+                            <td>{{ cliente.fecha_registro.strftime('%d/%m/%Y') }}</td>
+                            <td>
+                                <div class="btn-group">
+                                    <a href="{{ url_for('admin.ver_pedidos_cliente', cliente_id=cliente._id) }}" class="btn btn-sm btn-outline-info">
+                                        <i class="fas fa-shopping-bag"></i> Pedidos
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            {% else %}
+            <div class="text-center py-5">
+                <i class="fas fa-users fa-4x text-muted mb-3"></i>
+                <h4>No hay clientes registrados</h4>
+                <p>Aún no hay clientes registrados en el sistema.</p>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Búsqueda en tabla de clientes
+        const buscarInput = document.getElementById('buscarCliente');
+        const btnBuscar = document.getElementById('btnBuscar');
+        const tablaClientes = document.getElementById('tablaClientes');
+
+        if (buscarInput && tablaClientes) {
+            const filas = tablaClientes.getElementsByTagName('tbody')[0].getElementsByTagName('tr');
+
+            function buscarClientes() {
+                const texto = buscarInput.value.toLowerCase();
+
+                for (let i = 0; i < filas.length; i++) {
+                    const nombre = filas[i].cells[0].textContent.toLowerCase();
+                    const email = filas[i].cells[1].textContent.toLowerCase();
+                    const telefono = filas[i].cells[2].textContent.toLowerCase();
+
+                    if (nombre.includes(texto) || email.includes(texto) || telefono.includes(texto)) {
+                        filas[i].style.display = '';
+                    } else {
+                        filas[i].style.display = 'none';
+                    }
+                }
+            }
+
+            buscarInput.addEventListener('keyup', function(e) {
+                if (e.key === 'Enter') {
+                    buscarClientes();
+                }
+            });
+
+            if (btnBuscar) {
+                btnBuscar.addEventListener('click', buscarClientes);
+            }
+        }
+    });
+</script>
+{% endblock %}
