@@ -280,8 +280,23 @@ def checkout():
 
     if request.method == 'POST':
         usuario_id = session.get('usuario_id')
-        direccion_entrega = request.form['direccion_entrega']
-        metodo_pago = request.form['metodo_pago']
+        direccion_entrega = request.form.get('direccion_entrega')
+        metodo_pago = request.form.get('metodo_pago')
+
+        # Verificar campos requeridos
+        if not direccion_entrega or not metodo_pago:
+            flash('Por favor completa todos los campos requeridos', 'danger')
+            return redirect(url_for('cliente.checkout'))
+
+        # Verificar campos de tarjeta si el método es tarjeta
+        if metodo_pago == 'tarjeta':
+            card_number = request.form.get('card_number')
+            card_expiry = request.form.get('card_expiry')
+            card_cvv = request.form.get('card_cvv')
+
+            if not card_number or not card_expiry or not card_cvv:
+                flash('Por favor completa todos los campos de la tarjeta', 'danger')
+                return redirect(url_for('cliente.checkout'))
 
         # Lista para productos que se procesaron correctamente
         productos_procesados = []

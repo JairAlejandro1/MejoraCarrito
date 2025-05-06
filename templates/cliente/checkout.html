@@ -16,10 +16,13 @@
                 <h5 class="mb-0">Información de Envío</h5>
             </div>
             <div class="card-body">
-                <form action="{{ url_for('cliente.checkout') }}" method="post">
+                <form action="{{ url_for('cliente.checkout') }}" method="post" id="checkoutForm" class="needs-validation" novalidate>
                     <div class="mb-3">
                         <label for="direccion_entrega" class="form-label">Dirección de Entrega</label>
                         <textarea class="form-control" id="direccion_entrega" name="direccion_entrega" rows="3" required>{{ usuario.direccion }}</textarea>
+                        <div class="invalid-feedback">
+                            Por favor ingresa tu dirección de entrega.
+                        </div>
                     </div>
 
                     <div class="card shadow-sm mb-4">
@@ -28,7 +31,7 @@
                         </div>
                         <div class="card-body">
                             <div class="form-check mb-2">
-                                <input class="form-check-input" type="radio" name="metodo_pago" id="tarjeta" value="tarjeta" checked>
+                                <input class="form-check-input payment-method" type="radio" name="metodo_pago" id="tarjeta" value="tarjeta" checked required>
                                 <label class="form-check-label" for="tarjeta">
                                     <i class="fas fa-credit-card me-2"></i>Tarjeta de Crédito/Débito
                                 </label>
@@ -38,28 +41,37 @@
                                 <div class="row">
                                     <div class="col-md-6 mb-2">
                                         <label for="card_number" class="form-label">Número de Tarjeta</label>
-                                        <input type="text" class="form-control" id="card_number" placeholder="XXXX XXXX XXXX XXXX">
+                                        <input type="text" class="form-control" id="card_number" name="card_number" placeholder="XXXX XXXX XXXX XXXX" maxlength="19" pattern="[0-9\s]{13,19}" required>
+                                        <div class="invalid-feedback">
+                                            Por favor ingresa un número de tarjeta válido.
+                                        </div>
                                     </div>
                                     <div class="col-md-3 mb-2">
                                         <label for="card_expiry" class="form-label">Fecha Exp.</label>
-                                        <input type="text" class="form-control" id="card_expiry" placeholder="MM/AA">
+                                        <input type="text" class="form-control" id="card_expiry" name="card_expiry" placeholder="MM/AA" maxlength="5" pattern="(0[1-9]|1[0-2])\/[0-9]{2}" required>
+                                        <div class="invalid-feedback">
+                                            Formato requerido: MM/AA
+                                        </div>
                                     </div>
                                     <div class="col-md-3 mb-2">
                                         <label for="card_cvv" class="form-label">CVV</label>
-                                        <input type="text" class="form-control" id="card_cvv" placeholder="XXX">
+                                        <input type="text" class="form-control" id="card_cvv" name="card_cvv" placeholder="XXX" maxlength="4" pattern="[0-9]{3,4}" required>
+                                        <div class="invalid-feedback">
+                                            Ingresa un CVV válido (3-4 dígitos).
+                                        </div>
                                     </div>
                                 </div>
                             </div>
 
                             <div class="form-check mb-2">
-                                <input class="form-check-input" type="radio" name="metodo_pago" id="paypal" value="paypal">
+                                <input class="form-check-input payment-method" type="radio" name="metodo_pago" id="paypal" value="paypal">
                                 <label class="form-check-label" for="paypal">
                                     <i class="fab fa-paypal me-2"></i>PayPal
                                 </label>
                             </div>
 
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="metodo_pago" id="transferencia" value="transferencia">
+                                <input class="form-check-input payment-method" type="radio" name="metodo_pago" id="transferencia" value="transferencia">
                                 <label class="form-check-label" for="transferencia">
                                     <i class="fas fa-university me-2"></i>Transferencia Bancaria
                                 </label>
@@ -119,19 +131,151 @@
 
 {% block extra_js %}
 <script>
-    // Mostrar/ocultar detalles de tarjeta de crédito
     document.addEventListener('DOMContentLoaded', function() {
-        const metodoPagoInputs = document.querySelectorAll('input[name="metodo_pago"]');
+        const form = document.getElementById('checkoutForm');
+        const paymentMethods = document.querySelectorAll('.payment-method');
         const tarjetaDetails = document.getElementById('tarjeta-details');
+        const cardInputs = tarjetaDetails.querySelectorAll('input');
 
-        metodoPagoInputs.forEach(function(input) {
+        // Formatear número de tarjeta
+        const cardNumberInput = document.getElementById('card_number');
+        if (cardNumberInput) {
+            cardNumberInput.addEventListener('input', function(e) {
+                // Remover cualquier caracter que no sea número o espacio
+                let value = this.value.replace(/[^\d\s]/g, '');
+
+                // Remover espacios duplicados
+                value = value.replace(/\s+/g, ' ');
+
+                // Agregar espacio cada 4 dígitos
+                value = value.replace(/(\d{4})(?=\d)/g, '$1 ');
+
+                // Limitar a 19 caracteres (16 dígitos + 3 espacios máximo)
+                if (value.length > 19) {
+                    value = value.substring(0, 19);
+                }
+
+                this.value = value;
+            });
+        }
+
+        // Formatear fecha de expiración
+        const cardExpiryInput = document.getElementById('card_expiry');
+        if (cardExpiryInput) {
+            cardExpiryInput.addEventListener('input', function(e) {
+                // Remover cualquier caracter que no sea número
+                let value = this.value.replace(/\D/g, '');
+
+                // Agregar la barra después de los primeros 2 dígitos
+                if (value.length > 2) {
+                    value = value.substring(0, 2) + '/' + value.substring(2, 4);
+                }
+
+                // Limitar a MM/YY (5 caracteres)
+                if (value.length > 5) {
+                    value = value.substring(0, 5);
+                }
+
+                // Validar que el mes sea entre 01 y 12
+                if (value.length >= 2) {
+                    const month = parseInt(value.substring(0, 2));
+                    if (month < 1) {
+                        value = '01' + value.substring(2);
+                    } else if (month > 12) {
+                        value = '12' + value.substring(2);
+                    }
+                }
+
+                this.value = value;
+            });
+        }
+
+        // Formatear CVV
+        const cardCvvInput = document.getElementById('card_cvv');
+        if (cardCvvInput) {
+            cardCvvInput.addEventListener('input', function(e) {
+                // Remover cualquier caracter que no sea número
+                let value = this.value.replace(/\D/g, '');
+
+                // Limitar a 4 dígitos máximo
+                if (value.length > 4) {
+                    value = value.substring(0, 4);
+                }
+
+                this.value = value;
+            });
+        }
+
+        // Mostrar/ocultar campos de tarjeta según el método de pago
+        paymentMethods.forEach(function(input) {
             input.addEventListener('change', function() {
                 if (this.value === 'tarjeta') {
                     tarjetaDetails.style.display = 'block';
+                    cardInputs.forEach(input => {
+                        input.setAttribute('required', '');
+                    });
                 } else {
                     tarjetaDetails.style.display = 'none';
+                    cardInputs.forEach(input => {
+                        input.removeAttribute('required');
+                    });
                 }
             });
+        });
+
+        // Validación al enviar el formulario
+        form.addEventListener('submit', function(event) {
+            // Verificar si se ha seleccionado el método de pago por tarjeta
+            const tarjetaSelected = document.getElementById('tarjeta').checked;
+
+            // Si se seleccionó tarjeta, validar los campos de la tarjeta
+            if (tarjetaSelected) {
+                const cardNumber = document.getElementById('card_number').value.trim();
+                const cardExpiry = document.getElementById('card_expiry').value.trim();
+                const cardCvv = document.getElementById('card_cvv').value.trim();
+
+                let isValid = true;
+
+                // Validar número de tarjeta (solo dígitos y espacios, 13-19 dígitos)
+                if (!cardNumber || !/^[\d\s]{13,19}$/.test(cardNumber.replace(/\s/g, ''))) {
+                    document.getElementById('card_number').classList.add('is-invalid');
+                    isValid = false;
+                } else {
+                    document.getElementById('card_number').classList.remove('is-invalid');
+                    document.getElementById('card_number').classList.add('is-valid');
+                }
+
+                // Validar fecha de expiración (formato MM/AA)
+                if (!cardExpiry || !/^(0[1-9]|1[0-2])\/[0-9]{2}$/.test(cardExpiry)) {
+                    document.getElementById('card_expiry').classList.add('is-invalid');
+                    isValid = false;
+                } else {
+                    document.getElementById('card_expiry').classList.remove('is-invalid');
+                    document.getElementById('card_expiry').classList.add('is-valid');
+                }
+
+                // Validar CVV (3-4 dígitos)
+                if (!cardCvv || !/^[0-9]{3,4}$/.test(cardCvv)) {
+                    document.getElementById('card_cvv').classList.add('is-invalid');
+                    isValid = false;
+                } else {
+                    document.getElementById('card_cvv').classList.remove('is-invalid');
+                    document.getElementById('card_cvv').classList.add('is-valid');
+                }
+
+                if (!isValid) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                }
+            }
+
+            // Validar el resto del formulario (como la dirección)
+            if (!form.checkValidity()) {
+                event.preventDefault();
+                event.stopPropagation();
+            }
+
+            form.classList.add('was-validated');
         });
     });
 </script>
