@@ -50,7 +50,7 @@
                 <div class="tab-pane fade show active" id="todos" role="tabpanel" aria-labelledby="todos-tab">
                     {% if pedidos|length > 0 %}
                     <div class="table-responsive">
-                        <table class="table table-hover" id="tablaPedidos">
+                        <table class="table table-hover tabla-pedidos" id="tablaTodos">
                             <thead>
                                 <tr>
                                     <th>ID</th>
@@ -110,12 +110,12 @@
                     {% endif %}
                 </div>
 
-                <!-- Las otras pestañas tendrán código similar pero filtrado por estado -->
+                <!-- Pestaña de pedidos pendientes -->
                 <div class="tab-pane fade" id="pendientes" role="tabpanel" aria-labelledby="pendientes-tab">
                     {% set pedidos_pendientes = pedidos|selectattr('estado', 'equalto', 'pendiente')|list %}
                     {% if pedidos_pendientes|length > 0 %}
                     <div class="table-responsive">
-                        <table class="table table-hover">
+                        <table class="table table-hover tabla-pedidos" id="tablaPendientes">
                             <thead>
                                 <tr>
                                     <th>ID</th>
@@ -127,7 +127,7 @@
                             </thead>
                             <tbody>
                                 {% for pedido in pedidos_pendientes %}
-                                <tr>
+                                <tr class="pedido-item">
                                     <td>{{ pedido._id_str|truncate(8, True, '') }}</td>
                                     <td>{{ pedido.cliente_nombre }}</td>
                                     <td>{{ pedido.fecha_creacion.strftime('%d/%m/%Y %H:%M') }}</td>
@@ -135,7 +135,7 @@
                                     <td>
                                         <div class="btn-group">
                                             <a href="{{ url_for('admin.detalle_pedido', pedido_id=pedido._id) }}" class="btn btn-sm btn-outline-primary">
-                                                <i class="fas fa-eye"></i>
+                                                <i class="fas fa-eye"></i> Ver
                                             </a>
                                             <button type="button" class="btn btn-sm btn-outline-success actualizar-estado"
                                                     data-bs-toggle="modal" data-bs-target="#actualizarEstadoModal"
@@ -159,8 +159,136 @@
                     {% endif %}
                 </div>
 
-                <!-- Las demás pestañas (enviados, completados, cancelados) tendrían un código similar -->
-                <!-- Por brevedad, omito el código de las demás pestañas que sería similar al anterior pero con diferentes filtros -->
+                <!-- Pestaña de pedidos enviados -->
+                <div class="tab-pane fade" id="enviados" role="tabpanel" aria-labelledby="enviados-tab">
+                    {% set pedidos_enviados = pedidos|selectattr('estado', 'equalto', 'enviado')|list %}
+                    {% if pedidos_enviados|length > 0 %}
+                    <div class="table-responsive">
+                        <table class="table table-hover tabla-pedidos" id="tablaEnviados">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Cliente</th>
+                                    <th>Fecha</th>
+                                    <th>Total</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for pedido in pedidos_enviados %}
+                                <tr class="pedido-item">
+                                    <td>{{ pedido._id_str|truncate(8, True, '') }}</td>
+                                    <td>{{ pedido.cliente_nombre }}</td>
+                                    <td>{{ pedido.fecha_creacion.strftime('%d/%m/%Y %H:%M') }}</td>
+                                    <td>${{ pedido.total }}</td>
+                                    <td>
+                                        <div class="btn-group">
+                                            <a href="{{ url_for('admin.detalle_pedido', pedido_id=pedido._id) }}" class="btn btn-sm btn-outline-primary">
+                                                <i class="fas fa-eye"></i> Ver
+                                            </a>
+                                            <button type="button" class="btn btn-sm btn-outline-success actualizar-estado"
+                                                    data-bs-toggle="modal" data-bs-target="#actualizarEstadoModal"
+                                                    data-pedido-id="{{ pedido._id }}"
+                                                    data-pedido-estado="{{ pedido.estado }}">
+                                                <i class="fas fa-edit"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                    {% else %}
+                    <div class="text-center py-5">
+                        <i class="fas fa-shipping-fast fa-4x text-muted mb-3"></i>
+                        <h4>No hay pedidos enviados</h4>
+                        <p>Ningún pedido ha sido enviado todavía.</p>
+                    </div>
+                    {% endif %}
+                </div>
+
+                <!-- Pestaña de pedidos completados -->
+                <div class="tab-pane fade" id="completados" role="tabpanel" aria-labelledby="completados-tab">
+                    {% set pedidos_completados = pedidos|selectattr('estado', 'equalto', 'entregado')|list %}
+                    {% if pedidos_completados|length > 0 %}
+                    <div class="table-responsive">
+                        <table class="table table-hover tabla-pedidos" id="tablaCompletados">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Cliente</th>
+                                    <th>Fecha</th>
+                                    <th>Total</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for pedido in pedidos_completados %}
+                                <tr class="pedido-item">
+                                    <td>{{ pedido._id_str|truncate(8, True, '') }}</td>
+                                    <td>{{ pedido.cliente_nombre }}</td>
+                                    <td>{{ pedido.fecha_creacion.strftime('%d/%m/%Y %H:%M') }}</td>
+                                    <td>${{ pedido.total }}</td>
+                                    <td>
+                                        <a href="{{ url_for('admin.detalle_pedido', pedido_id=pedido._id) }}" class="btn btn-sm btn-outline-primary">
+                                            <i class="fas fa-eye"></i> Ver
+                                        </a>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                    {% else %}
+                    <div class="text-center py-5">
+                        <i class="fas fa-box-open fa-4x text-muted mb-3"></i>
+                        <h4>No hay pedidos completados</h4>
+                        <p>Ningún pedido ha sido completado todavía.</p>
+                    </div>
+                    {% endif %}
+                </div>
+
+                <!-- Pestaña de pedidos cancelados -->
+                <div class="tab-pane fade" id="cancelados" role="tabpanel" aria-labelledby="cancelados-tab">
+                    {% set pedidos_cancelados = pedidos|selectattr('estado', 'equalto', 'cancelado')|list %}
+                    {% if pedidos_cancelados|length > 0 %}
+                    <div class="table-responsive">
+                        <table class="table table-hover tabla-pedidos" id="tablaCancelados">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Cliente</th>
+                                    <th>Fecha</th>
+                                    <th>Total</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for pedido in pedidos_cancelados %}
+                                <tr class="pedido-item">
+                                    <td>{{ pedido._id_str|truncate(8, True, '') }}</td>
+                                    <td>{{ pedido.cliente_nombre }}</td>
+                                    <td>{{ pedido.fecha_creacion.strftime('%d/%m/%Y %H:%M') }}</td>
+                                    <td>${{ pedido.total }}</td>
+                                    <td>
+                                        <a href="{{ url_for('admin.detalle_pedido', pedido_id=pedido._id) }}" class="btn btn-sm btn-outline-primary">
+                                            <i class="fas fa-eye"></i> Ver
+                                        </a>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                    {% else %}
+                    <div class="text-center py-5">
+                        <i class="fas fa-times-circle fa-4x text-danger mb-3"></i>
+                        <h4>No hay pedidos cancelados</h4>
+                        <p>Ningún pedido ha sido cancelado.</p>
+                    </div>
+                    {% endif %}
+                </div>
             </div>
         </div>
     </div>
@@ -205,16 +333,23 @@
 {% block extra_js %}
 <script>
     document.addEventListener('DOMContentLoaded', function() {
-        // Búsqueda de pedidos
+        // Variables para el buscador
         const buscarInput = document.getElementById('buscarPedido');
         const btnBuscar = document.getElementById('btnBuscar');
-        const tablaPedidos = document.getElementById('tablaPedidos');
+        const tablasPedidos = document.querySelectorAll('.tabla-pedidos');
 
+        // Función para buscar en la tabla activa
         function buscarPedidos() {
             const texto = buscarInput.value.toLowerCase();
-            const filas = document.querySelectorAll('.pedido-item');
 
-            filas.forEach(function(fila) {
+            // Identificar la pestaña activa
+            const tabActiva = document.querySelector('.tab-pane.active');
+            if (!tabActiva) return;
+
+            // Buscar solo en la tabla de la pestaña activa
+            const filasActivas = tabActiva.querySelectorAll('.pedido-item');
+
+            filasActivas.forEach(function(fila) {
                 const id = fila.cells[0].textContent.toLowerCase();
                 const cliente = fila.cells[1].textContent.toLowerCase();
 
@@ -226,11 +361,34 @@
             });
         }
 
+        // Asignar eventos a los elementos
         if (btnBuscar) btnBuscar.addEventListener('click', buscarPedidos);
-        if (buscarInput) buscarInput.addEventListener('keyup', function(e) {
-            if (e.key === 'Enter') {
-                buscarPedidos();
-            }
+
+        if (buscarInput) {
+            buscarInput.addEventListener('keyup', function(e) {
+                if (e.key === 'Enter') {
+                    buscarPedidos();
+                }
+            });
+
+            // Limpiar resultados cuando se borra el texto de búsqueda
+            buscarInput.addEventListener('input', function() {
+                if (this.value === '') {
+                    document.querySelectorAll('.pedido-item').forEach(fila => {
+                        fila.style.display = '';
+                    });
+                }
+            });
+        }
+
+        // Al cambiar de pestaña, aplicar la búsqueda actual
+        const tabs = document.querySelectorAll('button[data-bs-toggle="tab"]');
+        tabs.forEach(function(tab) {
+            tab.addEventListener('shown.bs.tab', function() {
+                if (buscarInput.value.trim() !== '') {
+                    buscarPedidos();
+                }
+            });
         });
 
         // Actualizar estado modal
@@ -271,7 +429,6 @@
         }
 
         // Configurar eventos de click en los tabs para actualizar la URL
-        const tabs = document.querySelectorAll('button[data-bs-toggle="tab"]');
         tabs.forEach(function(tab) {
             tab.addEventListener('shown.bs.tab', function(event) {
                 const id = event.target.id.replace('-tab', '');
