@@ -431,3 +431,42 @@ def detalle_pedido(pedido_id):
         print(f"Error en detalle_pedido: {str(e)}")
         flash(f'Error al cargar el detalle del pedido: {str(e)}', 'danger')
         return redirect(url_for('cliente.mis_pedidos'))
+
+
+@cliente_bp.route('/pedido/cancelar/<pedido_id>', methods=['POST'])
+@role_required(['cliente'])
+def cancelar_pedido(pedido_id):
+    try:
+        # Verificar si el pedido existe
+        pedido = Pedido.obtener_por_id(ObjectId(pedido_id))
+
+        if not pedido:
+            flash('Pedido no encontrado', 'danger')
+            return redirect(url_for('cliente.mis_pedidos'))
+
+        # Verificar que el pedido pertenece al cliente actual
+        cliente_id_pedido = pedido['cliente_id']
+        if isinstance(cliente_id_pedido, ObjectId):
+            cliente_id_pedido = str(cliente_id_pedido)
+
+        usuario_id = session.get('usuario_id')
+
+        if cliente_id_pedido != usuario_id:
+            flash('No tienes permiso para cancelar este pedido', 'danger')
+            return redirect(url_for('cliente.mis_pedidos'))
+
+        # Verificar que el pedido esté en estado pendiente
+        if pedido['estado'] != 'pendiente':
+            flash('Solo se pueden cancelar pedidos en estado pendiente', 'danger')
+            return redirect(url_for('cliente.detalle_pedido', pedido_id=pedido_id))
+
+        # Actualizar el estado del pedido a "cancelado"
+        Pedido.actualizar_estado(ObjectId(pedido_id), 'cancelado')
+
+        flash('Pedido cancelado correctamente', 'success')
+        return redirect(url_for('cliente.mis_pedidos'))
+
+    except Exception as e:
+        print(f"Error en cancelar_pedido: {str(e)}")
+        flash(f'Error al cancelar el pedido: {str(e)}', 'danger')
+        return redirect(url_for('cliente.mis_pedidos'))

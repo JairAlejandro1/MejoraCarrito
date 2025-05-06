@@ -20,6 +20,12 @@
             <a href="{{ url_for('cliente.mis_pedidos') }}" class="btn btn-outline-primary">
                 <i class="fas fa-arrow-left me-2"></i>Volver a Mis Pedidos
             </a>
+
+            {% if pedido.estado == 'pendiente' %}
+            <button type="button" class="btn btn-danger ms-2" data-bs-toggle="modal" data-bs-target="#cancelarPedidoModal">
+                <i class="fas fa-times-circle me-2"></i>Cancelar Pedido
+            </button>
+            {% endif %}
         </div>
     </div>
 
@@ -110,13 +116,18 @@
                 </div>
             </div>
 
-            {% if pedido.estado == 'pendiente' %}
-            <div class="card shadow-sm mb-4 border-warning">
+            {% if pedido.estado == 'enviado' %}
+            <div class="card shadow-sm mb-4 border-primary">
                 <div class="card-body">
-                    <h5 class="text-warning"><i class="fas fa-clock me-2"></i>Pedido en Proceso</h5>
-                    <p class="mb-0">Tu pedido está siendo procesado. Recibirás una actualización cuando sea enviado.</p>
+                    <h5 class="text-primary"><i class="fas fa-info-circle me-2"></i>¿Deseas cancelar tu pedido?</h5>
+                    <p>Tu pedido ya ha sido enviado. Si necesitas cancelarlo, por favor contacta a nuestro servicio de atención al cliente:</p>
+                    <p><i class="fas fa-phone me-2"></i>(123) 456-7890</p>
+                    <p><i class="fas fa-envelope me-2"></i>soporte@ecoshop.com</p>
                 </div>
             </div>
+            {% endif %}
+
+            {% if pedido.estado == 'pendiente' %}
             {% elif pedido.estado == 'pagado' %}
             <div class="card shadow-sm mb-4 border-info">
                 <div class="card-body">
@@ -146,6 +157,28 @@
                 </div>
             </div>
             {% endif %}
+        </div>
+    </div>
+</div>
+
+<!-- Modal Cancelar Pedido -->
+<div class="modal fade" id="cancelarPedidoModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Confirmar Cancelación</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>¿Estás seguro de que deseas cancelar este pedido?</p>
+                <p class="text-danger">Esta acción no se puede deshacer.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No, mantener pedido</button>
+                <form action="{{ url_for('cliente.cancelar_pedido', pedido_id=pedido._id) }}" method="post">
+                    <button type="submit" class="btn btn-danger">Sí, cancelar pedido</button>
+                </form>
+            </div>
         </div>
     </div>
 </div>
