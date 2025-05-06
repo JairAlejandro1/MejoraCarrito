@@ -42,15 +42,18 @@
             </div>
 
             {% if es_cliente() %}
-            <form action="{{ url_for('cliente.agregar_al_carrito', producto_id=producto._id) }}" method="post">
+            <form action="{{ url_for('cliente.agregar_al_carrito', producto_id=producto._id) }}" method="post" id="formAgregarCarrito">
                 <div class="d-flex align-items-center mb-4">
-                    <div class="input-group me-3" style="width: 130px;">
+                    <div class="input-group me-3" style="width: 180px;">
                         <span class="input-group-text">Cantidad</span>
-                        <input type="number" class="form-control" name="cantidad" value="1" min="1" max="{{ producto.existencias }}">
+                        <input type="number" class="form-control" name="cantidad" id="cantidadInput" value="1" min="1" max="{{ producto.existencias }}">
                     </div>
                     <button type="submit" class="btn btn-primary">
                         <i class="fas fa-cart-plus me-2"></i>Agregar al Carrito
                     </button>
+                </div>
+                <div class="alert alert-danger mt-2" id="errorCantidad" style="display: none;">
+                    Cantidad inválida. Solo se permiten números enteros positivos.
                 </div>
             </form>
             {% elif not session.get('usuario_id') %}
@@ -90,4 +93,65 @@
         </div>
     </div>
 </div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Obtener referencias a los elementos del DOM
+        const formCarrito = document.getElementById('formAgregarCarrito');
+        const cantidadInput = document.getElementById('cantidadInput');
+        const errorCantidad = document.getElementById('errorCantidad');
+
+        // Almacenar la cantidad máxima disponible como número
+        var maxStock = parseInt("{{ producto.existencias }}");
+
+        if (formCarrito && cantidadInput) {
+            // Validar el formulario al enviarlo
+            formCarrito.addEventListener('submit', function(e) {
+                const cantidad = cantidadInput.value;
+
+                // Verificar si es un entero positivo
+                if (!cantidad || isNaN(cantidad) || parseInt(cantidad) <= 0 || !Number.isInteger(parseFloat(cantidad))) {
+                    e.preventDefault();
+                    errorCantidad.textContent = 'Cantidad inválida. Solo se permiten números enteros positivos.';
+                    errorCantidad.style.display = 'block';
+                    cantidadInput.classList.add('is-invalid');
+                    return false;
+                }
+
+                // Verificar si excede el stock disponible
+                if (parseInt(cantidad) > maxStock) {
+                    e.preventDefault();
+                    errorCantidad.textContent = 'Solo hay ' + maxStock + ' unidades disponibles.';
+                    errorCantidad.style.display = 'block';
+                    cantidadInput.classList.add('is-invalid');
+                    return false;
+                }
+
+                // Todo válido
+                errorCantidad.style.display = 'none';
+                cantidadInput.classList.remove('is-invalid');
+            });
+
+            // Validación en tiempo real
+            cantidadInput.addEventListener('input', function() {
+                const cantidad = this.value;
+
+                if (!cantidad || isNaN(cantidad) || parseInt(cantidad) <= 0 || !Number.isInteger(parseFloat(cantidad))) {
+                    errorCantidad.textContent = 'Cantidad inválida. Solo se permiten números enteros positivos.';
+                    errorCantidad.style.display = 'block';
+                    this.classList.add('is-invalid');
+                } else if (parseInt(cantidad) > maxStock) {
+                    errorCantidad.textContent = 'Solo hay ' + maxStock + ' unidades disponibles.';
+                    errorCantidad.style.display = 'block';
+                    this.classList.add('is-invalid');
+                } else {
+                    errorCantidad.style.display = 'none';
+                    this.classList.remove('is-invalid');
+                }
+            });
+        }
+    });
+</script>
 {% endblock %}

@@ -178,10 +178,16 @@ def agregar_al_carrito(producto_id):
         flash('Producto no encontrado', 'danger')
         return redirect(url_for('main.productos'))
 
-    cantidad = int(request.form.get('cantidad', 1))
+    # Get and validate the quantity
+    cantidad = request.form.get('cantidad', '1')
 
-    if cantidad <= 0:
-        flash('La cantidad debe ser mayor a 0', 'warning')
+    try:
+        cantidad = int(cantidad)
+        if cantidad <= 0:
+            flash('La cantidad debe ser un número positivo', 'warning')
+            return redirect(url_for('main.detalle_producto', producto_id=producto_id))
+    except ValueError:
+        flash('La cantidad debe ser un número entero', 'warning')
         return redirect(url_for('main.detalle_producto', producto_id=producto_id))
 
     # Volver a verificar existencias en tiempo real
@@ -236,7 +242,17 @@ def eliminar_del_carrito(producto_id):
 @role_required(['cliente'])
 def actualizar_carrito():
     producto_id = request.form['producto_id']
-    cantidad = int(request.form['cantidad'])
+    cantidad = request.form['cantidad']
+
+    # Validar que la cantidad sea un número entero positivo
+    try:
+        cantidad = int(cantidad)
+        if cantidad <= 0:
+            flash('La cantidad debe ser un número positivo', 'warning')
+            return redirect(url_for('cliente.carrito'))
+    except ValueError:
+        flash('La cantidad debe ser un número entero', 'warning')
+        return redirect(url_for('cliente.carrito'))
 
     if 'carrito' in session:
         for item in session['carrito']:
