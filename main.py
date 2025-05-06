@@ -1,3 +1,4 @@
+# main.py
 from flask import Flask, session, redirect, url_for, render_template, flash, g, request, current_app
 from app.services.database import get_db
 from config.config import Config
@@ -5,8 +6,7 @@ from bson.objectid import ObjectId
 import datetime
 import os
 from werkzeug.utils import secure_filename
-from pyngrok import ngrok
-# Importar función de debug
+# Remove ngrok related imports
 from app.debug_utils import setup_debugging
 
 # Importar Blueprints
@@ -135,7 +135,12 @@ if __name__ == '__main__':
 
     # Verificar si existen administradores
     with app.app_context():
-        admin_count = len(list(Usuario.obtener_todos_por_rol('admin')))
+        try:
+            admin_count = len(list(Usuario.obtener_todos_por_rol('admin')))
+        except Exception as e:
+            # Si hay un error al obtener administradores, asumimos que no hay ninguno
+            print(f"Error al verificar administradores: {str(e)}")
+            admin_count = 0
 
     # Crear enlaces útiles
     local_url = "http://127.0.0.1:5000"
@@ -144,19 +149,11 @@ if __name__ == '__main__':
     print("EcoShop - Sistema de Comercio Electrónico")
     print("=" * 50)
 
-    # Solo mostrar los 3 enlaces solicitados
+    # Mostrar enlace para crear administrador si no existe ninguno
     if admin_count == 0:
-        print(f"[1] Crear Administrador: {local_url}/registrar-admin")
+        print(f"[1] Crear Administrador: {local_url}/auth/setup-admin")
 
     print(f"[2] Abrir localmente: {local_url}")
-
-    # Configurar ngrok si está disponible
-    try:
-        public_url = ngrok.connect(5000)
-        print(f"[3] Abrir globalmente con ngrok: {public_url}")
-    except:
-        print("[3] Abrir globalmente con ngrok: ngrok no está disponible")
-
     print("=" * 50 + "\n")
 
     # Configuración para evitar el error de socket en Windows

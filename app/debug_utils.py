@@ -1,4 +1,4 @@
-from flask import Flask, current_app, g, request, session, render_template
+from flask import Flask, current_app, g, request, session
 import traceback
 import logging
 import os
@@ -53,27 +53,8 @@ def setup_debugging(app):
         app.logger.error(f"Unhandled exception: {str(e)}")
         app.logger.error(traceback.format_exc())
 
-        # Custom error page with debug info in development
-        if app.debug:
-            error_details = {
-                'type': type(e).__name__,
-                'message': str(e),
-                'traceback': traceback.format_exc(),
-                'session': {k: v for k, v in session.items()},
-                'request': {
-                    'path': request.path,
-                    'method': request.method,
-                    'args': request.args,
-                    'form': request.form,
-                }
-            }
-            return render_template('error_debug.html', error=error_details), 500
-
-        # Standard error page in production
-        return render_template('error.html',
-                               error="An unexpected error occurred",
-                               title="Error",
-                               message="Our team has been notified of this issue."), 500
+        # Return simple error response instead of trying to render a template
+        return f"Error: {str(e)}", 500
 
 
 def debug_usuario(usuario_id):
