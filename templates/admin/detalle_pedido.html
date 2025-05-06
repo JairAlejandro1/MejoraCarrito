@@ -8,7 +8,7 @@
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="{{ url_for('admin.dashboard') }}">Dashboard</a></li>
             <li class="breadcrumb-item"><a href="{{ url_for('admin.pedidos') }}">Pedidos</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Pedido #{{ pedido._id|truncate(8, True, '') }}</li>
+            <li class="breadcrumb-item active" aria-current="page">Pedido #{{ pedido._id_str|truncate(8, True, '') }}</li>
         </ol>
     </nav>
 
@@ -163,7 +163,7 @@
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item d-flex justify-content-between">
                             <span>Número de Pedido:</span>
-                            <span>{{ pedido._id|truncate(8, True, '') }}</span>
+                            <span>{{ pedido._id_str|truncate(8, True, '') }}</span>
                         </li>
                         <li class="list-group-item d-flex justify-content-between">
                             <span>Fecha:</span>
@@ -223,18 +223,6 @@
                     <p class="mb-0">{{ pedido.direccion_entrega }}</p>
                 </div>
             </div>
-
-            {% if pedido.estado == 'pendiente' %}
-            <div class="card shadow-sm mb-4 border-warning">
-                <div class="card-body">
-                    <h5 class="text-warning"><i class="fas fa-exclamation-triangle me-2"></i>Acción Requerida</h5>
-                    <p class="mb-2">Este pedido está pendiente. Confirma el pago para continuar el proceso.</p>
-                    <button type="button" class="btn btn-warning w-100" data-bs-toggle="modal" data-bs-target="#actualizarEstadoModal">
-                        Confirmar Pago
-                    </button>
-                </div>
-            </div>
-            {% endif %}
         </div>
     </div>
 </div>
@@ -253,11 +241,10 @@
                         <label for="estado" class="form-label">Nuevo Estado</label>
                         <select class="form-select" id="estado" name="estado" required>
                             <option value="">Selecciona un estado</option>
-                            <option> value="pendiente" {% if pedido.estado == 'pendiente' %}selected{% endif %}>Pendiente</option>
-                            <option> value="pagado" {% if pedido.estado == 'pagado' %}selected{% endif %}>Pagado</option>
-                            <option> value="enviado" {% if pedido.estado == 'enviado' %}selected{% endif %}>Enviado</option>
-                            <option> value="entregado" {% if pedido.estado == 'entregado' %}selected{% endif %}>Entregado</option>
-                            <option> value="cancelado" {% if pedido.estado == 'cancelado' %}selected{% endif %}>Cancelado</option>
+                            <option value="pendiente">Pendiente</option>
+                            <option value="enviado">Enviado</option>
+                            <option value="entregado">Entregado</option>
+                            <option value="cancelado">Cancelado</option>
                         </select>
                     </div>
                     <div class="alert alert-warning" role="alert">

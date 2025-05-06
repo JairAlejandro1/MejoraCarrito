@@ -3260,3 +3260,1052 @@ TypeError: object of type 'ObjectId' has no len()
 2025-05-05 17:02:46,063 - main - DEBUG - Response status: 304
 2025-05-05 17:02:46,064 - main - DEBUG - Response status: 304
 2025-05-05 17:02:46,065 - main - DEBUG - Response status: 304
+2025-05-05 17:12:40,921 - main - DEBUG - Request: GET /productos
+2025-05-05 17:12:40,923 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:12:40,924 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-05 17:12:40,926 - main - DEBUG - Request: GET /productos
+2025-05-05 17:12:40,926 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:12:40,926 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-05 17:12:41,064 - main - DEBUG - Response status: 200
+2025-05-05 17:12:41,564 - main - DEBUG - Response status: 200
+2025-05-05 17:12:41,594 - main - DEBUG - Request: GET /static/uploads/productos/65954521-df66-42e1-8d63-0e23e3f57a31_foto_perfil_persona.png
+2025-05-05 17:12:41,596 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:12:41,596 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-05 17:12:41,596 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-05 17:12:41,596 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:12:41,597 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-05 17:12:41,602 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-05 17:12:41,603 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:12:41,603 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-05 17:12:41,916 - main - DEBUG - Response status: 304
+2025-05-05 17:12:41,996 - main - DEBUG - Response status: 304
+2025-05-05 17:12:42,045 - main - DEBUG - Response status: 304
+2025-05-05 17:12:43,936 - main - DEBUG - Request: GET /productos
+2025-05-05 17:12:43,936 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:12:43,937 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-05 17:12:44,038 - main - DEBUG - Response status: 200
+2025-05-05 17:12:44,068 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-05 17:12:44,069 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:12:44,069 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-05 17:12:44,071 - main - DEBUG - Request: GET /static/uploads/productos/65954521-df66-42e1-8d63-0e23e3f57a31_foto_perfil_persona.png
+2025-05-05 17:12:44,071 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:12:44,072 - main - DEBUG - Response status: 304
+2025-05-05 17:12:44,073 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-05 17:12:44,073 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-05 17:12:44,073 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:12:44,074 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-05 17:12:44,075 - main - DEBUG - Response status: 304
+2025-05-05 17:12:44,076 - main - DEBUG - Response status: 304
+2025-05-05 17:12:46,747 - main - DEBUG - Request: GET /productos
+2025-05-05 17:12:46,747 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:12:46,747 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-05 17:12:46,848 - main - DEBUG - Response status: 200
+2025-05-05 17:12:46,879 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-05 17:12:46,881 - main - DEBUG - Request: GET /static/uploads/productos/65954521-df66-42e1-8d63-0e23e3f57a31_foto_perfil_persona.png
+2025-05-05 17:12:46,881 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:12:46,881 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:12:46,882 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-05 17:12:46,882 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-05 17:12:46,882 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-05 17:12:46,883 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:12:46,883 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-05 17:12:46,883 - main - DEBUG - Response status: 304
+2025-05-05 17:12:46,884 - main - DEBUG - Response status: 304
+2025-05-05 17:12:46,885 - main - DEBUG - Response status: 304
+2025-05-05 17:12:47,336 - main - DEBUG - Request: GET /cliente/mis_pedidos
+2025-05-05 17:12:47,336 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:12:47,337 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-05 17:12:47,534 - main - DEBUG - Response status: 200
+2025-05-05 17:12:47,809 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-05 17:12:47,810 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:12:47,811 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-05 17:12:47,816 - main - DEBUG - Response status: 304
+2025-05-05 17:12:47,839 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-05 17:12:47,840 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:12:47,841 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-05 17:12:47,846 - main - DEBUG - Response status: 304
+2025-05-05 17:12:49,169 - main - DEBUG - Request: GET /cliente/pedido/68192a66632741b513fd5f42
+2025-05-05 17:12:49,169 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:12:49,170 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-05 17:12:49,280 - main - DEBUG - Response status: 200
+2025-05-05 17:12:49,311 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-05 17:12:49,311 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:12:49,311 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-05 17:12:49,312 - main - DEBUG - Response status: 304
+2025-05-05 17:12:49,321 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-05 17:12:49,321 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:12:49,321 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-05 17:12:49,322 - main - DEBUG - Response status: 304
+2025-05-05 17:12:51,409 - main - DEBUG - Request: GET /cliente/mis_pedidos
+2025-05-05 17:12:51,409 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:12:51,409 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-05 17:12:51,510 - main - DEBUG - Response status: 200
+2025-05-05 17:12:51,550 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-05 17:12:51,551 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:12:51,551 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-05 17:12:51,552 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-05 17:12:51,552 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:12:51,553 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-05 17:12:51,554 - main - DEBUG - Response status: 304
+2025-05-05 17:12:51,554 - main - DEBUG - Response status: 304
+2025-05-05 17:12:52,695 - main - DEBUG - Request: GET /logout
+2025-05-05 17:12:52,695 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:12:52,695 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-05 17:12:52,696 - main - DEBUG - Response status: 302
+2025-05-05 17:12:52,707 - main - DEBUG - Request: GET /
+2025-05-05 17:12:52,707 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:12:52,819 - main - DEBUG - Response status: 200
+2025-05-05 17:12:52,878 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-05 17:12:52,879 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:12:52,880 - main - DEBUG - Request: GET /static/img/hero-image.jpg
+2025-05-05 17:12:52,882 - main - DEBUG - Request: GET /static/uploads/productos/65954521-df66-42e1-8d63-0e23e3f57a31_foto_perfil_persona.png
+2025-05-05 17:12:52,884 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-05 17:12:52,885 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:12:52,885 - main - DEBUG - Response status: 304
+2025-05-05 17:12:52,886 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:12:52,886 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:12:52,889 - main - DEBUG - Response status: 304
+2025-05-05 17:12:52,893 - main - DEBUG - Response status: 304
+2025-05-05 17:12:52,897 - main - DEBUG - Response status: 304
+2025-05-05 17:12:53,855 - main - DEBUG - Request: GET /login
+2025-05-05 17:12:53,855 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:12:53,859 - main - DEBUG - Response status: 200
+2025-05-05 17:12:53,894 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-05 17:12:53,894 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:12:53,895 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-05 17:12:53,896 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:12:53,896 - main - DEBUG - Response status: 304
+2025-05-05 17:12:53,897 - main - DEBUG - Response status: 304
+2025-05-05 17:13:02,578 - main - DEBUG - Request: POST /login
+2025-05-05 17:13:02,579 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:13:02,971 - main - DEBUG - Response status: 302
+2025-05-05 17:13:02,976 - main - DEBUG - Request: GET /admin/dashboard
+2025-05-05 17:13:02,976 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:13:02,977 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 17:13:03,877 - main - DEBUG - Response status: 200
+2025-05-05 17:13:03,920 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-05 17:13:03,921 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:13:03,922 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-05 17:13:03,922 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 17:13:03,922 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:13:03,922 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 17:13:03,923 - main - DEBUG - Response status: 304
+2025-05-05 17:13:03,924 - main - DEBUG - Response status: 304
+2025-05-05 17:13:07,602 - main - DEBUG - Request: GET /admin/pedido/68192a66632741b513fd5f42
+2025-05-05 17:13:07,603 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:13:07,603 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 17:13:07,830 - main - DEBUG - Response status: 302
+2025-05-05 17:13:07,841 - main - DEBUG - Request: GET /admin/pedidos
+2025-05-05 17:13:07,842 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:13:07,842 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 17:13:08,403 - main - DEBUG - Response status: 200
+2025-05-05 17:13:08,525 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-05 17:13:08,526 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:13:08,530 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-05 17:13:08,530 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 17:13:08,531 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:13:08,532 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 17:13:08,535 - main - DEBUG - Response status: 304
+2025-05-05 17:13:08,537 - main - DEBUG - Response status: 304
+2025-05-05 17:13:12,863 - main - DEBUG - Request: GET /admin/pedido/68192a66632741b513fd5f42
+2025-05-05 17:13:12,863 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:13:12,864 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 17:13:13,060 - main - DEBUG - Response status: 302
+2025-05-05 17:13:13,067 - main - DEBUG - Request: GET /admin/pedidos
+2025-05-05 17:13:13,067 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:13:13,067 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 17:13:13,590 - main - DEBUG - Response status: 200
+2025-05-05 17:13:13,629 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-05 17:13:13,630 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-05 17:13:13,630 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:13:13,630 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:13:13,630 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 17:13:13,632 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 17:13:13,633 - main - DEBUG - Response status: 304
+2025-05-05 17:13:13,633 - main - DEBUG - Response status: 304
+2025-05-05 17:13:37,972 - main - DEBUG - Request: GET /admin/pedidos
+2025-05-05 17:13:37,972 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:13:37,972 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 17:13:38,465 - main - DEBUG - Response status: 200
+2025-05-05 17:13:38,498 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-05 17:13:38,499 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-05 17:13:38,499 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:13:38,499 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:13:38,499 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 17:13:38,499 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 17:13:38,500 - main - DEBUG - Response status: 304
+2025-05-05 17:13:38,501 - main - DEBUG - Response status: 304
+2025-05-05 17:14:05,543 - main - DEBUG - Request: GET /productos
+2025-05-05 17:14:05,543 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:14:05,543 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 17:14:05,641 - main - DEBUG - Response status: 200
+2025-05-05 17:14:05,687 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-05 17:14:05,688 - main - DEBUG - Request: GET /static/uploads/productos/65954521-df66-42e1-8d63-0e23e3f57a31_foto_perfil_persona.png
+2025-05-05 17:14:05,688 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:14:05,689 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-05 17:14:05,689 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:14:05,689 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 17:14:05,690 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:14:05,690 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 17:14:05,690 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 17:14:05,691 - main - DEBUG - Response status: 304
+2025-05-05 17:14:05,692 - main - DEBUG - Response status: 304
+2025-05-05 17:14:05,692 - main - DEBUG - Response status: 304
+2025-05-05 17:14:06,294 - main - DEBUG - Request: GET /
+2025-05-05 17:14:06,294 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:14:06,295 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 17:14:06,395 - main - DEBUG - Response status: 200
+2025-05-05 17:14:06,437 - main - DEBUG - Request: GET /static/img/hero-image.jpg
+2025-05-05 17:14:06,438 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-05 17:14:06,439 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:14:06,439 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:14:06,440 - main - DEBUG - Request: GET /static/uploads/productos/65954521-df66-42e1-8d63-0e23e3f57a31_foto_perfil_persona.png
+2025-05-05 17:14:06,440 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 17:14:06,440 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 17:14:06,440 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:14:06,442 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-05 17:14:06,442 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 17:14:06,443 - main - DEBUG - Response status: 304
+2025-05-05 17:14:06,443 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:14:06,443 - main - DEBUG - Response status: 304
+2025-05-05 17:14:06,444 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 17:14:06,446 - main - DEBUG - Response status: 304
+2025-05-05 17:14:06,451 - main - DEBUG - Response status: 304
+2025-05-05 17:14:08,241 - main - DEBUG - Request: GET /admin/dashboard
+2025-05-05 17:14:08,241 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:14:08,241 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 17:14:09,130 - main - DEBUG - Response status: 200
+2025-05-05 17:14:09,173 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-05 17:14:09,174 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-05 17:14:09,174 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:14:09,174 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:14:09,175 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 17:14:09,175 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 17:14:09,176 - main - DEBUG - Response status: 304
+2025-05-05 17:14:09,176 - main - DEBUG - Response status: 304
+2025-05-05 17:22:54,601 - main - DEBUG - Request: GET /admin/dashboard
+2025-05-05 17:22:54,602 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:22:54,602 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 17:22:55,524 - main - DEBUG - Response status: 200
+2025-05-05 17:22:55,559 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-05 17:22:55,560 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:22:55,560 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-05 17:22:55,561 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 17:22:55,561 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:22:55,561 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 17:22:55,779 - main - DEBUG - Response status: 304
+2025-05-05 17:22:55,819 - main - DEBUG - Response status: 304
+2025-05-05 17:22:57,628 - main - DEBUG - Request: GET /admin/pedido/68192a66632741b513fd5f42
+2025-05-05 17:22:57,628 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:22:57,628 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 17:22:57,848 - main - DEBUG - Response status: 302
+2025-05-05 17:22:57,855 - main - DEBUG - Request: GET /admin/pedidos
+2025-05-05 17:22:57,855 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:22:57,855 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 17:22:58,354 - main - DEBUG - Response status: 200
+2025-05-05 17:22:58,394 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-05 17:22:58,394 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:22:58,395 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-05 17:22:58,395 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 17:22:58,395 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:22:58,396 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 17:22:58,396 - main - DEBUG - Response status: 304
+2025-05-05 17:22:58,397 - main - DEBUG - Response status: 304
+2025-05-05 17:23:00,005 - main - DEBUG - Request: GET /admin/pedido/68192a66632741b513fd5f42
+2025-05-05 17:23:00,005 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:23:00,005 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 17:23:00,201 - main - DEBUG - Response status: 302
+2025-05-05 17:23:00,206 - main - DEBUG - Request: GET /admin/pedidos
+2025-05-05 17:23:00,207 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:23:00,207 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 17:23:00,695 - main - DEBUG - Response status: 200
+2025-05-05 17:23:00,724 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-05 17:23:00,725 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:23:00,725 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 17:23:00,727 - main - DEBUG - Response status: 304
+2025-05-05 17:23:00,729 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-05 17:23:00,729 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:23:00,729 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 17:23:00,733 - main - DEBUG - Response status: 304
+2025-05-05 17:23:02,270 - main - DEBUG - Request: GET /admin/pedido/68192a4b632741b513fd5f41
+2025-05-05 17:23:02,270 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:23:02,270 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 17:23:02,466 - main - DEBUG - Response status: 302
+2025-05-05 17:23:02,472 - main - DEBUG - Request: GET /admin/pedidos
+2025-05-05 17:23:02,472 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:23:02,473 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 17:23:02,967 - main - DEBUG - Response status: 200
+2025-05-05 17:23:02,999 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-05 17:23:03,000 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:23:03,001 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 17:23:03,001 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-05 17:23:03,002 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:23:03,002 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 17:23:03,003 - main - DEBUG - Response status: 304
+2025-05-05 17:23:03,003 - main - DEBUG - Response status: 304
+2025-05-05 17:26:35,508 - main - DEBUG - Request: GET /admin/pedidos
+2025-05-05 17:26:35,509 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:26:35,509 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 17:26:36,043 - main - DEBUG - Response status: 200
+2025-05-05 17:26:36,075 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-05 17:26:36,077 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-05 17:26:36,077 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:26:36,077 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:26:36,077 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 17:26:36,078 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 17:26:36,230 - main - DEBUG - Response status: 304
+2025-05-05 17:26:36,285 - main - DEBUG - Response status: 304
+2025-05-05 17:26:38,415 - main - DEBUG - Request: GET /admin/pedido/68192a66632741b513fd5f42
+2025-05-05 17:26:38,415 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:26:38,415 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 17:26:38,634 - main - DEBUG - Response status: 200
+2025-05-05 17:26:38,680 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-05 17:26:38,682 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-05 17:26:38,682 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:26:38,682 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:26:38,683 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 17:26:38,684 - main - DEBUG - Response status: 304
+2025-05-05 17:26:38,682 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 17:26:38,687 - main - DEBUG - Response status: 304
+2025-05-05 17:26:58,061 - main - DEBUG - Request: POST /admin/pedido/actualizar_estado/68192a66632741b513fd5f42
+2025-05-05 17:26:58,061 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:26:58,062 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 17:26:58,252 - main - DEBUG - Response status: 302
+2025-05-05 17:26:58,259 - main - DEBUG - Request: GET /admin/pedidos
+2025-05-05 17:26:58,260 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:26:58,260 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 17:26:58,733 - main - DEBUG - Response status: 200
+2025-05-05 17:26:58,774 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-05 17:26:58,775 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-05 17:26:58,775 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:26:58,775 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:26:58,775 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 17:26:58,775 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 17:26:58,776 - main - DEBUG - Response status: 304
+2025-05-05 17:26:58,777 - main - DEBUG - Response status: 304
+2025-05-05 17:27:02,992 - main - DEBUG - Request: GET /admin/dashboard
+2025-05-05 17:27:02,992 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:27:02,992 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 17:27:03,854 - main - DEBUG - Response status: 200
+2025-05-05 17:27:03,889 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-05 17:27:03,890 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:27:03,891 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-05 17:27:03,891 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 17:27:03,891 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:27:03,891 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 17:27:03,892 - main - DEBUG - Response status: 304
+2025-05-05 17:27:03,893 - main - DEBUG - Response status: 304
+2025-05-05 17:27:05,127 - main - DEBUG - Request: GET /admin/productos
+2025-05-05 17:27:05,127 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:27:05,127 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 17:27:05,247 - main - DEBUG - Response status: 200
+2025-05-05 17:27:05,282 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-05 17:27:05,283 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-05 17:27:05,283 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:27:05,283 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:27:05,284 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 17:27:05,284 - main - DEBUG - Request: GET /static/uploads/productos/65954521-df66-42e1-8d63-0e23e3f57a31_foto_perfil_persona.png
+2025-05-05 17:27:05,285 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 17:27:05,285 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:27:05,285 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 17:27:05,286 - main - DEBUG - Response status: 304
+2025-05-05 17:27:05,286 - main - DEBUG - Response status: 304
+2025-05-05 17:27:05,287 - main - DEBUG - Response status: 304
+2025-05-05 17:27:06,598 - main - DEBUG - Request: GET /admin/pedidos
+2025-05-05 17:27:06,598 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:27:06,598 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 17:27:07,073 - main - DEBUG - Response status: 200
+2025-05-05 17:27:07,112 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-05 17:27:07,113 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:27:07,114 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-05 17:27:07,114 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 17:27:07,114 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:27:07,114 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 17:27:07,115 - main - DEBUG - Response status: 304
+2025-05-05 17:27:07,116 - main - DEBUG - Response status: 304
+2025-05-05 17:27:08,343 - main - DEBUG - Request: GET /admin/proveedores
+2025-05-05 17:27:08,343 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:27:08,343 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 17:27:08,633 - main - DEBUG - Response status: 200
+2025-05-05 17:27:08,677 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-05 17:27:08,678 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:27:08,678 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 17:27:08,680 - main - DEBUG - Response status: 304
+2025-05-05 17:27:08,688 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-05 17:27:08,688 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:27:08,688 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 17:27:08,689 - main - DEBUG - Response status: 304
+2025-05-05 17:27:09,608 - main - DEBUG - Request: GET /admin/dashboard
+2025-05-05 17:27:09,608 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:27:09,608 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 17:27:10,461 - main - DEBUG - Response status: 200
+2025-05-05 17:27:10,503 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-05 17:27:10,504 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-05 17:27:10,504 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:27:10,504 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:27:10,504 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 17:27:10,504 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 17:27:10,506 - main - DEBUG - Response status: 304
+2025-05-05 17:27:10,506 - main - DEBUG - Response status: 304
+2025-05-05 17:27:12,138 - main - DEBUG - Request: GET /admin/pedido/68192a4b632741b513fd5f41
+2025-05-05 17:27:12,138 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:27:12,138 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 17:27:12,331 - main - DEBUG - Response status: 200
+2025-05-05 17:27:12,387 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-05 17:27:12,387 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:27:12,387 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 17:27:12,389 - main - DEBUG - Response status: 304
+2025-05-05 17:27:12,392 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-05 17:27:12,392 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:27:12,393 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 17:27:12,394 - main - DEBUG - Response status: 304
+2025-05-05 17:27:57,880 - main - DEBUG - Request: GET /admin/dashboard
+2025-05-05 17:27:57,880 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:27:57,880 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 17:27:58,741 - main - DEBUG - Response status: 200
+2025-05-05 17:27:58,786 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-05 17:27:58,788 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-05 17:27:58,788 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:27:58,788 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:27:58,788 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 17:27:58,788 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 17:27:58,789 - main - DEBUG - Response status: 304
+2025-05-05 17:27:58,790 - main - DEBUG - Response status: 304
+2025-05-05 17:28:01,071 - main - DEBUG - Request: GET /admin/pedidos
+2025-05-05 17:28:01,071 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:28:01,072 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 17:28:01,562 - main - DEBUG - Response status: 200
+2025-05-05 17:28:01,601 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-05 17:28:01,601 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:28:01,602 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 17:28:01,603 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-05 17:28:01,604 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:28:01,605 - main - DEBUG - Response status: 304
+2025-05-05 17:28:01,605 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 17:28:01,607 - main - DEBUG - Response status: 304
+2025-05-05 17:35:10,736 - main - DEBUG - Request: GET /admin/pedidos
+2025-05-05 17:35:10,737 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:35:10,737 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 17:35:11,295 - main - DEBUG - Response status: 200
+2025-05-05 17:35:11,378 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-05 17:35:11,381 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:35:11,381 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 17:35:11,382 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-05 17:35:11,382 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:35:11,383 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 17:35:11,771 - main - DEBUG - Response status: 304
+2025-05-05 17:35:11,801 - main - DEBUG - Response status: 304
+2025-05-05 17:35:18,693 - main - DEBUG - Request: GET /admin/pedido/68192a66632741b513fd5f42
+2025-05-05 17:35:18,693 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:35:18,694 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 17:35:18,926 - main - DEBUG - Response status: 200
+2025-05-05 17:35:18,980 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-05 17:35:18,981 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:35:18,982 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 17:35:18,984 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-05 17:35:18,985 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:35:18,986 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 17:35:18,986 - main - DEBUG - Response status: 304
+2025-05-05 17:35:18,988 - main - DEBUG - Response status: 304
+2025-05-05 17:35:26,654 - main - DEBUG - Request: GET /admin/pedidos
+2025-05-05 17:35:26,654 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:35:26,655 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 17:35:27,128 - main - DEBUG - Response status: 200
+2025-05-05 17:35:27,191 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-05 17:35:27,192 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:35:27,192 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 17:35:27,194 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-05 17:35:27,198 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:35:27,198 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 17:35:27,200 - main - DEBUG - Response status: 304
+2025-05-05 17:35:27,202 - main - DEBUG - Response status: 304
+2025-05-05 17:35:28,569 - main - DEBUG - Request: GET /admin/pedido/681873f28e4ab2e18781a08e
+2025-05-05 17:35:28,570 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:35:28,570 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 17:35:28,767 - main - DEBUG - Response status: 200
+2025-05-05 17:35:28,831 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-05 17:35:28,832 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:35:28,832 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 17:35:28,834 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-05 17:35:28,835 - main - DEBUG - Response status: 304
+2025-05-05 17:35:28,835 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:35:28,836 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 17:35:28,837 - main - DEBUG - Response status: 304
+2025-05-05 17:39:32,626 - main - DEBUG - Request: GET /admin/pedidos
+2025-05-05 17:39:32,626 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:39:32,626 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 17:39:33,093 - main - DEBUG - Response status: 200
+2025-05-05 17:39:33,136 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-05 17:39:33,137 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:39:33,138 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 17:39:33,138 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-05 17:39:33,138 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:39:33,139 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 17:39:33,139 - main - DEBUG - Response status: 304
+2025-05-05 17:39:33,140 - main - DEBUG - Response status: 304
+2025-05-05 17:39:36,029 - main - DEBUG - Request: GET /admin/pedido/681873bd8e4ab2e18781a08d
+2025-05-05 17:39:36,029 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:39:36,030 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 17:39:36,219 - main - DEBUG - Response status: 200
+2025-05-05 17:39:36,271 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-05 17:39:36,273 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-05 17:39:36,273 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:39:36,273 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:39:36,273 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 17:39:36,273 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 17:39:36,275 - main - DEBUG - Response status: 304
+2025-05-05 17:39:36,275 - main - DEBUG - Response status: 304
+2025-05-05 17:39:44,984 - main - DEBUG - Request: GET /admin/dashboard
+2025-05-05 17:39:44,984 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:39:44,984 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 17:39:45,852 - main - DEBUG - Response status: 200
+2025-05-05 17:39:45,897 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-05 17:39:45,899 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-05 17:39:45,899 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:39:45,899 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:39:45,899 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 17:39:45,900 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 17:39:45,901 - main - DEBUG - Response status: 304
+2025-05-05 17:39:45,901 - main - DEBUG - Response status: 304
+2025-05-05 17:39:49,631 - main - DEBUG - Request: GET /admin/pedido/68192a4b632741b513fd5f41
+2025-05-05 17:39:49,631 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:39:49,631 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 17:39:49,830 - main - DEBUG - Response status: 200
+2025-05-05 17:39:49,880 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-05 17:39:49,881 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:39:49,881 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 17:39:49,882 - main - DEBUG - Response status: 304
+2025-05-05 17:39:49,885 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-05 17:39:49,886 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:39:49,886 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 17:39:49,887 - main - DEBUG - Response status: 304
+2025-05-05 17:39:56,110 - main - DEBUG - Request: GET /admin/pedidos
+2025-05-05 17:39:56,110 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:39:56,110 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 17:39:56,580 - main - DEBUG - Response status: 200
+2025-05-05 17:39:56,619 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-05 17:39:56,620 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:39:56,620 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-05 17:39:56,620 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 17:39:56,620 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:39:56,621 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 17:39:56,621 - main - DEBUG - Response status: 304
+2025-05-05 17:39:56,622 - main - DEBUG - Response status: 304
+2025-05-05 17:40:28,550 - main - DEBUG - Request: GET /logout
+2025-05-05 17:40:28,551 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:40:28,551 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 17:40:28,551 - main - DEBUG - Response status: 302
+2025-05-05 17:40:28,561 - main - DEBUG - Request: GET /
+2025-05-05 17:40:28,561 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:40:28,664 - main - DEBUG - Response status: 200
+2025-05-05 17:40:28,701 - main - DEBUG - Request: GET /static/uploads/productos/65954521-df66-42e1-8d63-0e23e3f57a31_foto_perfil_persona.png
+2025-05-05 17:40:28,702 - main - DEBUG - Request: GET /static/img/hero-image.jpg
+2025-05-05 17:40:28,703 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:40:28,703 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:40:28,704 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-05 17:40:28,705 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:40:28,705 - main - DEBUG - Response status: 304
+2025-05-05 17:40:28,706 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-05 17:40:28,706 - main - DEBUG - Response status: 304
+2025-05-05 17:40:28,707 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:40:28,707 - main - DEBUG - Response status: 304
+2025-05-05 17:40:28,711 - main - DEBUG - Response status: 304
+2025-05-05 17:40:30,787 - main - DEBUG - Request: GET /login
+2025-05-05 17:40:30,787 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:40:30,792 - main - DEBUG - Response status: 200
+2025-05-05 17:40:30,830 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-05 17:40:30,833 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:40:30,834 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-05 17:40:30,835 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:40:30,835 - main - DEBUG - Response status: 304
+2025-05-05 17:40:30,836 - main - DEBUG - Response status: 304
+2025-05-05 17:40:36,741 - main - DEBUG - Request: POST /login
+2025-05-05 17:40:36,742 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:40:37,127 - main - DEBUG - Response status: 302
+2025-05-05 17:40:37,134 - main - DEBUG - Request: GET /cliente/perfil
+2025-05-05 17:40:37,134 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:40:37,134 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-05 17:40:37,351 - main - DEBUG - Response status: 200
+2025-05-05 17:40:37,404 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-05 17:40:37,405 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-05 17:40:37,405 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:40:37,405 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:40:37,405 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-05 17:40:37,406 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-05 17:40:37,406 - main - DEBUG - Response status: 304
+2025-05-05 17:40:37,407 - main - DEBUG - Response status: 304
+2025-05-05 17:40:40,886 - main - DEBUG - Request: GET /cliente/mis_pedidos
+2025-05-05 17:40:40,886 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:40:40,887 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-05 17:40:41,002 - main - DEBUG - Response status: 200
+2025-05-05 17:40:41,046 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-05 17:40:41,046 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:40:41,047 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-05 17:40:41,048 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-05 17:40:41,048 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:40:41,048 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-05 17:40:41,049 - main - DEBUG - Response status: 304
+2025-05-05 17:40:41,049 - main - DEBUG - Response status: 304
+2025-05-05 17:40:44,124 - main - DEBUG - Request: GET /productos
+2025-05-05 17:40:44,124 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:40:44,124 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-05 17:40:44,230 - main - DEBUG - Response status: 200
+2025-05-05 17:40:44,269 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-05 17:40:44,270 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:40:44,271 - main - DEBUG - Request: GET /static/uploads/productos/65954521-df66-42e1-8d63-0e23e3f57a31_foto_perfil_persona.png
+2025-05-05 17:40:44,271 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-05 17:40:44,271 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:40:44,272 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-05 17:40:44,273 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-05 17:40:44,273 - main - DEBUG - Response status: 304
+2025-05-05 17:40:44,273 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:40:44,274 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-05 17:40:44,274 - main - DEBUG - Response status: 304
+2025-05-05 17:40:44,277 - main - DEBUG - Response status: 304
+2025-05-05 17:40:45,508 - main - DEBUG - Request: GET /producto/68181607c1d502027b2fe4c0
+2025-05-05 17:40:45,509 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:40:45,509 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-05 17:40:45,615 - main - DEBUG - Response status: 200
+2025-05-05 17:40:45,655 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-05 17:40:45,656 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:40:45,657 - main - DEBUG - Request: GET /static/uploads/productos/65954521-df66-42e1-8d63-0e23e3f57a31_foto_perfil_persona.png
+2025-05-05 17:40:45,657 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-05 17:40:45,658 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:40:45,659 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-05 17:40:45,659 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-05 17:40:45,660 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:40:45,660 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-05 17:40:45,660 - main - DEBUG - Response status: 304
+2025-05-05 17:40:45,661 - main - DEBUG - Response status: 304
+2025-05-05 17:40:45,664 - main - DEBUG - Response status: 304
+2025-05-05 17:40:46,900 - main - DEBUG - Request: POST /cliente/agregar_al_carrito/68181607c1d502027b2fe4c0
+2025-05-05 17:40:46,901 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:40:46,901 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-05 17:40:47,087 - main - DEBUG - Response status: 302
+2025-05-05 17:40:47,093 - main - DEBUG - Request: GET /cliente/carrito
+2025-05-05 17:40:47,093 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:40:47,093 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-05 17:40:47,200 - main - DEBUG - Response status: 200
+2025-05-05 17:40:47,250 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-05 17:40:47,251 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:40:47,252 - main - DEBUG - Request: GET /static/uploads/productos/65954521-df66-42e1-8d63-0e23e3f57a31_foto_perfil_persona.png
+2025-05-05 17:40:47,252 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-05 17:40:47,252 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:40:47,253 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-05 17:40:47,254 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-05 17:40:47,254 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:40:47,255 - main - DEBUG - Response status: 304
+2025-05-05 17:40:47,255 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-05 17:40:47,257 - main - DEBUG - Response status: 304
+2025-05-05 17:40:47,259 - main - DEBUG - Response status: 304
+2025-05-05 17:40:53,676 - main - DEBUG - Request: GET /cliente/checkout
+2025-05-05 17:40:53,676 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:40:53,676 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-05 17:40:53,868 - main - DEBUG - Response status: 200
+2025-05-05 17:40:53,910 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-05 17:40:53,911 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:40:53,913 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-05 17:40:53,913 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-05 17:40:53,914 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:40:53,914 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-05 17:40:53,915 - main - DEBUG - Response status: 304
+2025-05-05 17:40:53,916 - main - DEBUG - Response status: 304
+2025-05-05 17:40:59,224 - main - DEBUG - Request: POST /cliente/checkout
+2025-05-05 17:40:59,224 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:40:59,224 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-05 17:40:59,520 - main - DEBUG - Response status: 302
+2025-05-05 17:40:59,527 - main - DEBUG - Request: GET /cliente/mis_pedidos
+2025-05-05 17:40:59,527 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:40:59,527 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-05 17:40:59,623 - main - DEBUG - Response status: 200
+2025-05-05 17:40:59,672 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-05 17:40:59,673 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:40:59,673 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-05 17:40:59,673 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-05 17:40:59,673 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:40:59,674 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-05 17:40:59,674 - main - DEBUG - Response status: 304
+2025-05-05 17:40:59,675 - main - DEBUG - Response status: 304
+2025-05-05 17:41:07,478 - main - DEBUG - Request: GET /logout
+2025-05-05 17:41:07,479 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:41:07,479 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-05 17:41:07,479 - main - DEBUG - Response status: 302
+2025-05-05 17:41:07,487 - main - DEBUG - Request: GET /
+2025-05-05 17:41:07,487 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:41:07,581 - main - DEBUG - Response status: 200
+2025-05-05 17:41:07,621 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-05 17:41:07,622 - main - DEBUG - Request: GET /static/img/hero-image.jpg
+2025-05-05 17:41:07,623 - main - DEBUG - Request: GET /static/uploads/productos/65954521-df66-42e1-8d63-0e23e3f57a31_foto_perfil_persona.png
+2025-05-05 17:41:07,623 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:41:07,623 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:41:07,624 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:41:07,625 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-05 17:41:07,626 - main - DEBUG - Response status: 304
+2025-05-05 17:41:07,626 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:41:07,627 - main - DEBUG - Response status: 304
+2025-05-05 17:41:07,628 - main - DEBUG - Response status: 304
+2025-05-05 17:41:07,632 - main - DEBUG - Response status: 304
+2025-05-05 17:41:08,796 - main - DEBUG - Request: GET /login
+2025-05-05 17:41:08,796 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:41:08,797 - main - DEBUG - Response status: 200
+2025-05-05 17:41:08,838 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-05 17:41:08,838 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:41:08,839 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-05 17:41:08,839 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:41:08,840 - main - DEBUG - Response status: 304
+2025-05-05 17:41:08,840 - main - DEBUG - Response status: 304
+2025-05-05 17:41:15,638 - main - DEBUG - Request: POST /login
+2025-05-05 17:41:15,639 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:41:16,020 - main - DEBUG - Response status: 302
+2025-05-05 17:41:16,026 - main - DEBUG - Request: GET /admin/dashboard
+2025-05-05 17:41:16,026 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:41:16,027 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 17:41:16,979 - main - DEBUG - Response status: 200
+2025-05-05 17:41:17,027 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-05 17:41:17,028 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-05 17:41:17,028 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:41:17,028 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:41:17,028 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 17:41:17,028 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 17:41:17,029 - main - DEBUG - Response status: 304
+2025-05-05 17:41:17,029 - main - DEBUG - Response status: 304
+2025-05-05 17:41:27,717 - main - DEBUG - Request: GET /admin/pedidos
+2025-05-05 17:41:27,717 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:41:27,718 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 17:41:28,290 - main - DEBUG - Response status: 200
+2025-05-05 17:41:28,328 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-05 17:41:28,328 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:41:28,329 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 17:41:28,332 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-05 17:41:28,332 - main - DEBUG - Response status: 304
+2025-05-05 17:41:28,333 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:41:28,333 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 17:41:28,336 - main - DEBUG - Response status: 304
+2025-05-05 17:41:40,456 - main - DEBUG - Request: POST /admin/pedido/actualizar_estado/68194c8bcea07004e46bdab9
+2025-05-05 17:41:40,456 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:41:40,456 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 17:41:40,648 - main - DEBUG - Response status: 302
+2025-05-05 17:41:40,655 - main - DEBUG - Request: GET /admin/pedidos
+2025-05-05 17:41:40,656 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:41:40,656 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 17:41:41,230 - main - DEBUG - Response status: 200
+2025-05-05 17:41:41,269 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-05 17:41:41,270 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:41:41,270 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-05 17:41:41,270 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 17:41:41,270 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:41:41,271 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 17:41:41,271 - main - DEBUG - Response status: 304
+2025-05-05 17:41:41,272 - main - DEBUG - Response status: 304
+2025-05-05 17:41:42,492 - main - DEBUG - Request: GET /admin/pedido/68194c8bcea07004e46bdab9
+2025-05-05 17:41:42,492 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:41:42,492 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 17:41:42,682 - main - DEBUG - Response status: 200
+2025-05-05 17:41:42,725 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-05 17:41:42,726 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:41:42,726 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-05 17:41:42,726 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 17:41:42,727 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:41:42,727 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 17:41:42,728 - main - DEBUG - Response status: 304
+2025-05-05 17:41:42,729 - main - DEBUG - Response status: 304
+2025-05-05 17:41:59,773 - main - DEBUG - Request: GET /admin/pedidos
+2025-05-05 17:41:59,773 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:41:59,774 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 17:42:00,343 - main - DEBUG - Response status: 200
+2025-05-05 17:42:00,388 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-05 17:42:00,389 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-05 17:42:00,389 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:42:00,389 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:42:00,389 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 17:42:00,389 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 17:42:00,390 - main - DEBUG - Response status: 304
+2025-05-05 17:42:00,391 - main - DEBUG - Response status: 304
+2025-05-05 17:43:29,591 - main - DEBUG - Request: GET /admin/pedido/68194c8bcea07004e46bdab9
+2025-05-05 17:43:29,591 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:43:29,592 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 17:43:29,782 - main - DEBUG - Response status: 200
+2025-05-05 17:43:29,829 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-05 17:43:29,829 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:43:29,830 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 17:43:29,831 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-05 17:43:29,832 - main - DEBUG - Response status: 304
+2025-05-05 17:43:29,832 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:43:29,833 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 17:43:29,837 - main - DEBUG - Response status: 304
+2025-05-05 17:43:49,906 - main - DEBUG - Request: GET /admin/pedidos
+2025-05-05 17:43:49,907 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:43:49,908 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 17:43:50,473 - main - DEBUG - Response status: 200
+2025-05-05 17:43:50,514 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-05 17:43:50,515 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-05 17:43:50,515 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:43:50,516 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:43:50,516 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 17:43:50,516 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 17:43:50,517 - main - DEBUG - Response status: 304
+2025-05-05 17:43:50,517 - main - DEBUG - Response status: 304
+2025-05-05 17:43:54,551 - main - DEBUG - Request: GET /admin/pedido/68194c8bcea07004e46bdab9
+2025-05-05 17:43:54,551 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:43:54,552 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 17:43:54,743 - main - DEBUG - Response status: 200
+2025-05-05 17:43:54,785 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-05 17:43:54,786 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:43:54,789 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-05 17:43:54,789 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 17:43:54,789 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 17:43:54,790 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 17:43:54,791 - main - DEBUG - Response status: 304
+2025-05-05 17:43:54,792 - main - DEBUG - Response status: 304
+2025-05-05 18:18:12,078 - main - DEBUG - Request: GET /admin/pedido/68194c8bcea07004e46bdab9
+2025-05-05 18:18:12,079 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 18:18:12,079 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 18:18:12,318 - main - DEBUG - Response status: 200
+2025-05-05 18:18:12,363 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-05 18:18:12,364 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-05 18:18:12,365 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 18:18:12,365 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 18:18:12,365 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 18:18:12,365 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 18:18:12,528 - main - DEBUG - Response status: 304
+2025-05-05 18:18:12,537 - main - DEBUG - Response status: 304
+2025-05-05 18:18:14,288 - main - DEBUG - Request: GET /admin/pedidos
+2025-05-05 18:18:14,288 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 18:18:14,288 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 18:18:14,866 - main - DEBUG - Response status: 200
+2025-05-05 18:18:14,907 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-05 18:18:14,908 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-05 18:18:14,908 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 18:18:14,909 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 18:18:14,909 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 18:18:14,909 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 18:18:14,910 - main - DEBUG - Response status: 304
+2025-05-05 18:18:14,910 - main - DEBUG - Response status: 304
+2025-05-05 18:18:16,184 - main - DEBUG - Request: GET /admin/productos
+2025-05-05 18:18:16,184 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 18:18:16,185 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 18:18:16,290 - main - DEBUG - Response status: 200
+2025-05-05 18:18:16,326 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-05 18:18:16,327 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-05 18:18:16,327 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 18:18:16,327 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 18:18:16,329 - main - DEBUG - Request: GET /static/uploads/productos/65954521-df66-42e1-8d63-0e23e3f57a31_foto_perfil_persona.png
+2025-05-05 18:18:16,329 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 18:18:16,329 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 18:18:16,330 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 18:18:16,330 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 18:18:16,331 - main - DEBUG - Response status: 304
+2025-05-05 18:18:16,331 - main - DEBUG - Response status: 304
+2025-05-05 18:18:16,332 - main - DEBUG - Response status: 304
+2025-05-05 18:18:17,224 - main - DEBUG - Request: GET /admin/dashboard
+2025-05-05 18:18:17,224 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 18:18:17,224 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 18:18:18,175 - main - DEBUG - Response status: 200
+2025-05-05 18:18:18,205 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-05 18:18:18,206 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 18:18:18,207 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 18:18:18,208 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-05 18:18:18,209 - main - DEBUG - Response status: 304
+2025-05-05 18:18:18,209 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 18:18:18,210 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 18:18:18,213 - main - DEBUG - Response status: 304
+2025-05-05 18:18:19,456 - main - DEBUG - Request: GET /admin/pedidos
+2025-05-05 18:18:19,457 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 18:18:19,457 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 18:18:20,023 - main - DEBUG - Response status: 200
+2025-05-05 18:18:20,062 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-05 18:18:20,063 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 18:18:20,063 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-05 18:18:20,063 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 18:18:20,063 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 18:18:20,064 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 18:18:20,064 - main - DEBUG - Response status: 304
+2025-05-05 18:18:20,066 - main - DEBUG - Response status: 304
+2025-05-05 18:18:21,008 - main - DEBUG - Request: GET /admin/proveedores
+2025-05-05 18:18:21,009 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 18:18:21,009 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 18:18:21,313 - main - DEBUG - Response status: 200
+2025-05-05 18:18:21,349 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-05 18:18:21,350 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-05 18:18:21,350 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 18:18:21,351 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 18:18:21,351 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 18:18:21,351 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 18:18:21,352 - main - DEBUG - Response status: 304
+2025-05-05 18:18:21,352 - main - DEBUG - Response status: 304
+2025-05-05 18:18:22,424 - main - DEBUG - Request: GET /admin/dashboard
+2025-05-05 18:18:22,424 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 18:18:22,424 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 18:18:23,363 - main - DEBUG - Response status: 200
+2025-05-05 18:18:23,413 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-05 18:18:23,413 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 18:18:23,414 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 18:18:23,415 - main - DEBUG - Response status: 304
+2025-05-05 18:18:23,421 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-05 18:18:23,422 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 18:18:23,422 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 18:18:23,423 - main - DEBUG - Response status: 304
+2025-05-05 18:18:24,863 - main - DEBUG - Request: GET /admin/pedido/68194c8bcea07004e46bdab9
+2025-05-05 18:18:24,863 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 18:18:24,863 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 18:18:25,050 - main - DEBUG - Response status: 200
+2025-05-05 18:18:25,095 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-05 18:18:25,096 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 18:18:25,096 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 18:18:25,097 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-05 18:18:25,097 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 18:18:25,098 - main - DEBUG - Response status: 304
+2025-05-05 18:18:25,098 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 18:18:25,101 - main - DEBUG - Response status: 304
+2025-05-05 18:18:34,023 - main - DEBUG - Request: GET /admin/pedidos
+2025-05-05 18:18:34,024 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 18:18:34,024 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 18:18:34,599 - main - DEBUG - Response status: 200
+2025-05-05 18:18:34,639 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-05 18:18:34,640 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 18:18:34,641 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 18:18:34,642 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-05 18:18:34,642 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 18:18:34,642 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 18:18:34,643 - main - DEBUG - Response status: 304
+2025-05-05 18:18:34,644 - main - DEBUG - Response status: 304
+2025-05-05 18:18:36,263 - main - DEBUG - Request: GET /admin/pedido/681873f28e4ab2e18781a08e
+2025-05-05 18:18:36,263 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 18:18:36,263 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 18:18:36,456 - main - DEBUG - Response status: 200
+2025-05-05 18:18:36,499 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-05 18:18:36,500 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 18:18:36,501 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 18:18:36,502 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-05 18:18:36,502 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 18:18:36,503 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 18:18:36,503 - main - DEBUG - Response status: 304
+2025-05-05 18:18:36,505 - main - DEBUG - Response status: 304
+2025-05-05 18:18:38,567 - main - DEBUG - Request: GET /admin/pedidos
+2025-05-05 18:18:38,567 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 18:18:38,567 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 18:18:39,131 - main - DEBUG - Response status: 200
+2025-05-05 18:18:39,172 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-05 18:18:39,172 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 18:18:39,173 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 18:18:39,174 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-05 18:18:39,175 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 18:18:39,175 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 18:18:39,176 - main - DEBUG - Response status: 304
+2025-05-05 18:18:39,176 - main - DEBUG - Response status: 304
+2025-05-05 18:18:47,304 - main - DEBUG - Request: GET /productos
+2025-05-05 18:18:47,305 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 18:18:47,305 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 18:18:47,414 - main - DEBUG - Response status: 200
+2025-05-05 18:18:47,453 - main - DEBUG - Request: GET /static/uploads/productos/65954521-df66-42e1-8d63-0e23e3f57a31_foto_perfil_persona.png
+2025-05-05 18:18:47,454 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 18:18:47,455 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-05 18:18:47,455 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 18:18:47,456 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 18:18:47,456 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-05 18:18:47,457 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 18:18:47,457 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 18:18:47,457 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 18:18:47,458 - main - DEBUG - Response status: 304
+2025-05-05 18:18:47,458 - main - DEBUG - Response status: 304
+2025-05-05 18:18:47,461 - main - DEBUG - Response status: 304
+2025-05-05 18:18:48,774 - main - DEBUG - Request: GET /
+2025-05-05 18:18:48,774 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 18:18:48,774 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 18:18:48,882 - main - DEBUG - Response status: 200
+2025-05-05 18:18:48,925 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-05 18:18:48,927 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 18:18:48,928 - main - DEBUG - Request: GET /static/img/hero-image.jpg
+2025-05-05 18:18:48,928 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 18:18:48,929 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 18:18:48,929 - main - DEBUG - Request: GET /static/uploads/productos/65954521-df66-42e1-8d63-0e23e3f57a31_foto_perfil_persona.png
+2025-05-05 18:18:48,930 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 18:18:48,930 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 18:18:48,930 - main - DEBUG - Response status: 304
+2025-05-05 18:18:48,931 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-05 18:18:48,932 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 18:18:48,932 - main - DEBUG - Response status: 304
+2025-05-05 18:18:48,933 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 18:18:48,935 - main - DEBUG - Response status: 304
+2025-05-05 18:18:48,936 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 18:18:48,941 - main - DEBUG - Response status: 304
+2025-05-05 18:18:50,139 - main - DEBUG - Request: GET /productos
+2025-05-05 18:18:50,139 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 18:18:50,139 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 18:18:50,234 - main - DEBUG - Response status: 200
+2025-05-05 18:18:50,275 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-05 18:18:50,276 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 18:18:50,276 - main - DEBUG - Request: GET /static/uploads/productos/65954521-df66-42e1-8d63-0e23e3f57a31_foto_perfil_persona.png
+2025-05-05 18:18:50,277 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-05 18:18:50,277 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 18:18:50,277 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 18:18:50,277 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 18:18:50,278 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 18:18:50,278 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 18:18:50,279 - main - DEBUG - Response status: 304
+2025-05-05 18:18:50,279 - main - DEBUG - Response status: 304
+2025-05-05 18:18:50,280 - main - DEBUG - Response status: 304
+2025-05-05 18:18:51,552 - main - DEBUG - Request: GET /admin/productos
+2025-05-05 18:18:51,552 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 18:18:51,552 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 18:18:51,647 - main - DEBUG - Response status: 200
+2025-05-05 18:18:51,686 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-05 18:18:51,688 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 18:18:51,688 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-05 18:18:51,690 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 18:18:51,690 - main - DEBUG - Request: GET /static/uploads/productos/65954521-df66-42e1-8d63-0e23e3f57a31_foto_perfil_persona.png
+2025-05-05 18:18:51,690 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 18:18:51,690 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 18:18:51,691 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 18:18:51,691 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 18:18:51,692 - main - DEBUG - Response status: 304
+2025-05-05 18:18:51,693 - main - DEBUG - Response status: 304
+2025-05-05 18:18:51,694 - main - DEBUG - Response status: 304
+2025-05-05 18:18:53,443 - main - DEBUG - Request: GET /admin/dashboard
+2025-05-05 18:18:53,443 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 18:18:53,443 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 18:18:54,406 - main - DEBUG - Response status: 200
+2025-05-05 18:18:54,447 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-05 18:18:54,447 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 18:18:54,448 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 18:18:54,448 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-05 18:18:54,449 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 18:18:54,449 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 18:18:54,449 - main - DEBUG - Response status: 304
+2025-05-05 18:18:54,450 - main - DEBUG - Response status: 304
+2025-05-05 18:18:56,791 - main - DEBUG - Request: GET /admin/producto/nuevo
+2025-05-05 18:18:56,791 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 18:18:56,792 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 18:18:56,929 - main - DEBUG - Response status: 200
+2025-05-05 18:18:56,968 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-05 18:18:56,969 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-05 18:18:56,969 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 18:18:56,969 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 18:18:56,969 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 18:18:56,969 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 18:18:56,970 - main - DEBUG - Response status: 304
+2025-05-05 18:18:56,971 - main - DEBUG - Response status: 304
+2025-05-05 18:19:00,036 - main - DEBUG - Request: GET /admin/proveedor/nuevo
+2025-05-05 18:19:00,036 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 18:19:00,036 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 18:19:00,041 - main - DEBUG - Response status: 200
+2025-05-05 18:19:00,080 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-05 18:19:00,081 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 18:19:00,081 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-05 18:19:00,082 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 18:19:00,082 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 18:19:00,082 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 18:19:00,083 - main - DEBUG - Response status: 304
+2025-05-05 18:19:00,083 - main - DEBUG - Response status: 304
+2025-05-05 18:19:02,587 - main - DEBUG - Request: GET /admin/pedidos
+2025-05-05 18:19:02,587 - main - DEBUG - Request args: ImmutableMultiDict([('tab', 'pendientes')])
+2025-05-05 18:19:02,587 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 18:19:03,160 - main - DEBUG - Response status: 200
+2025-05-05 18:19:03,203 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-05 18:19:03,203 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-05 18:19:03,204 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 18:19:03,204 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-05 18:19:03,204 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 18:19:03,204 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-05 18:19:03,206 - main - DEBUG - Response status: 304
+2025-05-05 18:19:03,207 - main - DEBUG - Response status: 304

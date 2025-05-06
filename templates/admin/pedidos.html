@@ -35,9 +35,6 @@
                     <button class="nav-link" id="pendientes-tab" data-bs-toggle="tab" data-bs-target="#pendientes" type="button" role="tab" aria-controls="pendientes" aria-selected="false">Pendientes</button>
                 </li>
                 <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="pagados-tab" data-bs-toggle="tab" data-bs-target="#pagados" type="button" role="tab" aria-controls="pagados" aria-selected="false">Pagados</button>
-                </li>
-                <li class="nav-item" role="presentation">
                     <button class="nav-link" id="enviados-tab" data-bs-toggle="tab" data-bs-target="#enviados" type="button" role="tab" aria-controls="enviados" aria-selected="false">Enviados</button>
                 </li>
                 <li class="nav-item" role="presentation">
@@ -162,7 +159,7 @@
                     {% endif %}
                 </div>
 
-                <!-- Las demás pestañas (pagados, enviados, completados, cancelados) tendrían un código similar -->
+                <!-- Las demás pestañas (enviados, completados, cancelados) tendrían un código similar -->
                 <!-- Por brevedad, omito el código de las demás pestañas que sería similar al anterior pero con diferentes filtros -->
             </div>
         </div>
@@ -185,7 +182,6 @@
                         <select class="form-select" id="estadoModal" name="estado" required>
                             <option value="">Selecciona un estado</option>
                             <option value="pendiente">Pendiente</option>
-                            <option value="pagado">Pagado</option>
                             <option value="enviado">Enviado</option>
                             <option value="entregado">Entregado</option>
                             <option value="cancelado">Cancelado</option>

@@ -200,35 +200,55 @@ def pedidos():
 @role_required(['admin'])
 def detalle_pedido(pedido_id):
     try:
-        pedido = Pedido.obtener_por_id(ObjectId(pedido_id))
+        # Convert string pedido_id to ObjectId
+        pedido_id_obj = ObjectId(pedido_id)
+        pedido = Pedido.obtener_por_id(pedido_id_obj)
+
         if not pedido:
             flash('Pedido no encontrado', 'danger')
             return redirect(url_for('admin.pedidos'))
 
-        # Añadir _id_str para el template
-        pedido['_id_str'] = str(pedido['_id'])
+        # Convert _id to string for the template
+        pedido['_id_str'] = str(pedido.get('_id', ''))
 
-        # Obtener información del cliente
+        # Convert all ObjectId to strings
+        if isinstance(pedido.get('cliente_id'), ObjectId):
+            pedido['cliente_id'] = str(pedido['cliente_id'])
+
+        # Ensure productos is a list
+        if 'productos' not in pedido:
+            pedido['productos'] = []
+
+        # Process each product in the order
+        for producto in pedido['productos']:
+            if 'producto_id' in producto and isinstance(producto['producto_id'], ObjectId):
+                producto['producto_id'] = str(producto['producto_id'])
+
+        # Get client information
         cliente = None
         try:
-            # Asegurar que cliente_id sea un ObjectId para buscar en la base de datos
             cliente_id = pedido['cliente_id']
+            # If cliente_id is a string, convert it to ObjectId for database lookup
             if isinstance(cliente_id, str):
                 cliente_id = ObjectId(cliente_id)
 
             cliente = Usuario.obtener_por_id(cliente_id)
-
             if not cliente:
                 cliente = {"nombre": "Cliente desconocido", "email": "No disponible", "telefono": "No disponible"}
         except Exception as e:
             print(f"Error al obtener cliente para pedido {pedido_id}: {str(e)}")
             cliente = {"nombre": "Cliente desconocido", "email": "No disponible", "telefono": "No disponible"}
 
+        # Debugging - log the structure of pedido to help identify issues
+        print(f"Pedido structure: {str(pedido)}")
+
         return render_template('admin/detalle_pedido.html',
                                pedido=pedido,
                                cliente=cliente)
     except Exception as e:
+        import traceback
         print(f"Error en detalle_pedido: {str(e)}")
+        print(traceback.format_exc())  # Print full traceback for debugging
         flash(f'Error al obtener detalle del pedido: {str(e)}', 'danger')
         return redirect(url_for('admin.pedidos'))
 

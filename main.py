@@ -98,6 +98,12 @@ def create_app(config_class=Config):
         def calcular_subtotal(precio, cantidad):
             return round(precio * cantidad, 2)
 
+        def ensure_string_id(id_value):
+            """Convert ObjectId to string if necessary"""
+            if isinstance(id_value, ObjectId):
+                return str(id_value)
+            return id_value if id_value else ""
+
         return dict(
             es_admin=es_admin,
             es_cliente=es_cliente,
@@ -106,6 +112,7 @@ def create_app(config_class=Config):
             formato_fecha=formato_fecha,
             truncate_id=truncate_id,
             calcular_subtotal=calcular_subtotal,
+            ensure_string_id=ensure_string_id,
             datetime=datetime
         )
 

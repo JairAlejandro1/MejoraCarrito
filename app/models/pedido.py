@@ -52,13 +52,41 @@ class Pedido:
             "total": self.calcular_total()
         }
 
+    @staticmethod
+    def _stringify_object_ids(data):
+        """
+        Recursively convert all ObjectId instances to strings in a dictionary or list
+        """
+        if isinstance(data, dict):
+            for key, value in data.items():
+                if isinstance(value, ObjectId):
+                    data[key] = str(value)
+                elif isinstance(value, (dict, list)):
+                    Pedido._stringify_object_ids(value)
+        elif isinstance(data, list):
+            for i, item in enumerate(data):
+                if isinstance(item, ObjectId):
+                    data[i] = str(item)
+                elif isinstance(item, (dict, list)):
+                    Pedido._stringify_object_ids(item)
+        return data
+
     @classmethod
     def obtener_por_cliente(cls, cliente_id):
         return list(get_db().pedidos.find({"cliente_id": cliente_id}).sort("fecha_creacion", -1))
 
     @classmethod
     def obtener_por_id(cls, pedido_id):
-        return get_db().pedidos.find_one({"_id": pedido_id})
+        """
+        Obtener un pedido por su ID asegurando que los ObjectIds son manejados correctamente
+        """
+        pedido = get_db().pedidos.find_one({"_id": pedido_id})
+
+        if pedido:
+            # Convert all ObjectIds to strings for safe handling
+            cls._stringify_object_ids(pedido)
+
+        return pedido
 
     @classmethod
     def obtener_todos(cls):
@@ -117,7 +145,7 @@ class Pedido:
                         producto_id = ObjectId(producto_id)
 
                     cantidad = item['cantidad']
-                    Producto.actualizar_existencias(producto_id, cantidad)  # Aumenta las existencias
+                    Producto.restituir_existencias(producto_id, cantidad)  # Aumenta las existencias
                 except Exception as e:
                     print(f"Error al revertir existencias: {str(e)}")
 
