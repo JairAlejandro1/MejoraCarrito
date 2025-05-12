@@ -28,13 +28,13 @@ def perfil():
     try:
         pedidos = Pedido.obtener_por_cliente(ObjectId(usuario_id))
         if pedidos and isinstance(pedidos, list):
-            # Añadir _id_str para cada pedido
+
             for pedido in pedidos:
                 pedido['_id_str'] = str(pedido['_id'])
             pedidos_recientes = pedidos[:3]  # Limitar a los 3 más recientes
     except Exception as e:
         print(f"Error al obtener pedidos: {str(e)}")
-        # No se muestra error al usuario, simplemente se muestra una lista vacía
+
 
     return render_template('cliente/perfil.html',
                            usuario=usuario,
@@ -59,7 +59,7 @@ def editar_perfil():
         telefono = request.form.get('telefono')
         direccion = request.form.get('direccion')
 
-        # Actualizar usuario directamente en la base de datos
+        # Actualizar usuario directamente en bd
         db = get_db()
         db.usuarios.update_one(
             {"_id": ObjectId(usuario_id)},
@@ -130,10 +130,9 @@ def cambiar_password():
         rol='cliente'
     )
 
-    # Guardar el hash de la nueva contraseña
     password_hash = usuario_nuevo.password
 
-    # Actualizar directamente en la base de datos
+    # Actualizar directamente en la bd
     db = get_db()
     db.usuarios.update_one(
         {"_id": ObjectId(usuario_id)},
@@ -150,7 +149,7 @@ def carrito():
     if 'carrito' not in session:
         session['carrito'] = []
 
-    # Obtener detalles completos de los productos en el carrito
+    # Obtener detalles completos de los productos
     items_carrito = []
     total = 0
 
@@ -178,7 +177,7 @@ def agregar_al_carrito(producto_id):
         flash('Producto no encontrado', 'danger')
         return redirect(url_for('main.productos'))
 
-    # Get and validate the quantity
+
     cantidad = request.form.get('cantidad', '1')
 
     try:
@@ -190,17 +189,17 @@ def agregar_al_carrito(producto_id):
         flash('La cantidad debe ser un número entero', 'warning')
         return redirect(url_for('main.detalle_producto', producto_id=producto_id))
 
-    # Volver a verificar existencias en tiempo real
+
     producto_actualizado = Producto.obtener_por_id(ObjectId(producto_id))
     if cantidad > producto_actualizado['existencias']:
         flash(f'Solo hay {producto_actualizado["existencias"]} unidades disponibles', 'warning')
         return redirect(url_for('main.detalle_producto', producto_id=producto_id))
 
-    # Inicializar carrito si no existe
+
     if 'carrito' not in session:
         session['carrito'] = []
 
-    # Verificar si el producto ya está en el carrito
+
     encontrado = False
     for item in session['carrito']:
         if item['producto_id'] == producto_id:
@@ -308,13 +307,13 @@ def checkout():
             producto_id = ObjectId(item['producto_id'])
             cantidad = item['cantidad']
 
-            # Obtener información del producto para mostrar mensaje de error si es necesario
+            # Obtener información del producto para mostrar mensaje de error
             producto = Producto.obtener_por_id(producto_id)
             if not producto:
                 productos_fallidos.append(f"Producto con ID {item['producto_id']}")
                 continue
 
-            # Verificar y actualizar existencias atómicamente en un solo paso
+            # Verificar y actualizar existencias atómicamente
             if Producto.verificar_y_reservar(producto_id, cantidad):
                 # Si se actualizó correctamente, añadir a productos procesados
                 productos_procesados.append({
@@ -411,7 +410,7 @@ def detalle_pedido(pedido_id):
             flash('Pedido no encontrado', 'danger')
             return redirect(url_for('cliente.mis_pedidos'))
 
-        # Añadir _id_str para el template
+
         pedido['_id_str'] = str(pedido['_id'])
 
         # Convertir cliente_id a string si es ObjectId
@@ -421,7 +420,7 @@ def detalle_pedido(pedido_id):
 
         usuario_id = session.get('usuario_id')
 
-        # Solo comparar IDs si ambos son del mismo tipo (string)
+
         if cliente_id_pedido != usuario_id:
             flash('No tienes permiso para ver este pedido', 'danger')
             return redirect(url_for('cliente.mis_pedidos'))

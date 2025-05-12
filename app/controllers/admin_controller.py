@@ -11,7 +11,7 @@ import uuid
 
 admin_bp = Blueprint('admin', __name__, url_prefix='/admin')
 
-# Definir constantes para la subida de archivos
+
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
 
 
@@ -27,7 +27,7 @@ def dashboard():
     total_clientes = len(list(Usuario.obtener_todos_por_rol('cliente')))
     total_pedidos = len(list(Pedido.obtener_todos()))
 
-    # Obtener productos con bajo inventario para mostrar en el dashboard
+    # Mostrar productos con bajo inventario
     productos_bajo_inventario = []
     for producto in Producto.obtener_todos():
         if producto['existencias'] <= 5:
@@ -36,7 +36,7 @@ def dashboard():
     # Obtener últimos pedidos
     ultimos_pedidos = Pedido.obtener_todos()[:5]
 
-    # Para cada pedido, convertir ObjectId a string para que funcione el filtro truncate
+    # Convertir ObjectId a string para que funcione el filtro truncate
     for pedido in ultimos_pedidos:
         # Convertir _id a string para el template
         pedido['_id_str'] = str(pedido['_id'])
@@ -79,7 +79,7 @@ def nuevo_producto():
         if 'imagen' in request.files:
             archivo = request.files['imagen']
             if archivo.filename != '' and allowed_file(archivo.filename):
-                # Asegurar que el nombre del archivo sea seguro
+                # Asegurar que el nombre archivo
                 filename = secure_filename(archivo.filename)
                 # Generar un nombre único para evitar colisiones
                 filename = f"{str(uuid.uuid4())}_{filename}"
@@ -87,7 +87,6 @@ def nuevo_producto():
                 upload_folder = os.path.join('static', 'uploads', 'productos')
                 os.makedirs(upload_folder, exist_ok=True)
                 archivo.save(os.path.join(upload_folder, filename))
-                # Construir la URL para acceder a la imagen
                 imagen_url = f"/static/uploads/productos/{filename}"
 
         producto = Producto(
@@ -127,15 +126,11 @@ def editar_producto(producto_id):
         if 'imagen' in request.files:
             archivo = request.files['imagen']
             if archivo.filename != '' and allowed_file(archivo.filename):
-                # Asegurar que el nombre del archivo sea seguro
                 filename = secure_filename(archivo.filename)
-                # Generar un nombre único para evitar colisiones
                 filename = f"{str(uuid.uuid4())}_{filename}"
-                # Guardar el archivo
                 upload_folder = os.path.join('static', 'uploads', 'productos')
                 os.makedirs(upload_folder, exist_ok=True)
                 archivo.save(os.path.join(upload_folder, filename))
-                # Construir la URL para acceder a la imagen
                 imagen_url = f"/static/uploads/productos/{filename}"
 
         producto_actualizado = Producto(
@@ -163,7 +158,7 @@ def editar_producto(producto_id):
 @role_required(['admin'])
 def eliminar_producto():
     producto_id = request.form['producto_id']
-    # Implementar eliminación lógica
+    # Implementar eliminación
     Producto.eliminar(ObjectId(producto_id))
     flash('Producto eliminado correctamente', 'success')
     return redirect(url_for('admin.productos'))
@@ -175,7 +170,7 @@ def pedidos():
     try:
         pedidos_data = Pedido.obtener_todos()
 
-        # Para cada pedido, obtener información del cliente y convertir ObjectId a string
+        # Para cada pedido, obtener información del cliente
         for pedido in pedidos_data:
             # Convertir _id a string para el template
             pedido['_id_str'] = str(pedido['_id'])
@@ -200,7 +195,7 @@ def pedidos():
 @role_required(['admin'])
 def detalle_pedido(pedido_id):
     try:
-        # Convert string pedido_id to ObjectId
+
         pedido_id_obj = ObjectId(pedido_id)
         pedido = Pedido.obtener_por_id(pedido_id_obj)
 
@@ -215,16 +210,16 @@ def detalle_pedido(pedido_id):
         if isinstance(pedido.get('cliente_id'), ObjectId):
             pedido['cliente_id'] = str(pedido['cliente_id'])
 
-        # Ensure productos is a list
+
         if 'productos' not in pedido:
             pedido['productos'] = []
 
-        # Process each product in the order
+
         for producto in pedido['productos']:
             if 'producto_id' in producto and isinstance(producto['producto_id'], ObjectId):
                 producto['producto_id'] = str(producto['producto_id'])
 
-        # Get client information
+
         cliente = None
         try:
             cliente_id = pedido['cliente_id']
@@ -239,7 +234,7 @@ def detalle_pedido(pedido_id):
             print(f"Error al obtener cliente para pedido {pedido_id}: {str(e)}")
             cliente = {"nombre": "Cliente desconocido", "email": "No disponible", "telefono": "No disponible"}
 
-        # Debugging - log the structure of pedido to help identify issues
+
         print(f"Pedido structure: {str(pedido)}")
 
         return render_template('admin/detalle_pedido.html',
@@ -248,7 +243,7 @@ def detalle_pedido(pedido_id):
     except Exception as e:
         import traceback
         print(f"Error en detalle_pedido: {str(e)}")
-        print(traceback.format_exc())  # Print full traceback for debugging
+        print(traceback.format_exc())
         flash(f'Error al obtener detalle del pedido: {str(e)}', 'danger')
         return redirect(url_for('admin.pedidos'))
 
@@ -350,8 +345,7 @@ def editar_proveedor(proveedor_id):
 def eliminar_proveedor():
     try:
         proveedor_id = request.form['proveedor_id']
-        # Implementar eliminación lógica
-        # Proveedor.eliminar(ObjectId(proveedor_id))
+        # Implementar eliminación
         flash('Proveedor eliminado correctamente', 'success')
     except Exception as e:
         flash(f'Error al eliminar proveedor: {str(e)}', 'danger')
@@ -395,7 +389,7 @@ def ver_pedidos_cliente(cliente_id):
 
         pedidos = Pedido.obtener_por_cliente(ObjectId(cliente_id))
 
-        # Añadir _id_str para cada pedido
+
         for pedido in pedidos:
             pedido['_id_str'] = str(pedido['_id'])
 

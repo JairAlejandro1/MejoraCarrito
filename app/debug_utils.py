@@ -16,24 +16,24 @@ def setup_debugging(app):
     if not os.path.exists('logs'):
         os.makedirs('logs')
 
-    # Configure file handler
+
     file_handler = logging.FileHandler('logs/app.log')
     file_handler.setLevel(logging.DEBUG)
     file_formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
     file_handler.setFormatter(file_formatter)
 
-    # Configure console handler
+
     console_handler = logging.StreamHandler(sys.stdout)
     console_handler.setLevel(logging.DEBUG)
     console_formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
     console_handler.setFormatter(console_formatter)
 
-    # Add handlers to app logger
+
     app.logger.addHandler(file_handler)
     app.logger.addHandler(console_handler)
     app.logger.setLevel(logging.DEBUG)
 
-    # Add request logger
+
     @app.before_request
     def log_request():
         app.logger.debug(f"Request: {request.method} {request.path}")
@@ -41,19 +41,19 @@ def setup_debugging(app):
         if 'usuario_id' in session:
             app.logger.debug(f"User in session: {session.get('usuario_id')}")
 
-    # Add response logger
+
     @app.after_request
     def log_response(response):
         app.logger.debug(f"Response status: {response.status_code}")
         return response
 
-    # Add error handler
+
     @app.errorhandler(Exception)
     def handle_exception(e):
         app.logger.error(f"Unhandled exception: {str(e)}")
         app.logger.error(traceback.format_exc())
 
-        # Return simple error response instead of trying to render a template
+
         return f"Error: {str(e)}", 500
 
 

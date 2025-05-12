@@ -1,6 +1,5 @@
 from flask import Blueprint, request, session, redirect, url_for, render_template, flash, current_app as app
 from app.models.usuario import Usuario
-from app.services.database import get_db
 from functools import wraps
 
 auth_bp = Blueprint('auth', __name__)
@@ -94,7 +93,7 @@ def registro():
             flash('Este email ya está registrado. Por favor usa otro.', 'danger')
             return render_template('auth/registro.html')
 
-        # Crear nuevo usuario (por defecto como cliente)
+        # Crear nuevo usuario (cliente)
         usuario = Usuario(
             nombre=nombre,
             email=email,

@@ -2,11 +2,8 @@
 from flask import Flask, session, redirect, url_for, render_template, flash, g, request, current_app
 from app.services.database import get_db
 from config.config import Config
-from bson.objectid import ObjectId
 import datetime
 import os
-from werkzeug.utils import secure_filename
-# Remove ngrok related imports
 from app.debug_utils import setup_debugging
 
 # Importar Blueprints
@@ -30,7 +27,7 @@ def create_app(config_class=Config):
     app = Flask(__name__)
     app.config.from_object(config_class)
 
-    # Configurar la carpeta de subida de archivos
+    # Carpeta de subida de archivos
     app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
     os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
@@ -41,11 +38,10 @@ def create_app(config_class=Config):
     app.register_blueprint(cliente_bp)
     app.register_blueprint(proveedor_bp)
 
-    # Inicializar la base de datos
+
     with app.app_context():
         try:
             db = get_db()
-            # Crear índices si es necesario
             db.usuarios.create_index('email', unique=True)
             db.productos.create_index([('nombre', 'text'), ('descripcion', 'text')])
         except Exception as e:
@@ -53,7 +49,7 @@ def create_app(config_class=Config):
 
     @app.errorhandler(Exception)
     def handle_exception(e):
-        # Manejar excepciones genéricas
+
         app.logger.error(f"Uncaught exception: {str(e)}")
         return render_template('error.html',
                                error=str(e),
@@ -72,7 +68,7 @@ def create_app(config_class=Config):
 
     @app.context_processor
     def utility_processor():
-        # Utilidades disponibles en todas las plantillas
+        # Utilidades disponibles de las plantillas
         def es_admin():
             return session.get('rol') == 'admin'
 
@@ -126,7 +122,7 @@ def create_app(config_class=Config):
 if __name__ == '__main__':
     app = create_app()
 
-    # Configurar herramientas de debugging
+
     setup_debugging(app)
 
     # Obtener número de administradores
@@ -138,18 +134,18 @@ if __name__ == '__main__':
         try:
             admin_count = len(list(Usuario.obtener_todos_por_rol('admin')))
         except Exception as e:
-            # Si hay un error al obtener administradores, asumimos que no hay ninguno
+            # Si hay un error al obtener administrador
             print(f"Error al verificar administradores: {str(e)}")
             admin_count = 0
 
-    # Crear enlaces útiles
+
     local_url = "http://127.0.0.1:5000"
 
     print("\n" + "=" * 50)
     print("EcoShop - Sistema de Comercio Electrónico")
     print("=" * 50)
 
-    # Mostrar enlace para crear administrador si no existe ninguno
+    # Mostrar enlace para crear administrado solo si no existe ninguno
     if admin_count == 0:
         print(f"[1] Crear Administrador: {local_url}/auth/setup-admin")
 

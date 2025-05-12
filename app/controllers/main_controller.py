@@ -6,7 +6,7 @@ main_bp = Blueprint('main', __name__)
 
 @main_bp.route('/')
 def index():
-    productos_destacados = Producto.obtener_todos()[:6]  # Limitar a 6 para mostrar en la página principal
+    productos_destacados = Producto.obtener_todos()[:6]
     return render_template('main/index.html',
                           productos=productos_destacados,
                           is_authenticated='usuario_id' in session)
