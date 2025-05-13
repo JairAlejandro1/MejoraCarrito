@@ -28,13 +28,13 @@ def perfil():
     try:
         pedidos = Pedido.obtener_por_cliente(ObjectId(usuario_id))
         if pedidos and isinstance(pedidos, list):
-
+            # Añadir _id_str para cada pedido
             for pedido in pedidos:
                 pedido['_id_str'] = str(pedido['_id'])
             pedidos_recientes = pedidos[:3]  # Limitar a los 3 más recientes
     except Exception as e:
         print(f"Error al obtener pedidos: {str(e)}")
-
+        # No se muestra error al usuario, simplemente se muestra una lista vacía
 
     return render_template('cliente/perfil.html',
                            usuario=usuario,
@@ -59,7 +59,7 @@ def editar_perfil():
         telefono = request.form.get('telefono')
         direccion = request.form.get('direccion')
 
-        # Actualizar usuario directamente en bd
+        # Actualizar usuario directamente en la base de datos
         db = get_db()
         db.usuarios.update_one(
             {"_id": ObjectId(usuario_id)},
@@ -130,9 +130,10 @@ def cambiar_password():
         rol='cliente'
     )
 
+    # Guardar el hash de la nueva contraseña
     password_hash = usuario_nuevo.password
 
-    # Actualizar directamente en la bd
+    # Actualizar directamente en la base de datos
     db = get_db()
     db.usuarios.update_one(
         {"_id": ObjectId(usuario_id)},
@@ -149,7 +150,7 @@ def carrito():
     if 'carrito' not in session:
         session['carrito'] = []
 
-    # Obtener detalles completos de los productos
+    # Obtener detalles completos de los productos en el carrito
     items_carrito = []
     total = 0
 
@@ -177,7 +178,7 @@ def agregar_al_carrito(producto_id):
         flash('Producto no encontrado', 'danger')
         return redirect(url_for('main.productos'))
 
-
+    # Get and validate the quantity
     cantidad = request.form.get('cantidad', '1')
 
     try:
@@ -189,17 +190,17 @@ def agregar_al_carrito(producto_id):
         flash('La cantidad debe ser un número entero', 'warning')
         return redirect(url_for('main.detalle_producto', producto_id=producto_id))
 
-
+    # Volver a verificar existencias en tiempo real
     producto_actualizado = Producto.obtener_por_id(ObjectId(producto_id))
     if cantidad > producto_actualizado['existencias']:
         flash(f'Solo hay {producto_actualizado["existencias"]} unidades disponibles', 'warning')
         return redirect(url_for('main.detalle_producto', producto_id=producto_id))
 
-
+    # Inicializar carrito si no existe
     if 'carrito' not in session:
         session['carrito'] = []
 
-
+    # Verificar si el producto ya está en el carrito
     encontrado = False
     for item in session['carrito']:
         if item['producto_id'] == producto_id:
@@ -277,8 +278,18 @@ def checkout():
         flash('Tu carrito está vacío', 'warning')
         return redirect(url_for('cliente.carrito'))
 
+    usuario_id = session.get('usuario_id')
+
+    # Verificar que el usuario tenga un campo de tarjetas inicializado
+    if request.method == 'GET':
+        # Asegurarse de que el usuario tenga un campo de tarjetas
+        db = get_db()
+        db.usuarios.update_one(
+            {"_id": ObjectId(usuario_id), "tarjetas": {"$exists": False}},
+            {"$set": {"tarjetas": []}}
+        )
+
     if request.method == 'POST':
-        usuario_id = session.get('usuario_id')
         direccion_entrega = request.form.get('direccion_entrega')
         metodo_pago = request.form.get('metodo_pago')
 
@@ -289,13 +300,44 @@ def checkout():
 
         # Verificar campos de tarjeta si el método es tarjeta
         if metodo_pago == 'tarjeta':
-            card_number = request.form.get('card_number')
-            card_expiry = request.form.get('card_expiry')
-            card_cvv = request.form.get('card_cvv')
+            tarjeta_guardada = request.form.get('tarjeta_guardada')
 
-            if not card_number or not card_expiry or not card_cvv:
-                flash('Por favor completa todos los campos de la tarjeta', 'danger')
-                return redirect(url_for('cliente.checkout'))
+            # Si el usuario seleccionó una tarjeta guardada
+            if tarjeta_guardada and tarjeta_guardada != 'nueva':
+                usuario = Usuario.obtener_por_id(ObjectId(usuario_id))
+                if usuario and 'tarjetas' in usuario and len(usuario['tarjetas']) > int(tarjeta_guardada):
+                    # Usar tarjeta guardada
+                    print(f"Usando tarjeta guardada: {tarjeta_guardada}")
+                    # No necesitamos hacer nada más aquí - solo confirmamos que es válida
+                else:
+                    flash('Tarjeta seleccionada no válida', 'danger')
+                    return redirect(url_for('cliente.checkout'))
+            else:
+                # Nueva tarjeta
+                card_number = request.form.get('card_number')
+                card_expiry = request.form.get('card_expiry')
+                card_cvv = request.form.get('card_cvv')
+
+                if not card_number or not card_expiry or not card_cvv:
+                    flash('Por favor completa todos los campos de la tarjeta', 'danger')
+                    return redirect(url_for('cliente.checkout'))
+
+                # Eliminar espacios del número de tarjeta
+                card_number = card_number.replace(' ', '')
+
+                # Guardar tarjeta si el usuario lo solicita
+                if request.form.get('guardar_tarjeta') == '1':
+                    try:
+                        tarjeta_data = {
+                            "card_number": card_number,
+                            "card_expiry": card_expiry,
+                            "card_cvv": card_cvv
+                        }
+                        Usuario.guardar_tarjeta(ObjectId(usuario_id), tarjeta_data)
+                        flash('Tarjeta guardada correctamente para futuras compras', 'success')
+                    except Exception as e:
+                        print(f"Error al guardar tarjeta: {str(e)}")
+                        # Continuamos con el proceso aunque falle el guardado
 
         # Lista para productos que se procesaron correctamente
         productos_procesados = []
@@ -307,13 +349,13 @@ def checkout():
             producto_id = ObjectId(item['producto_id'])
             cantidad = item['cantidad']
 
-            # Obtener información del producto para mostrar mensaje de error
+            # Obtener información del producto para mostrar mensaje de error si es necesario
             producto = Producto.obtener_por_id(producto_id)
             if not producto:
                 productos_fallidos.append(f"Producto con ID {item['producto_id']}")
                 continue
 
-            # Verificar y actualizar existencias atómicamente
+            # Verificar y actualizar existencias atómicamente en un solo paso
             if Producto.verificar_y_reservar(producto_id, cantidad):
                 # Si se actualizó correctamente, añadir a productos procesados
                 productos_procesados.append({
@@ -372,7 +414,6 @@ def checkout():
             })
             total += subtotal
 
-    usuario_id = session.get('usuario_id')
     usuario = Usuario.obtener_por_id(ObjectId(usuario_id))
 
     return render_template('cliente/checkout.html',
@@ -410,7 +451,7 @@ def detalle_pedido(pedido_id):
             flash('Pedido no encontrado', 'danger')
             return redirect(url_for('cliente.mis_pedidos'))
 
-
+        # Añadir _id_str para el template
         pedido['_id_str'] = str(pedido['_id'])
 
         # Convertir cliente_id a string si es ObjectId
@@ -420,7 +461,7 @@ def detalle_pedido(pedido_id):
 
         usuario_id = session.get('usuario_id')
 
-
+        # Solo comparar IDs si ambos son del mismo tipo (string)
         if cliente_id_pedido != usuario_id:
             flash('No tienes permiso para ver este pedido', 'danger')
             return redirect(url_for('cliente.mis_pedidos'))
@@ -469,3 +510,44 @@ def cancelar_pedido(pedido_id):
         print(f"Error en cancelar_pedido: {str(e)}")
         flash(f'Error al cancelar el pedido: {str(e)}', 'danger')
         return redirect(url_for('cliente.mis_pedidos'))
+
+
+@cliente_bp.route('/eliminar_tarjeta', methods=['POST'])
+@role_required(['cliente'])
+def eliminar_tarjeta():
+    usuario_id = session.get('usuario_id')
+    if not usuario_id:
+        flash('Sesión expirada. Por favor inicia sesión nuevamente.', 'warning')
+        return redirect(url_for('auth.login'))
+
+    tarjeta_index = request.form.get('tarjeta_index')
+    if tarjeta_index is None:
+        flash('Datos inválidos', 'danger')
+        return redirect(url_for('cliente.perfil'))
+
+    try:
+        tarjeta_index = int(tarjeta_index)
+
+        # Obtener usuario y verificar que tenga tarjetas
+        usuario = Usuario.obtener_por_id(ObjectId(usuario_id))
+        if not usuario or 'tarjetas' not in usuario or len(usuario['tarjetas']) <= tarjeta_index:
+            flash('Tarjeta no encontrada', 'danger')
+            return redirect(url_for('cliente.perfil'))
+
+        # Eliminar la tarjeta usando la operación $pull de MongoDB
+        db = get_db()
+        # Primero obtenemos la tarjeta que vamos a eliminar
+        tarjeta_a_eliminar = usuario['tarjetas'][tarjeta_index]
+
+        # Eliminamos la tarjeta específica usando $pull con un filtro
+        db.usuarios.update_one(
+            {"_id": ObjectId(usuario_id)},
+            {"$pull": {"tarjetas": tarjeta_a_eliminar}}
+        )
+
+        flash('Tarjeta eliminada correctamente', 'success')
+    except Exception as e:
+        print(f"Error al eliminar tarjeta: {str(e)}")
+        flash('Error al eliminar la tarjeta', 'danger')
+
+    return redirect(url_for('cliente.perfil'))

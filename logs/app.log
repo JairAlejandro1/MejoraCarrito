@@ -17450,3 +17450,2084 @@ pymongo.errors.ServerSelectionTimeoutError: ac-hmkso1o-shard-00-02.h70d2gu.mongo
 2025-05-08 16:15:12,039 - main - DEBUG - Request: GET /favicon.ico
 2025-05-08 16:15:12,040 - main - DEBUG - Request args: ImmutableMultiDict([])
 2025-05-08 16:15:12,040 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 17:58:15,317 - main - DEBUG - Request: GET /
+2025-05-12 17:58:15,319 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 17:58:15,669 - main - DEBUG - Response status: 200
+2025-05-12 17:58:15,758 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-12 17:58:15,762 - main - DEBUG - Request: GET /static/img/ImagenEcoShop.jpg
+2025-05-12 17:58:15,762 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 17:58:15,767 - main - DEBUG - Request: GET /static/uploads/productos/f46602be-fcf4-4a2e-803d-6e67c21bf80e_pepsi_black.png
+2025-05-12 17:58:15,768 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 17:58:15,769 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 17:58:15,812 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-12 17:58:15,812 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 17:58:15,853 - main - DEBUG - Request: GET /static/img/producto-default.jpg
+2025-05-12 17:58:15,862 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 17:58:15,907 - main - DEBUG - Request: GET /static/uploads/productos/1a2b4193-f045-44c3-94f0-e778f522d4aa_VASO-CAFE-ECOLOGICO-fibra-de-agave-PNG-1.png
+2025-05-12 17:58:15,908 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 17:58:16,477 - main - DEBUG - Response status: 304
+2025-05-12 17:58:16,514 - main - DEBUG - Response status: 304
+2025-05-12 17:58:16,538 - main - DEBUG - Response status: 304
+2025-05-12 17:58:16,579 - main - DEBUG - Response status: 304
+2025-05-12 17:58:16,592 - main - DEBUG - Response status: 304
+2025-05-12 17:58:16,611 - main - DEBUG - Response status: 304
+2025-05-12 17:58:16,646 - main - DEBUG - Request: GET /favicon.ico
+2025-05-12 17:58:16,646 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 17:58:18,251 - main - DEBUG - Request: GET /login
+2025-05-12 17:58:18,251 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 17:58:18,270 - main - DEBUG - Response status: 200
+2025-05-12 17:58:18,303 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-12 17:58:18,304 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 17:58:18,305 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-12 17:58:18,305 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 17:58:18,306 - main - DEBUG - Response status: 304
+2025-05-12 17:58:18,307 - main - DEBUG - Response status: 304
+2025-05-12 17:58:18,792 - main - DEBUG - Request: GET /favicon.ico
+2025-05-12 17:58:18,793 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 17:58:24,036 - main - DEBUG - Request: POST /login
+2025-05-12 17:58:24,036 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 17:58:24,936 - main - DEBUG - Response status: 200
+2025-05-12 17:58:24,969 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-12 17:58:24,969 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 17:58:24,970 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-12 17:58:24,970 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 17:58:24,971 - main - DEBUG - Response status: 304
+2025-05-12 17:58:24,972 - main - DEBUG - Response status: 304
+2025-05-12 17:58:25,022 - main - DEBUG - Request: GET /favicon.ico
+2025-05-12 17:58:25,023 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 17:58:31,307 - main - DEBUG - Request: POST /login
+2025-05-12 17:58:31,308 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 17:58:32,067 - main - DEBUG - Response status: 302
+2025-05-12 17:58:32,075 - main - DEBUG - Request: GET /cliente/perfil
+2025-05-12 17:58:32,075 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 17:58:32,075 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 17:58:32,867 - main - DEBUG - Response status: 200
+2025-05-12 17:58:32,894 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-12 17:58:32,895 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 17:58:32,895 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 17:58:32,899 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-12 17:58:32,900 - main - DEBUG - Response status: 304
+2025-05-12 17:58:32,900 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 17:58:32,901 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 17:58:32,904 - main - DEBUG - Response status: 304
+2025-05-12 17:58:32,950 - main - DEBUG - Request: GET /favicon.ico
+2025-05-12 17:58:32,951 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 17:58:32,951 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 17:58:41,388 - main - DEBUG - Request: GET /productos
+2025-05-12 17:58:41,388 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 17:58:41,388 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 17:58:41,669 - main - DEBUG - Response status: 200
+2025-05-12 17:58:41,711 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-12 17:58:41,711 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 17:58:41,712 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 17:58:41,713 - main - DEBUG - Response status: 304
+2025-05-12 17:58:41,717 - main - DEBUG - Request: GET /static/uploads/productos/1a2b4193-f045-44c3-94f0-e778f522d4aa_VASO-CAFE-ECOLOGICO-fibra-de-agave-PNG-1.png
+2025-05-12 17:58:41,717 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 17:58:41,718 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 17:58:41,718 - main - DEBUG - Request: GET /static/uploads/productos/f46602be-fcf4-4a2e-803d-6e67c21bf80e_pepsi_black.png
+2025-05-12 17:58:41,720 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 17:58:41,720 - main - DEBUG - Request: GET /static/img/producto-default.jpg
+2025-05-12 17:58:41,720 - main - DEBUG - Response status: 304
+2025-05-12 17:58:41,721 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 17:58:41,721 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 17:58:41,722 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-12 17:58:41,723 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 17:58:41,724 - main - DEBUG - Response status: 304
+2025-05-12 17:58:41,725 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 17:58:41,728 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 17:58:41,732 - main - DEBUG - Response status: 304
+2025-05-12 17:58:41,733 - main - DEBUG - Response status: 304
+2025-05-12 17:58:41,999 - main - DEBUG - Request: GET /favicon.ico
+2025-05-12 17:58:42,000 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 17:58:42,000 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 17:58:45,082 - main - DEBUG - Request: GET /producto/68195747d18576e9b2bd4479
+2025-05-12 17:58:45,082 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 17:58:45,083 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 17:58:45,681 - main - DEBUG - Response status: 200
+2025-05-12 17:58:45,746 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-12 17:58:45,748 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 17:58:45,752 - main - DEBUG - Request: GET /static/uploads/productos/1a2b4193-f045-44c3-94f0-e778f522d4aa_VASO-CAFE-ECOLOGICO-fibra-de-agave-PNG-1.png
+2025-05-12 17:58:45,752 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 17:58:45,754 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 17:58:45,757 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-12 17:58:45,758 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 17:58:45,759 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 17:58:45,761 - main - DEBUG - Response status: 304
+2025-05-12 17:58:45,761 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 17:58:45,765 - main - DEBUG - Response status: 304
+2025-05-12 17:58:45,768 - main - DEBUG - Response status: 304
+2025-05-12 17:58:45,824 - main - DEBUG - Request: GET /favicon.ico
+2025-05-12 17:58:45,825 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 17:58:45,826 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 17:58:48,262 - main - DEBUG - Request: POST /cliente/agregar_al_carrito/68195747d18576e9b2bd4479
+2025-05-12 17:58:48,263 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 17:58:48,263 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 17:58:49,470 - main - DEBUG - Response status: 302
+2025-05-12 17:58:49,482 - main - DEBUG - Request: GET /cliente/carrito
+2025-05-12 17:58:49,482 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 17:58:49,483 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 17:58:50,039 - main - DEBUG - Response status: 200
+2025-05-12 17:58:50,109 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-12 17:58:50,110 - main - DEBUG - Request: GET /static/uploads/productos/1a2b4193-f045-44c3-94f0-e778f522d4aa_VASO-CAFE-ECOLOGICO-fibra-de-agave-PNG-1.png
+2025-05-12 17:58:50,110 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 17:58:50,112 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 17:58:50,112 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-12 17:58:50,112 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 17:58:50,113 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 17:58:50,113 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 17:58:50,114 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 17:58:50,116 - main - DEBUG - Response status: 304
+2025-05-12 17:58:50,117 - main - DEBUG - Response status: 304
+2025-05-12 17:58:50,118 - main - DEBUG - Response status: 304
+2025-05-12 17:58:50,339 - main - DEBUG - Request: GET /favicon.ico
+2025-05-12 17:58:50,340 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 17:58:50,340 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 17:58:54,379 - main - DEBUG - Request: GET /cliente/checkout
+2025-05-12 17:58:54,379 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 17:58:54,380 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 17:58:55,454 - main - DEBUG - Response status: 200
+2025-05-12 17:58:55,524 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-12 17:58:55,526 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-12 17:58:55,526 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 17:58:55,526 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 17:58:55,527 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 17:58:55,527 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 17:58:55,528 - main - DEBUG - Response status: 304
+2025-05-12 17:58:55,529 - main - DEBUG - Response status: 304
+2025-05-12 17:58:56,150 - main - DEBUG - Request: GET /favicon.ico
+2025-05-12 17:58:56,151 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 17:58:56,151 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 17:59:15,746 - main - DEBUG - Request: POST /cliente/checkout
+2025-05-12 17:59:15,747 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 17:59:15,747 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 17:59:17,334 - main - DEBUG - Response status: 302
+2025-05-12 17:59:17,347 - main - DEBUG - Request: GET /cliente/mis_pedidos
+2025-05-12 17:59:17,347 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 17:59:17,347 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 17:59:17,830 - main - DEBUG - Response status: 200
+2025-05-12 17:59:17,890 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-12 17:59:17,891 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 17:59:17,892 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 17:59:17,892 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-12 17:59:17,892 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 17:59:17,893 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 17:59:17,893 - main - DEBUG - Response status: 304
+2025-05-12 17:59:17,894 - main - DEBUG - Response status: 304
+2025-05-12 17:59:18,385 - main - DEBUG - Request: GET /favicon.ico
+2025-05-12 17:59:18,385 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 17:59:18,386 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 17:59:20,810 - main - DEBUG - Request: GET /productos
+2025-05-12 17:59:20,810 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 17:59:20,811 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 17:59:21,533 - main - DEBUG - Response status: 200
+2025-05-12 17:59:21,615 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-12 17:59:21,617 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 17:59:21,621 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 17:59:21,621 - main - DEBUG - Request: GET /static/uploads/productos/f46602be-fcf4-4a2e-803d-6e67c21bf80e_pepsi_black.png
+2025-05-12 17:59:21,622 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 17:59:21,622 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 17:59:21,624 - main - DEBUG - Response status: 304
+2025-05-12 17:59:21,624 - main - DEBUG - Request: GET /static/uploads/productos/1a2b4193-f045-44c3-94f0-e778f522d4aa_VASO-CAFE-ECOLOGICO-fibra-de-agave-PNG-1.png
+2025-05-12 17:59:21,625 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 17:59:21,625 - main - DEBUG - Response status: 304
+2025-05-12 17:59:21,626 - main - DEBUG - Request: GET /static/img/producto-default.jpg
+2025-05-12 17:59:21,627 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 17:59:21,629 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-12 17:59:21,631 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 17:59:21,631 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 17:59:21,632 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 17:59:21,632 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 17:59:21,633 - main - DEBUG - Response status: 304
+2025-05-12 17:59:21,634 - main - DEBUG - Response status: 304
+2025-05-12 17:59:21,637 - main - DEBUG - Response status: 304
+2025-05-12 17:59:21,901 - main - DEBUG - Request: GET /favicon.ico
+2025-05-12 17:59:21,901 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 17:59:21,903 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 17:59:22,827 - main - DEBUG - Request: GET /producto/68195747d18576e9b2bd4479
+2025-05-12 17:59:22,827 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 17:59:22,827 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 17:59:23,648 - main - DEBUG - Response status: 200
+2025-05-12 17:59:23,728 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-12 17:59:23,728 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 17:59:23,729 - main - DEBUG - Request: GET /static/uploads/productos/1a2b4193-f045-44c3-94f0-e778f522d4aa_VASO-CAFE-ECOLOGICO-fibra-de-agave-PNG-1.png
+2025-05-12 17:59:23,729 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 17:59:23,730 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-12 17:59:23,730 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 17:59:23,730 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 17:59:23,731 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 17:59:23,731 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 17:59:23,732 - main - DEBUG - Response status: 304
+2025-05-12 17:59:23,732 - main - DEBUG - Response status: 304
+2025-05-12 17:59:23,734 - main - DEBUG - Response status: 304
+2025-05-12 17:59:23,941 - main - DEBUG - Request: GET /favicon.ico
+2025-05-12 17:59:23,941 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 17:59:23,941 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 17:59:24,486 - main - DEBUG - Request: POST /cliente/agregar_al_carrito/68195747d18576e9b2bd4479
+2025-05-12 17:59:24,486 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 17:59:24,487 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 17:59:25,626 - main - DEBUG - Response status: 302
+2025-05-12 17:59:25,638 - main - DEBUG - Request: GET /cliente/carrito
+2025-05-12 17:59:25,639 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 17:59:25,639 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 17:59:25,875 - main - DEBUG - Response status: 200
+2025-05-12 17:59:25,961 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-12 17:59:25,963 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 17:59:25,963 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 17:59:25,966 - main - DEBUG - Request: GET /static/uploads/productos/1a2b4193-f045-44c3-94f0-e778f522d4aa_VASO-CAFE-ECOLOGICO-fibra-de-agave-PNG-1.png
+2025-05-12 17:59:25,967 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 17:59:25,968 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 17:59:25,971 - main - DEBUG - Response status: 304
+2025-05-12 17:59:25,973 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-12 17:59:25,974 - main - DEBUG - Response status: 304
+2025-05-12 17:59:25,974 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 17:59:25,976 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 17:59:25,979 - main - DEBUG - Response status: 304
+2025-05-12 17:59:26,002 - main - DEBUG - Request: GET /favicon.ico
+2025-05-12 17:59:26,003 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 17:59:26,003 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 17:59:29,548 - main - DEBUG - Request: GET /cliente/checkout
+2025-05-12 17:59:29,549 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 17:59:29,549 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 17:59:30,626 - main - DEBUG - Response status: 200
+2025-05-12 17:59:30,699 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-12 17:59:30,701 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 17:59:30,706 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-12 17:59:30,707 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 17:59:30,708 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 17:59:30,709 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 17:59:30,711 - main - DEBUG - Response status: 304
+2025-05-12 17:59:30,712 - main - DEBUG - Response status: 304
+2025-05-12 17:59:30,743 - main - DEBUG - Request: GET /favicon.ico
+2025-05-12 17:59:30,744 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 17:59:30,744 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 17:59:51,808 - main - DEBUG - Request: GET /cliente/checkout
+2025-05-12 17:59:51,809 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 17:59:51,809 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 17:59:52,643 - main - DEBUG - Response status: 200
+2025-05-12 17:59:52,680 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-12 17:59:52,680 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 17:59:52,680 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 17:59:52,683 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-12 17:59:52,684 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 17:59:52,684 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 17:59:52,851 - main - DEBUG - Response status: 304
+2025-05-12 17:59:52,891 - main - DEBUG - Response status: 304
+2025-05-12 17:59:53,110 - main - DEBUG - Request: GET /favicon.ico
+2025-05-12 17:59:53,111 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 17:59:53,111 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 17:59:55,492 - main - DEBUG - Request: GET /cliente/checkout
+2025-05-12 17:59:55,493 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 17:59:55,493 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 17:59:56,458 - main - DEBUG - Response status: 200
+2025-05-12 17:59:56,526 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-12 17:59:56,527 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 17:59:56,527 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 17:59:56,529 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-12 17:59:56,530 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 17:59:56,531 - main - DEBUG - Response status: 304
+2025-05-12 17:59:56,531 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 17:59:56,534 - main - DEBUG - Response status: 304
+2025-05-12 17:59:56,559 - main - DEBUG - Request: GET /favicon.ico
+2025-05-12 17:59:56,560 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 17:59:56,560 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 17:59:59,381 - main - DEBUG - Request: GET /cliente/carrito
+2025-05-12 17:59:59,382 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 17:59:59,382 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 17:59:59,854 - main - DEBUG - Response status: 200
+2025-05-12 17:59:59,918 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-12 17:59:59,919 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 17:59:59,919 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 17:59:59,922 - main - DEBUG - Request: GET /static/uploads/productos/1a2b4193-f045-44c3-94f0-e778f522d4aa_VASO-CAFE-ECOLOGICO-fibra-de-agave-PNG-1.png
+2025-05-12 17:59:59,922 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 17:59:59,924 - main - DEBUG - Response status: 304
+2025-05-12 17:59:59,926 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-12 17:59:59,926 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 17:59:59,928 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 17:59:59,930 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 17:59:59,932 - main - DEBUG - Response status: 304
+2025-05-12 17:59:59,934 - main - DEBUG - Response status: 304
+2025-05-12 18:00:00,186 - main - DEBUG - Request: GET /favicon.ico
+2025-05-12 18:00:00,186 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:00:00,186 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:00:01,142 - main - DEBUG - Request: GET /cliente/checkout
+2025-05-12 18:00:01,142 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:00:01,142 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:00:02,083 - main - DEBUG - Response status: 200
+2025-05-12 18:00:02,149 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-12 18:00:02,150 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:00:02,151 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:00:02,153 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-12 18:00:02,153 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:00:02,154 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:00:02,155 - main - DEBUG - Response status: 304
+2025-05-12 18:00:02,156 - main - DEBUG - Response status: 304
+2025-05-12 18:00:02,184 - main - DEBUG - Request: GET /favicon.ico
+2025-05-12 18:00:02,184 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:00:02,185 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:00:17,326 - main - DEBUG - Request: POST /cliente/checkout
+2025-05-12 18:00:17,327 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:00:17,328 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:00:18,571 - main - DEBUG - Response status: 302
+2025-05-12 18:00:18,587 - main - DEBUG - Request: GET /cliente/mis_pedidos
+2025-05-12 18:00:18,588 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:00:18,588 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:00:19,037 - main - DEBUG - Response status: 200
+2025-05-12 18:00:19,098 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-12 18:00:19,098 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:00:19,098 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:00:19,100 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-12 18:00:19,100 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:00:19,101 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:00:19,102 - main - DEBUG - Response status: 304
+2025-05-12 18:00:19,104 - main - DEBUG - Response status: 304
+2025-05-12 18:00:19,628 - main - DEBUG - Request: GET /favicon.ico
+2025-05-12 18:00:19,629 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:00:19,629 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:00:21,695 - main - DEBUG - Request: GET /cliente/pedido/68228b9157420219b1f03e3c
+2025-05-12 18:00:21,696 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:00:21,696 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:00:22,427 - main - DEBUG - Response status: 200
+2025-05-12 18:00:22,477 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-12 18:00:22,478 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:00:22,479 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:00:22,480 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-12 18:00:22,481 - main - DEBUG - Response status: 304
+2025-05-12 18:00:22,481 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:00:22,482 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:00:22,485 - main - DEBUG - Response status: 304
+2025-05-12 18:00:22,546 - main - DEBUG - Request: GET /favicon.ico
+2025-05-12 18:00:22,546 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:00:22,547 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:00:24,161 - main - DEBUG - Request: POST /cliente/pedido/cancelar/68228b9157420219b1f03e3c
+2025-05-12 18:00:24,161 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:00:24,162 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:00:26,197 - main - DEBUG - Response status: 302
+2025-05-12 18:00:26,209 - main - DEBUG - Request: GET /cliente/mis_pedidos
+2025-05-12 18:00:26,210 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:00:26,210 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:00:26,889 - main - DEBUG - Response status: 200
+2025-05-12 18:00:26,970 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-12 18:00:26,971 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:00:26,971 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:00:26,972 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-12 18:00:26,972 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:00:26,973 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:00:26,973 - main - DEBUG - Response status: 304
+2025-05-12 18:00:26,975 - main - DEBUG - Response status: 304
+2025-05-12 18:00:27,030 - main - DEBUG - Request: GET /favicon.ico
+2025-05-12 18:00:27,031 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:00:27,031 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:00:28,382 - main - DEBUG - Request: GET /cliente/pedido/68228b549ec3f968c4a9e2d6
+2025-05-12 18:00:28,382 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:00:28,382 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:00:29,036 - main - DEBUG - Response status: 200
+2025-05-12 18:00:29,113 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-12 18:00:29,113 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:00:29,114 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:00:29,115 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-12 18:00:29,115 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:00:29,116 - main - DEBUG - Response status: 304
+2025-05-12 18:00:29,116 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:00:29,117 - main - DEBUG - Response status: 304
+2025-05-12 18:00:29,146 - main - DEBUG - Request: GET /favicon.ico
+2025-05-12 18:00:29,146 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:00:29,146 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:00:30,644 - main - DEBUG - Request: POST /cliente/pedido/cancelar/68228b549ec3f968c4a9e2d6
+2025-05-12 18:00:30,644 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:00:30,644 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:00:32,908 - main - DEBUG - Response status: 302
+2025-05-12 18:00:32,919 - main - DEBUG - Request: GET /cliente/mis_pedidos
+2025-05-12 18:00:32,920 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:00:32,920 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:00:33,732 - main - DEBUG - Response status: 200
+2025-05-12 18:00:33,804 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-12 18:00:33,805 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:00:33,806 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:00:33,807 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-12 18:00:33,808 - main - DEBUG - Response status: 304
+2025-05-12 18:00:33,808 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:00:33,808 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:00:33,811 - main - DEBUG - Response status: 304
+2025-05-12 18:00:34,164 - main - DEBUG - Request: GET /favicon.ico
+2025-05-12 18:00:34,164 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:00:34,164 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:00:38,367 - main - DEBUG - Request: GET /productos
+2025-05-12 18:00:38,367 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:00:38,368 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:00:39,193 - main - DEBUG - Response status: 200
+2025-05-12 18:00:39,248 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-12 18:00:39,248 - main - DEBUG - Request: GET /static/uploads/productos/f46602be-fcf4-4a2e-803d-6e67c21bf80e_pepsi_black.png
+2025-05-12 18:00:39,249 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:00:39,250 - main - DEBUG - Request: GET /static/uploads/productos/1a2b4193-f045-44c3-94f0-e778f522d4aa_VASO-CAFE-ECOLOGICO-fibra-de-agave-PNG-1.png
+2025-05-12 18:00:39,250 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:00:39,251 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:00:39,251 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:00:39,251 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:00:39,252 - main - DEBUG - Request: GET /static/img/producto-default.jpg
+2025-05-12 18:00:39,254 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:00:39,255 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-12 18:00:39,256 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:00:39,256 - main - DEBUG - Response status: 304
+2025-05-12 18:00:39,256 - main - DEBUG - Response status: 304
+2025-05-12 18:00:39,256 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:00:39,257 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:00:39,257 - main - DEBUG - Response status: 304
+2025-05-12 18:00:39,258 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:00:39,263 - main - DEBUG - Response status: 304
+2025-05-12 18:00:39,265 - main - DEBUG - Response status: 304
+2025-05-12 18:00:39,559 - main - DEBUG - Request: GET /favicon.ico
+2025-05-12 18:00:39,559 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:00:39,559 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:08:41,199 - main - DEBUG - Request: GET /productos
+2025-05-12 18:08:41,199 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:08:41,200 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:08:41,748 - main - DEBUG - Response status: 200
+2025-05-12 18:08:41,814 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-12 18:08:41,817 - main - DEBUG - Request: GET /static/uploads/productos/f46602be-fcf4-4a2e-803d-6e67c21bf80e_pepsi_black.png
+2025-05-12 18:08:41,817 - main - DEBUG - Request: GET /static/uploads/productos/1a2b4193-f045-44c3-94f0-e778f522d4aa_VASO-CAFE-ECOLOGICO-fibra-de-agave-PNG-1.png
+2025-05-12 18:08:41,818 - main - DEBUG - Request: GET /static/img/producto-default.jpg
+2025-05-12 18:08:41,819 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:08:41,819 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:08:41,819 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:08:41,821 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-12 18:08:41,821 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:08:41,821 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:08:41,821 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:08:41,821 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:08:41,822 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:08:41,822 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:08:41,823 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:08:42,422 - main - DEBUG - Response status: 304
+2025-05-12 18:08:42,457 - main - DEBUG - Response status: 304
+2025-05-12 18:08:42,540 - main - DEBUG - Response status: 304
+2025-05-12 18:08:42,589 - main - DEBUG - Response status: 304
+2025-05-12 18:08:42,600 - main - DEBUG - Response status: 304
+2025-05-12 18:08:43,310 - main - DEBUG - Request: GET /favicon.ico
+2025-05-12 18:08:43,311 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:08:43,311 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:08:46,005 - main - DEBUG - Request: GET /producto/68195747d18576e9b2bd4479
+2025-05-12 18:08:46,005 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:08:46,005 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:08:46,525 - main - DEBUG - Response status: 200
+2025-05-12 18:08:46,596 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-12 18:08:46,597 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:08:46,597 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:08:46,599 - main - DEBUG - Request: GET /static/uploads/productos/1a2b4193-f045-44c3-94f0-e778f522d4aa_VASO-CAFE-ECOLOGICO-fibra-de-agave-PNG-1.png
+2025-05-12 18:08:46,601 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:08:46,604 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-12 18:08:46,605 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:08:46,606 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:08:46,606 - main - DEBUG - Response status: 304
+2025-05-12 18:08:46,607 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:08:46,610 - main - DEBUG - Response status: 304
+2025-05-12 18:08:46,612 - main - DEBUG - Response status: 304
+2025-05-12 18:08:46,661 - main - DEBUG - Request: GET /favicon.ico
+2025-05-12 18:08:46,661 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:08:46,661 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:08:47,683 - main - DEBUG - Request: POST /cliente/agregar_al_carrito/68195747d18576e9b2bd4479
+2025-05-12 18:08:47,683 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:08:47,683 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:08:48,658 - main - DEBUG - Response status: 302
+2025-05-12 18:08:48,669 - main - DEBUG - Request: GET /cliente/carrito
+2025-05-12 18:08:48,669 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:08:48,669 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:08:49,081 - main - DEBUG - Response status: 200
+2025-05-12 18:08:49,143 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-12 18:08:49,144 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:08:49,145 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:08:49,147 - main - DEBUG - Request: GET /static/uploads/productos/1a2b4193-f045-44c3-94f0-e778f522d4aa_VASO-CAFE-ECOLOGICO-fibra-de-agave-PNG-1.png
+2025-05-12 18:08:49,148 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-12 18:08:49,149 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:08:49,149 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:08:49,149 - main - DEBUG - Response status: 304
+2025-05-12 18:08:49,149 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:08:49,150 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:08:49,152 - main - DEBUG - Response status: 304
+2025-05-12 18:08:49,153 - main - DEBUG - Response status: 304
+2025-05-12 18:08:49,176 - main - DEBUG - Request: GET /favicon.ico
+2025-05-12 18:08:49,177 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:08:49,177 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:08:51,702 - main - DEBUG - Request: GET /cliente/checkout
+2025-05-12 18:08:51,703 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:08:51,703 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:08:52,549 - main - DEBUG - Response status: 200
+2025-05-12 18:08:52,588 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-12 18:08:52,589 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:08:52,590 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:08:52,591 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-12 18:08:52,592 - main - DEBUG - Response status: 304
+2025-05-12 18:08:52,593 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:08:52,594 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:08:52,597 - main - DEBUG - Response status: 304
+2025-05-12 18:08:52,627 - main - DEBUG - Request: GET /favicon.ico
+2025-05-12 18:08:52,627 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:08:52,628 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:09:15,183 - main - DEBUG - Request: POST /cliente/checkout
+2025-05-12 18:09:15,184 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:09:15,184 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:09:16,544 - main - DEBUG - Response status: 302
+2025-05-12 18:09:16,559 - main - DEBUG - Request: GET /cliente/mis_pedidos
+2025-05-12 18:09:16,560 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:09:16,560 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:09:16,804 - main - DEBUG - Response status: 200
+2025-05-12 18:09:16,862 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-12 18:09:16,862 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:09:16,863 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-12 18:09:16,864 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:09:16,864 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:09:16,865 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:09:16,867 - main - DEBUG - Response status: 304
+2025-05-12 18:09:16,868 - main - DEBUG - Response status: 304
+2025-05-12 18:09:16,899 - main - DEBUG - Request: GET /favicon.ico
+2025-05-12 18:09:16,900 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:09:16,900 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:09:20,605 - main - DEBUG - Request: GET /productos
+2025-05-12 18:09:20,605 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:09:20,605 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:09:21,146 - main - DEBUG - Response status: 200
+2025-05-12 18:09:21,224 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-12 18:09:21,230 - main - DEBUG - Request: GET /static/uploads/productos/f46602be-fcf4-4a2e-803d-6e67c21bf80e_pepsi_black.png
+2025-05-12 18:09:21,230 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:09:21,233 - main - DEBUG - Request: GET /static/uploads/productos/1a2b4193-f045-44c3-94f0-e778f522d4aa_VASO-CAFE-ECOLOGICO-fibra-de-agave-PNG-1.png
+2025-05-12 18:09:21,233 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:09:21,234 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:09:21,235 - main - DEBUG - Request: GET /static/img/producto-default.jpg
+2025-05-12 18:09:21,236 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:09:21,237 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:09:21,238 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-12 18:09:21,238 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:09:21,239 - main - DEBUG - Response status: 304
+2025-05-12 18:09:21,239 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:09:21,239 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:09:21,239 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:09:21,240 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:09:21,241 - main - DEBUG - Response status: 304
+2025-05-12 18:09:21,244 - main - DEBUG - Response status: 304
+2025-05-12 18:09:21,246 - main - DEBUG - Response status: 304
+2025-05-12 18:09:21,248 - main - DEBUG - Response status: 304
+2025-05-12 18:09:21,531 - main - DEBUG - Request: GET /favicon.ico
+2025-05-12 18:09:21,532 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:09:21,532 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:09:23,553 - main - DEBUG - Request: GET /producto/681a7eabad0f4cd440ac15bb
+2025-05-12 18:09:23,553 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:09:23,553 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:09:24,087 - main - DEBUG - Response status: 200
+2025-05-12 18:09:24,152 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-12 18:09:24,153 - main - DEBUG - Request: GET /static/img/producto-default.jpg
+2025-05-12 18:09:24,153 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:09:24,154 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:09:24,155 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-12 18:09:24,156 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:09:24,156 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:09:24,156 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:09:24,159 - main - DEBUG - Response status: 304
+2025-05-12 18:09:24,159 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:09:24,162 - main - DEBUG - Response status: 304
+2025-05-12 18:09:24,166 - main - DEBUG - Response status: 304
+2025-05-12 18:09:24,201 - main - DEBUG - Request: GET /favicon.ico
+2025-05-12 18:09:24,202 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:09:24,202 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:09:25,647 - main - DEBUG - Request: POST /cliente/agregar_al_carrito/681a7eabad0f4cd440ac15bb
+2025-05-12 18:09:25,647 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:09:25,647 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:09:26,192 - main - DEBUG - Response status: 302
+2025-05-12 18:09:26,204 - main - DEBUG - Request: GET /cliente/carrito
+2025-05-12 18:09:26,205 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:09:26,205 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:09:26,303 - main - DEBUG - Response status: 200
+2025-05-12 18:09:26,378 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-12 18:09:26,379 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:09:26,379 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:09:26,380 - main - DEBUG - Request: GET /static/img/producto-default.jpg
+2025-05-12 18:09:26,381 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:09:26,381 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:09:26,382 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-12 18:09:26,382 - main - DEBUG - Response status: 304
+2025-05-12 18:09:26,383 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:09:26,383 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:09:26,384 - main - DEBUG - Response status: 304
+2025-05-12 18:09:26,388 - main - DEBUG - Response status: 304
+2025-05-12 18:09:26,458 - main - DEBUG - Request: GET /favicon.ico
+2025-05-12 18:09:26,459 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:09:26,459 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:09:28,207 - main - DEBUG - Request: GET /cliente/checkout
+2025-05-12 18:09:28,208 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:09:28,208 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:09:28,501 - main - DEBUG - Response status: 200
+2025-05-12 18:09:28,578 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-12 18:09:28,579 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:09:28,580 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:09:28,585 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-12 18:09:28,585 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:09:28,586 - main - DEBUG - Response status: 304
+2025-05-12 18:09:28,586 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:09:28,588 - main - DEBUG - Response status: 304
+2025-05-12 18:09:28,613 - main - DEBUG - Request: GET /favicon.ico
+2025-05-12 18:09:28,613 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:09:28,613 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:11:46,541 - main - DEBUG - Request: POST /cliente/checkout
+2025-05-12 18:11:46,541 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:11:46,541 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:11:48,211 - main - DEBUG - Response status: 302
+2025-05-12 18:11:48,227 - main - DEBUG - Request: GET /cliente/mis_pedidos
+2025-05-12 18:11:48,228 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:11:48,228 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:11:48,379 - main - DEBUG - Response status: 200
+2025-05-12 18:11:48,473 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-12 18:11:48,474 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-12 18:11:48,475 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:11:48,475 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:11:48,475 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:11:48,476 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:11:48,478 - main - DEBUG - Response status: 304
+2025-05-12 18:11:48,478 - main - DEBUG - Response status: 304
+2025-05-12 18:11:48,530 - main - DEBUG - Request: GET /favicon.ico
+2025-05-12 18:11:48,530 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:11:48,530 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:11:52,180 - main - DEBUG - Request: GET /cliente/pedido/68228e43effe6b381d93b4d5
+2025-05-12 18:11:52,180 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:11:52,180 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:11:52,670 - main - DEBUG - Response status: 200
+2025-05-12 18:11:52,724 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-12 18:11:52,726 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-12 18:11:52,726 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:11:52,727 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:11:52,727 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:11:52,727 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:11:52,729 - main - DEBUG - Response status: 304
+2025-05-12 18:11:52,730 - main - DEBUG - Response status: 304
+2025-05-12 18:11:52,791 - main - DEBUG - Request: GET /favicon.ico
+2025-05-12 18:11:52,792 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:11:52,792 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:14:43,225 - main - DEBUG - Request: POST /cliente/pedido/cancelar/68228e43effe6b381d93b4d5
+2025-05-12 18:14:43,225 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:14:43,225 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:14:45,060 - main - DEBUG - Response status: 302
+2025-05-12 18:14:45,071 - main - DEBUG - Request: GET /cliente/mis_pedidos
+2025-05-12 18:14:45,072 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:14:45,073 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:14:45,429 - main - DEBUG - Response status: 200
+2025-05-12 18:14:45,483 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-12 18:14:45,487 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-12 18:14:45,487 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:14:45,487 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:14:45,487 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:14:45,489 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:14:45,490 - main - DEBUG - Response status: 304
+2025-05-12 18:14:45,491 - main - DEBUG - Response status: 304
+2025-05-12 18:14:45,970 - main - DEBUG - Request: GET /favicon.ico
+2025-05-12 18:14:45,970 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:14:45,970 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:14:47,511 - main - DEBUG - Request: GET /cliente/perfil
+2025-05-12 18:14:47,511 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:14:47,511 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:14:48,821 - main - DEBUG - Response status: 200
+2025-05-12 18:14:48,862 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-12 18:14:48,862 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:14:48,863 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-12 18:14:48,863 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:14:48,864 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:14:48,864 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:14:48,864 - main - DEBUG - Response status: 304
+2025-05-12 18:14:48,865 - main - DEBUG - Response status: 304
+2025-05-12 18:14:49,143 - main - DEBUG - Request: GET /favicon.ico
+2025-05-12 18:14:49,143 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:14:49,143 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:36:44,239 - main - DEBUG - Request: GET /cliente/mis_pedidos
+2025-05-12 18:36:44,240 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:36:44,240 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:36:44,383 - main - DEBUG - Response status: 200
+2025-05-12 18:36:45,426 - main - DEBUG - Request: GET /favicon.ico
+2025-05-12 18:36:45,426 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:36:45,426 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:36:46,564 - main - DEBUG - Request: GET /cliente/carrito
+2025-05-12 18:36:46,564 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:36:46,564 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:36:46,577 - main - DEBUG - Response status: 200
+2025-05-12 18:36:46,613 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-12 18:36:46,614 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:36:46,614 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-12 18:36:46,615 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:36:46,615 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:36:46,615 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:36:46,814 - main - DEBUG - Response status: 304
+2025-05-12 18:36:46,848 - main - DEBUG - Response status: 200
+2025-05-12 18:36:47,104 - main - DEBUG - Request: GET /favicon.ico
+2025-05-12 18:36:47,104 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:36:47,105 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:36:47,675 - main - DEBUG - Request: GET /cliente/mis_pedidos
+2025-05-12 18:36:47,675 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:36:47,675 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:36:47,779 - main - DEBUG - Response status: 200
+2025-05-12 18:36:47,816 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-12 18:36:47,817 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:36:47,818 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:36:47,819 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-12 18:36:47,819 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:36:47,820 - main - DEBUG - Response status: 304
+2025-05-12 18:36:47,820 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:36:47,822 - main - DEBUG - Response status: 304
+2025-05-12 18:36:47,875 - main - DEBUG - Request: GET /favicon.ico
+2025-05-12 18:36:47,875 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:36:47,876 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:36:48,554 - main - DEBUG - Request: GET /productos
+2025-05-12 18:36:48,555 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:36:48,555 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:36:48,666 - main - DEBUG - Response status: 200
+2025-05-12 18:36:48,707 - main - DEBUG - Request: GET /static/uploads/productos/f46602be-fcf4-4a2e-803d-6e67c21bf80e_pepsi_black.png
+2025-05-12 18:36:48,708 - main - DEBUG - Request: GET /static/uploads/productos/1a2b4193-f045-44c3-94f0-e778f522d4aa_VASO-CAFE-ECOLOGICO-fibra-de-agave-PNG-1.png
+2025-05-12 18:36:48,708 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-12 18:36:48,709 - main - DEBUG - Request: GET /static/img/producto-default.jpg
+2025-05-12 18:36:48,710 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:36:48,711 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-12 18:36:48,711 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:36:48,711 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:36:48,711 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:36:48,711 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:36:48,712 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:36:48,712 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:36:48,712 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:36:48,712 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:36:48,713 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:36:48,714 - main - DEBUG - Response status: 304
+2025-05-12 18:36:48,715 - main - DEBUG - Response status: 304
+2025-05-12 18:36:48,716 - main - DEBUG - Response status: 304
+2025-05-12 18:36:48,718 - main - DEBUG - Response status: 304
+2025-05-12 18:36:48,729 - main - DEBUG - Response status: 304
+2025-05-12 18:36:49,590 - main - DEBUG - Request: GET /favicon.ico
+2025-05-12 18:36:49,592 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:36:49,593 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:36:51,309 - main - DEBUG - Request: GET /cliente/mis_pedidos
+2025-05-12 18:36:51,309 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:36:51,310 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:36:51,414 - main - DEBUG - Response status: 200
+2025-05-12 18:36:51,455 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-12 18:36:51,456 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:36:51,456 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:36:51,457 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-12 18:36:51,457 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:36:51,457 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:36:51,458 - main - DEBUG - Response status: 304
+2025-05-12 18:36:51,459 - main - DEBUG - Response status: 304
+2025-05-12 18:36:51,512 - main - DEBUG - Request: GET /favicon.ico
+2025-05-12 18:36:51,512 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:36:51,513 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:36:55,262 - main - DEBUG - Request: GET /cliente/pedido/68228e43effe6b381d93b4d5
+2025-05-12 18:36:55,262 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:36:55,262 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:36:55,376 - main - DEBUG - Response status: 200
+2025-05-12 18:36:55,413 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-12 18:36:55,414 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:36:55,415 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-12 18:36:55,416 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:36:55,416 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:36:55,416 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:36:55,417 - main - DEBUG - Response status: 304
+2025-05-12 18:36:55,418 - main - DEBUG - Response status: 304
+2025-05-12 18:36:55,436 - main - DEBUG - Request: GET /favicon.ico
+2025-05-12 18:36:55,436 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:36:55,437 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:37:04,951 - main - DEBUG - Request: GET /cliente/mis_pedidos
+2025-05-12 18:37:04,951 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:37:04,951 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:37:05,055 - main - DEBUG - Response status: 200
+2025-05-12 18:37:05,099 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-12 18:37:05,099 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:37:05,100 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-12 18:37:05,101 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:37:05,101 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:37:05,102 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:37:05,102 - main - DEBUG - Response status: 304
+2025-05-12 18:37:05,104 - main - DEBUG - Response status: 304
+2025-05-12 18:37:05,138 - main - DEBUG - Request: GET /favicon.ico
+2025-05-12 18:37:05,138 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:37:05,138 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:37:06,676 - main - DEBUG - Request: GET /productos
+2025-05-12 18:37:06,677 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:37:06,677 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:37:06,783 - main - DEBUG - Response status: 200
+2025-05-12 18:37:06,835 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-12 18:37:06,836 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:37:06,837 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:37:06,839 - main - DEBUG - Request: GET /static/uploads/productos/1a2b4193-f045-44c3-94f0-e778f522d4aa_VASO-CAFE-ECOLOGICO-fibra-de-agave-PNG-1.png
+2025-05-12 18:37:06,840 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:37:06,841 - main - DEBUG - Response status: 304
+2025-05-12 18:37:06,841 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:37:06,848 - main - DEBUG - Response status: 304
+2025-05-12 18:37:06,852 - main - DEBUG - Request: GET /static/uploads/productos/f46602be-fcf4-4a2e-803d-6e67c21bf80e_pepsi_black.png
+2025-05-12 18:37:06,852 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:37:06,853 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:37:06,854 - main - DEBUG - Response status: 304
+2025-05-12 18:37:06,845 - main - DEBUG - Request: GET /static/img/producto-default.jpg
+2025-05-12 18:37:06,855 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:37:06,855 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:37:06,857 - main - DEBUG - Response status: 304
+2025-05-12 18:37:06,895 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-12 18:37:06,895 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:37:06,895 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:37:06,905 - main - DEBUG - Response status: 304
+2025-05-12 18:37:07,361 - main - DEBUG - Request: GET /favicon.ico
+2025-05-12 18:37:07,362 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:37:07,363 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:37:08,520 - main - DEBUG - Request: GET /producto/68195747d18576e9b2bd4479
+2025-05-12 18:37:08,520 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:37:08,520 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:37:08,637 - main - DEBUG - Response status: 200
+2025-05-12 18:37:08,675 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-12 18:37:08,676 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:37:08,677 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:37:08,679 - main - DEBUG - Response status: 304
+2025-05-12 18:37:08,681 - main - DEBUG - Request: GET /static/uploads/productos/1a2b4193-f045-44c3-94f0-e778f522d4aa_VASO-CAFE-ECOLOGICO-fibra-de-agave-PNG-1.png
+2025-05-12 18:37:08,682 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:37:08,683 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:37:08,683 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-12 18:37:08,685 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:37:08,686 - main - DEBUG - Response status: 304
+2025-05-12 18:37:08,686 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:37:08,688 - main - DEBUG - Response status: 304
+2025-05-12 18:37:08,709 - main - DEBUG - Request: GET /favicon.ico
+2025-05-12 18:37:08,709 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:37:08,709 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:37:10,178 - main - DEBUG - Request: POST /cliente/agregar_al_carrito/68195747d18576e9b2bd4479
+2025-05-12 18:37:10,178 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:37:10,179 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:37:10,397 - main - DEBUG - Response status: 302
+2025-05-12 18:37:10,406 - main - DEBUG - Request: GET /cliente/carrito
+2025-05-12 18:37:10,406 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:37:10,406 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:37:10,506 - main - DEBUG - Response status: 200
+2025-05-12 18:37:10,552 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-12 18:37:10,553 - main - DEBUG - Request: GET /static/uploads/productos/1a2b4193-f045-44c3-94f0-e778f522d4aa_VASO-CAFE-ECOLOGICO-fibra-de-agave-PNG-1.png
+2025-05-12 18:37:10,553 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:37:10,553 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:37:10,553 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:37:10,553 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:37:10,555 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-12 18:37:10,555 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:37:10,555 - main - DEBUG - Response status: 304
+2025-05-12 18:37:10,556 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:37:10,556 - main - DEBUG - Response status: 304
+2025-05-12 18:37:10,558 - main - DEBUG - Response status: 304
+2025-05-12 18:37:10,916 - main - DEBUG - Request: GET /favicon.ico
+2025-05-12 18:37:10,917 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:37:10,917 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:37:12,574 - main - DEBUG - Request: GET /cliente/checkout
+2025-05-12 18:37:12,574 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:37:12,574 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:37:12,887 - main - DEBUG - Response status: 200
+2025-05-12 18:37:12,927 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-12 18:37:12,927 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:37:12,928 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:37:12,929 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-12 18:37:12,930 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:37:12,930 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:37:12,931 - main - DEBUG - Response status: 304
+2025-05-12 18:37:12,931 - main - DEBUG - Response status: 304
+2025-05-12 18:37:13,164 - main - DEBUG - Request: GET /favicon.ico
+2025-05-12 18:37:13,165 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:37:13,165 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:37:37,409 - main - DEBUG - Request: POST /cliente/checkout
+2025-05-12 18:37:37,409 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:37:37,410 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:37:37,814 - main - DEBUG - Response status: 302
+2025-05-12 18:37:37,821 - main - DEBUG - Request: GET /cliente/mis_pedidos
+2025-05-12 18:37:37,821 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:37:37,821 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:37:37,923 - main - DEBUG - Response status: 200
+2025-05-12 18:37:37,969 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-12 18:37:37,969 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:37:37,969 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-12 18:37:37,970 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:37:37,970 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:37:37,971 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:37:37,972 - main - DEBUG - Response status: 304
+2025-05-12 18:37:37,974 - main - DEBUG - Response status: 304
+2025-05-12 18:37:38,132 - main - DEBUG - Request: GET /favicon.ico
+2025-05-12 18:37:38,132 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:37:38,132 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:37:40,519 - main - DEBUG - Request: GET /cliente/pedido/682294514d5db57581b29029
+2025-05-12 18:37:40,520 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:37:40,520 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:37:40,632 - main - DEBUG - Response status: 200
+2025-05-12 18:37:40,672 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-12 18:37:40,673 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:37:40,674 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-12 18:37:40,674 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:37:40,674 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:37:40,676 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:37:40,678 - main - DEBUG - Response status: 304
+2025-05-12 18:37:40,679 - main - DEBUG - Response status: 304
+2025-05-12 18:37:40,705 - main - DEBUG - Request: GET /favicon.ico
+2025-05-12 18:37:40,706 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:37:40,706 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:37:42,046 - main - DEBUG - Request: GET /cliente/mis_pedidos
+2025-05-12 18:37:42,046 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:37:42,046 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:37:42,150 - main - DEBUG - Response status: 200
+2025-05-12 18:37:42,193 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-12 18:37:42,194 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:37:42,195 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:37:42,195 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-12 18:37:42,195 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:37:42,195 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:37:42,196 - main - DEBUG - Response status: 304
+2025-05-12 18:37:42,197 - main - DEBUG - Response status: 304
+2025-05-12 18:37:42,254 - main - DEBUG - Request: GET /favicon.ico
+2025-05-12 18:37:42,254 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:37:42,254 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:37:43,750 - main - DEBUG - Request: GET /productos
+2025-05-12 18:37:43,750 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:37:43,751 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:37:43,853 - main - DEBUG - Response status: 200
+2025-05-12 18:37:43,897 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-12 18:37:43,899 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:37:43,899 - main - DEBUG - Request: GET /static/uploads/productos/1a2b4193-f045-44c3-94f0-e778f522d4aa_VASO-CAFE-ECOLOGICO-fibra-de-agave-PNG-1.png
+2025-05-12 18:37:43,899 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:37:43,899 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:37:43,901 - main - DEBUG - Request: GET /static/uploads/productos/f46602be-fcf4-4a2e-803d-6e67c21bf80e_pepsi_black.png
+2025-05-12 18:37:43,901 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:37:43,901 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:37:43,903 - main - DEBUG - Response status: 304
+2025-05-12 18:37:43,903 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:37:43,903 - main - DEBUG - Request: GET /static/img/producto-default.jpg
+2025-05-12 18:37:43,906 - main - DEBUG - Response status: 304
+2025-05-12 18:37:43,906 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-12 18:37:43,908 - main - DEBUG - Response status: 304
+2025-05-12 18:37:43,909 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:37:43,910 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:37:43,911 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:37:43,912 - main - DEBUG - Response status: 304
+2025-05-12 18:37:43,913 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:37:43,915 - main - DEBUG - Response status: 304
+2025-05-12 18:37:44,333 - main - DEBUG - Request: GET /favicon.ico
+2025-05-12 18:37:44,333 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:37:44,334 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:37:46,486 - main - DEBUG - Request: GET /producto/68195747d18576e9b2bd4479
+2025-05-12 18:37:46,486 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:37:46,486 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:37:46,589 - main - DEBUG - Response status: 200
+2025-05-12 18:37:46,641 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-12 18:37:46,641 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:37:46,642 - main - DEBUG - Request: GET /static/uploads/productos/1a2b4193-f045-44c3-94f0-e778f522d4aa_VASO-CAFE-ECOLOGICO-fibra-de-agave-PNG-1.png
+2025-05-12 18:37:46,643 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:37:46,643 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:37:46,645 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-12 18:37:46,645 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:37:46,646 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:37:46,647 - main - DEBUG - Response status: 304
+2025-05-12 18:37:46,648 - main - DEBUG - Response status: 304
+2025-05-12 18:37:46,649 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:37:46,653 - main - DEBUG - Response status: 304
+2025-05-12 18:37:46,731 - main - DEBUG - Request: GET /favicon.ico
+2025-05-12 18:37:46,731 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:37:46,731 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:37:51,671 - main - DEBUG - Request: GET /cliente/carrito
+2025-05-12 18:37:51,671 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:37:51,671 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:37:51,673 - main - DEBUG - Response status: 200
+2025-05-12 18:37:51,717 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-12 18:37:51,718 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:37:51,719 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-12 18:37:51,719 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:37:51,720 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:37:51,720 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:37:51,721 - main - DEBUG - Response status: 304
+2025-05-12 18:37:51,721 - main - DEBUG - Response status: 304
+2025-05-12 18:37:51,737 - main - DEBUG - Request: GET /favicon.ico
+2025-05-12 18:37:51,737 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:37:51,738 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:37:53,384 - main - DEBUG - Request: GET /cliente/mis_pedidos
+2025-05-12 18:37:53,384 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:37:53,384 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:37:53,491 - main - DEBUG - Response status: 200
+2025-05-12 18:37:53,531 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-12 18:37:53,532 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:37:53,533 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:37:53,534 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-12 18:37:53,535 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:37:53,535 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:37:53,536 - main - DEBUG - Response status: 304
+2025-05-12 18:37:53,537 - main - DEBUG - Response status: 304
+2025-05-12 18:37:53,918 - main - DEBUG - Request: GET /favicon.ico
+2025-05-12 18:37:53,918 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:37:53,918 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:37:54,310 - main - DEBUG - Request: GET /cliente/pedido/682294514d5db57581b29029
+2025-05-12 18:37:54,310 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:37:54,310 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:37:54,410 - main - DEBUG - Response status: 200
+2025-05-12 18:37:54,452 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-12 18:37:54,453 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-12 18:37:54,453 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:37:54,453 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:37:54,453 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:37:54,454 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:37:54,454 - main - DEBUG - Response status: 304
+2025-05-12 18:37:54,455 - main - DEBUG - Response status: 304
+2025-05-12 18:37:54,477 - main - DEBUG - Request: GET /favicon.ico
+2025-05-12 18:37:54,477 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:37:54,478 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:37:55,927 - main - DEBUG - Request: POST /cliente/pedido/cancelar/682294514d5db57581b29029
+2025-05-12 18:37:55,927 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:37:55,927 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:37:56,332 - main - DEBUG - Response status: 302
+2025-05-12 18:37:56,339 - main - DEBUG - Request: GET /cliente/mis_pedidos
+2025-05-12 18:37:56,340 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:37:56,340 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:37:56,445 - main - DEBUG - Response status: 200
+2025-05-12 18:37:56,487 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-12 18:37:56,488 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:37:56,489 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:37:56,490 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-12 18:37:56,491 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:37:56,491 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:37:56,493 - main - DEBUG - Response status: 304
+2025-05-12 18:37:56,495 - main - DEBUG - Response status: 304
+2025-05-12 18:37:56,567 - main - DEBUG - Request: GET /favicon.ico
+2025-05-12 18:37:56,567 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:37:56,567 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:37:57,391 - main - DEBUG - Request: GET /productos
+2025-05-12 18:37:57,391 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:37:57,392 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:37:57,503 - main - DEBUG - Response status: 200
+2025-05-12 18:37:57,552 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-12 18:37:57,553 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:37:57,554 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:37:57,558 - main - DEBUG - Request: GET /static/uploads/productos/f46602be-fcf4-4a2e-803d-6e67c21bf80e_pepsi_black.png
+2025-05-12 18:37:57,559 - main - DEBUG - Request: GET /static/uploads/productos/1a2b4193-f045-44c3-94f0-e778f522d4aa_VASO-CAFE-ECOLOGICO-fibra-de-agave-PNG-1.png
+2025-05-12 18:37:57,560 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:37:57,560 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:37:57,561 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:37:57,561 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:37:57,561 - main - DEBUG - Response status: 304
+2025-05-12 18:37:57,563 - main - DEBUG - Request: GET /static/img/producto-default.jpg
+2025-05-12 18:37:57,565 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:37:57,566 - main - DEBUG - Response status: 304
+2025-05-12 18:37:57,566 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:37:57,566 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-12 18:37:57,572 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:37:57,573 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:37:57,568 - main - DEBUG - Response status: 304
+2025-05-12 18:37:57,571 - main - DEBUG - Response status: 304
+2025-05-12 18:37:57,575 - main - DEBUG - Response status: 304
+2025-05-12 18:37:57,676 - main - DEBUG - Request: GET /favicon.ico
+2025-05-12 18:37:57,676 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:37:57,676 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:37:58,762 - main - DEBUG - Request: GET /producto/68195747d18576e9b2bd4479
+2025-05-12 18:37:58,762 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:37:58,763 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:37:58,867 - main - DEBUG - Response status: 200
+2025-05-12 18:37:58,909 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-12 18:37:58,910 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:37:58,910 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:37:58,911 - main - DEBUG - Request: GET /static/uploads/productos/1a2b4193-f045-44c3-94f0-e778f522d4aa_VASO-CAFE-ECOLOGICO-fibra-de-agave-PNG-1.png
+2025-05-12 18:37:58,911 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:37:58,912 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:37:58,913 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-12 18:37:58,913 - main - DEBUG - Response status: 304
+2025-05-12 18:37:58,914 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:37:58,914 - main - DEBUG - Response status: 304
+2025-05-12 18:37:58,914 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:37:58,916 - main - DEBUG - Response status: 304
+2025-05-12 18:37:58,939 - main - DEBUG - Request: GET /favicon.ico
+2025-05-12 18:37:58,939 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:37:58,939 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:38:44,616 - main - DEBUG - Request: POST /cliente/agregar_al_carrito/68195747d18576e9b2bd4479
+2025-05-12 18:38:44,617 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:38:44,617 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:38:44,818 - main - DEBUG - Response status: 302
+2025-05-12 18:38:44,825 - main - DEBUG - Request: GET /cliente/carrito
+2025-05-12 18:38:44,826 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:38:44,826 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:38:44,929 - main - DEBUG - Response status: 200
+2025-05-12 18:38:44,972 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-12 18:38:44,973 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:38:44,973 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:38:44,977 - main - DEBUG - Request: GET /static/uploads/productos/1a2b4193-f045-44c3-94f0-e778f522d4aa_VASO-CAFE-ECOLOGICO-fibra-de-agave-PNG-1.png
+2025-05-12 18:38:44,978 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-12 18:38:44,978 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:38:44,979 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:38:44,979 - main - DEBUG - Response status: 304
+2025-05-12 18:38:44,979 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:38:44,980 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:38:44,982 - main - DEBUG - Response status: 304
+2025-05-12 18:38:44,983 - main - DEBUG - Response status: 304
+2025-05-12 18:38:45,005 - main - DEBUG - Request: GET /favicon.ico
+2025-05-12 18:38:45,005 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:38:45,005 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:38:46,217 - main - DEBUG - Request: GET /cliente/checkout
+2025-05-12 18:38:46,217 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:38:46,217 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:38:46,559 - main - DEBUG - Request: GET /cliente/checkout
+2025-05-12 18:38:46,559 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:38:46,559 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:38:49,123 - main - DEBUG - Response status: 200
+2025-05-12 18:38:50,901 - main - DEBUG - Response status: 200
+2025-05-12 18:38:50,947 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-12 18:38:50,948 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:38:50,948 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:38:50,949 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-12 18:38:50,949 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:38:50,949 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:38:50,950 - main - DEBUG - Response status: 304
+2025-05-12 18:38:50,951 - main - DEBUG - Response status: 304
+2025-05-12 18:38:51,227 - main - DEBUG - Request: GET /favicon.ico
+2025-05-12 18:38:51,227 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:38:51,227 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:51:17,561 - main - DEBUG - Request: GET /cliente/checkout
+2025-05-12 18:51:17,562 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:51:17,563 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:51:17,899 - main - DEBUG - Response status: 200
+2025-05-12 18:51:17,934 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-12 18:51:17,935 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:51:17,936 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-12 18:51:17,936 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:51:17,936 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:51:17,937 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:51:18,137 - main - DEBUG - Response status: 304
+2025-05-12 18:51:18,191 - main - DEBUG - Response status: 200
+2025-05-12 18:51:18,808 - main - DEBUG - Request: GET /favicon.ico
+2025-05-12 18:51:18,809 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:51:18,809 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:51:28,546 - main - DEBUG - Request: GET /
+2025-05-12 18:51:28,546 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:51:28,547 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:51:28,656 - main - DEBUG - Response status: 200
+2025-05-12 18:51:28,696 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-12 18:51:28,697 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:51:28,698 - main - DEBUG - Request: GET /static/img/ImagenEcoShop.jpg
+2025-05-12 18:51:28,699 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:51:28,699 - main - DEBUG - Request: GET /static/uploads/productos/f46602be-fcf4-4a2e-803d-6e67c21bf80e_pepsi_black.png
+2025-05-12 18:51:28,699 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:51:28,700 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:51:28,701 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:51:28,702 - main - DEBUG - Request: GET /static/uploads/productos/1a2b4193-f045-44c3-94f0-e778f522d4aa_VASO-CAFE-ECOLOGICO-fibra-de-agave-PNG-1.png
+2025-05-12 18:51:28,702 - main - DEBUG - Response status: 304
+2025-05-12 18:51:28,702 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:51:28,703 - main - DEBUG - Request: GET /static/img/producto-default.jpg
+2025-05-12 18:51:28,703 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:51:28,705 - main - DEBUG - Response status: 304
+2025-05-12 18:51:28,706 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-12 18:51:28,707 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:51:28,707 - main - DEBUG - Response status: 304
+2025-05-12 18:51:28,708 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:51:28,711 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:51:28,713 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:51:28,714 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:51:28,715 - main - DEBUG - Response status: 304
+2025-05-12 18:51:28,717 - main - DEBUG - Response status: 304
+2025-05-12 18:51:28,720 - main - DEBUG - Response status: 304
+2025-05-12 18:51:28,981 - main - DEBUG - Request: GET /favicon.ico
+2025-05-12 18:51:28,982 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:51:28,982 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:51:31,802 - main - DEBUG - Request: GET /productos
+2025-05-12 18:51:31,802 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:51:31,802 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:51:31,918 - main - DEBUG - Response status: 200
+2025-05-12 18:51:31,947 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-12 18:51:31,948 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:51:31,948 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:51:31,949 - main - DEBUG - Request: GET /static/uploads/productos/f46602be-fcf4-4a2e-803d-6e67c21bf80e_pepsi_black.png
+2025-05-12 18:51:31,951 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:51:31,951 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:51:31,953 - main - DEBUG - Response status: 304
+2025-05-12 18:51:31,954 - main - DEBUG - Response status: 304
+2025-05-12 18:51:31,959 - main - DEBUG - Request: GET /static/uploads/productos/1a2b4193-f045-44c3-94f0-e778f522d4aa_VASO-CAFE-ECOLOGICO-fibra-de-agave-PNG-1.png
+2025-05-12 18:51:31,962 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:51:31,963 - main - DEBUG - Request: GET /static/img/producto-default.jpg
+2025-05-12 18:51:31,964 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:51:31,964 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-12 18:51:31,965 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:51:31,965 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:51:31,965 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:51:31,966 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:51:31,967 - main - DEBUG - Response status: 304
+2025-05-12 18:51:31,968 - main - DEBUG - Response status: 304
+2025-05-12 18:51:31,970 - main - DEBUG - Response status: 304
+2025-05-12 18:51:32,050 - main - DEBUG - Request: GET /favicon.ico
+2025-05-12 18:51:32,051 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:51:32,051 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:51:41,611 - main - DEBUG - Request: GET /
+2025-05-12 18:51:41,612 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:51:41,612 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:51:41,714 - main - DEBUG - Response status: 200
+2025-05-12 18:51:41,752 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-12 18:51:41,753 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:51:41,753 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:51:41,756 - main - DEBUG - Response status: 304
+2025-05-12 18:51:41,756 - main - DEBUG - Request: GET /static/uploads/productos/1a2b4193-f045-44c3-94f0-e778f522d4aa_VASO-CAFE-ECOLOGICO-fibra-de-agave-PNG-1.png
+2025-05-12 18:51:41,758 - main - DEBUG - Request: GET /static/img/ImagenEcoShop.jpg
+2025-05-12 18:51:41,759 - main - DEBUG - Request: GET /static/uploads/productos/f46602be-fcf4-4a2e-803d-6e67c21bf80e_pepsi_black.png
+2025-05-12 18:51:41,760 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:51:41,760 - main - DEBUG - Request: GET /static/img/producto-default.jpg
+2025-05-12 18:51:41,761 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:51:41,761 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:51:41,762 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:51:41,764 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-12 18:51:41,764 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:51:41,764 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:51:41,765 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:51:41,765 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:51:41,765 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:51:41,765 - main - DEBUG - Response status: 304
+2025-05-12 18:51:41,765 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:51:41,767 - main - DEBUG - Response status: 304
+2025-05-12 18:51:41,767 - main - DEBUG - Response status: 304
+2025-05-12 18:51:41,769 - main - DEBUG - Response status: 304
+2025-05-12 18:51:41,772 - main - DEBUG - Response status: 304
+2025-05-12 18:51:42,089 - main - DEBUG - Request: GET /productos
+2025-05-12 18:51:42,089 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:51:42,089 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:51:42,194 - main - DEBUG - Response status: 200
+2025-05-12 18:51:42,234 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-12 18:51:42,234 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:51:42,235 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:51:42,236 - main - DEBUG - Request: GET /static/uploads/productos/f46602be-fcf4-4a2e-803d-6e67c21bf80e_pepsi_black.png
+2025-05-12 18:51:42,236 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:51:42,236 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:51:42,237 - main - DEBUG - Response status: 304
+2025-05-12 18:51:42,238 - main - DEBUG - Request: GET /static/uploads/productos/1a2b4193-f045-44c3-94f0-e778f522d4aa_VASO-CAFE-ECOLOGICO-fibra-de-agave-PNG-1.png
+2025-05-12 18:51:42,238 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:51:42,239 - main - DEBUG - Request: GET /static/img/producto-default.jpg
+2025-05-12 18:51:42,240 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:51:42,240 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:51:42,244 - main - DEBUG - Response status: 304
+2025-05-12 18:51:42,246 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:51:42,246 - main - DEBUG - Response status: 304
+2025-05-12 18:51:42,247 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-12 18:51:42,251 - main - DEBUG - Response status: 304
+2025-05-12 18:51:42,252 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:51:42,254 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:51:42,257 - main - DEBUG - Response status: 304
+2025-05-12 18:51:42,528 - main - DEBUG - Request: GET /favicon.ico
+2025-05-12 18:51:42,529 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:51:42,529 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:51:42,865 - main - DEBUG - Request: GET /cliente/mis_pedidos
+2025-05-12 18:51:42,866 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:51:42,866 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:51:42,994 - main - DEBUG - Response status: 200
+2025-05-12 18:51:43,031 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-12 18:51:43,032 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:51:43,032 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:51:43,033 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-12 18:51:43,034 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:51:43,034 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:51:43,035 - main - DEBUG - Response status: 304
+2025-05-12 18:51:43,037 - main - DEBUG - Response status: 304
+2025-05-12 18:51:43,522 - main - DEBUG - Request: GET /favicon.ico
+2025-05-12 18:51:43,522 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:51:43,523 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:51:44,322 - main - DEBUG - Request: GET /productos
+2025-05-12 18:51:44,323 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:51:44,323 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:51:44,426 - main - DEBUG - Response status: 200
+2025-05-12 18:51:44,466 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-12 18:51:44,467 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:51:44,467 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:51:44,468 - main - DEBUG - Request: GET /static/uploads/productos/f46602be-fcf4-4a2e-803d-6e67c21bf80e_pepsi_black.png
+2025-05-12 18:51:44,468 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:51:44,469 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:51:44,470 - main - DEBUG - Request: GET /static/uploads/productos/1a2b4193-f045-44c3-94f0-e778f522d4aa_VASO-CAFE-ECOLOGICO-fibra-de-agave-PNG-1.png
+2025-05-12 18:51:44,470 - main - DEBUG - Response status: 304
+2025-05-12 18:51:44,470 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:51:44,471 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:51:44,472 - main - DEBUG - Response status: 304
+2025-05-12 18:51:44,476 - main - DEBUG - Request: GET /static/img/producto-default.jpg
+2025-05-12 18:51:44,477 - main - DEBUG - Response status: 304
+2025-05-12 18:51:44,480 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:51:44,481 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-12 18:51:44,482 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:51:44,483 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:51:44,485 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:51:44,486 - main - DEBUG - Response status: 304
+2025-05-12 18:51:44,488 - main - DEBUG - Response status: 304
+2025-05-12 18:51:44,917 - main - DEBUG - Request: GET /favicon.ico
+2025-05-12 18:51:44,917 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:51:44,918 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:51:47,250 - main - DEBUG - Request: GET /producto/68195747d18576e9b2bd4479
+2025-05-12 18:51:47,250 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:51:47,250 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:51:47,364 - main - DEBUG - Response status: 200
+2025-05-12 18:51:47,405 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-12 18:51:47,406 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:51:47,407 - main - DEBUG - Request: GET /static/uploads/productos/1a2b4193-f045-44c3-94f0-e778f522d4aa_VASO-CAFE-ECOLOGICO-fibra-de-agave-PNG-1.png
+2025-05-12 18:51:47,407 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:51:47,408 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:51:47,408 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:51:47,410 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-12 18:51:47,410 - main - DEBUG - Response status: 304
+2025-05-12 18:51:47,410 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:51:47,411 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:51:47,412 - main - DEBUG - Response status: 304
+2025-05-12 18:51:47,414 - main - DEBUG - Response status: 304
+2025-05-12 18:51:47,469 - main - DEBUG - Request: GET /favicon.ico
+2025-05-12 18:51:47,469 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:51:47,470 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:51:48,804 - main - DEBUG - Request: POST /cliente/agregar_al_carrito/68195747d18576e9b2bd4479
+2025-05-12 18:51:48,804 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:51:48,804 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:51:49,013 - main - DEBUG - Response status: 302
+2025-05-12 18:51:49,019 - main - DEBUG - Request: GET /cliente/carrito
+2025-05-12 18:51:49,019 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:51:49,020 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:51:49,131 - main - DEBUG - Response status: 200
+2025-05-12 18:51:49,180 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-12 18:51:49,181 - main - DEBUG - Request: GET /static/uploads/productos/1a2b4193-f045-44c3-94f0-e778f522d4aa_VASO-CAFE-ECOLOGICO-fibra-de-agave-PNG-1.png
+2025-05-12 18:51:49,181 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:51:49,181 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:51:49,182 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:51:49,183 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-12 18:51:49,183 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:51:49,183 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:51:49,184 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:51:49,184 - main - DEBUG - Response status: 304
+2025-05-12 18:51:49,186 - main - DEBUG - Response status: 304
+2025-05-12 18:51:49,186 - main - DEBUG - Response status: 304
+2025-05-12 18:51:49,550 - main - DEBUG - Request: GET /favicon.ico
+2025-05-12 18:51:49,551 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:51:49,551 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:51:53,683 - main - DEBUG - Request: GET /productos
+2025-05-12 18:51:53,683 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:51:53,684 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:51:53,785 - main - DEBUG - Response status: 200
+2025-05-12 18:51:53,827 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-12 18:51:53,827 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:51:53,827 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:51:53,829 - main - DEBUG - Response status: 304
+2025-05-12 18:51:53,831 - main - DEBUG - Request: GET /static/uploads/productos/f46602be-fcf4-4a2e-803d-6e67c21bf80e_pepsi_black.png
+2025-05-12 18:51:53,833 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:51:53,834 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:51:53,835 - main - DEBUG - Request: GET /static/uploads/productos/1a2b4193-f045-44c3-94f0-e778f522d4aa_VASO-CAFE-ECOLOGICO-fibra-de-agave-PNG-1.png
+2025-05-12 18:51:53,836 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:51:53,837 - main - DEBUG - Request: GET /static/img/producto-default.jpg
+2025-05-12 18:51:53,837 - main - DEBUG - Response status: 304
+2025-05-12 18:51:53,838 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:51:53,839 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-12 18:51:53,840 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:51:53,843 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:51:53,841 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:51:53,842 - main - DEBUG - Response status: 304
+2025-05-12 18:51:53,844 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:51:53,844 - main - DEBUG - Response status: 304
+2025-05-12 18:51:53,847 - main - DEBUG - Response status: 304
+2025-05-12 18:51:54,124 - main - DEBUG - Request: GET /favicon.ico
+2025-05-12 18:51:54,124 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:51:54,125 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:51:55,186 - main - DEBUG - Request: GET /cliente/carrito
+2025-05-12 18:51:55,186 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:51:55,186 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:51:55,290 - main - DEBUG - Response status: 200
+2025-05-12 18:51:55,333 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-12 18:51:55,334 - main - DEBUG - Request: GET /static/uploads/productos/1a2b4193-f045-44c3-94f0-e778f522d4aa_VASO-CAFE-ECOLOGICO-fibra-de-agave-PNG-1.png
+2025-05-12 18:51:55,336 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-12 18:51:55,336 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:51:55,336 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:51:55,336 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:51:55,336 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:51:55,337 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:51:55,337 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:51:55,339 - main - DEBUG - Response status: 304
+2025-05-12 18:51:55,340 - main - DEBUG - Response status: 304
+2025-05-12 18:51:55,342 - main - DEBUG - Response status: 304
+2025-05-12 18:51:55,398 - main - DEBUG - Request: GET /favicon.ico
+2025-05-12 18:51:55,398 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:51:55,399 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:51:57,010 - main - DEBUG - Request: GET /productos
+2025-05-12 18:51:57,010 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:51:57,011 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:51:57,113 - main - DEBUG - Response status: 200
+2025-05-12 18:51:57,158 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-12 18:51:57,158 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:51:57,159 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:51:57,160 - main - DEBUG - Request: GET /static/uploads/productos/f46602be-fcf4-4a2e-803d-6e67c21bf80e_pepsi_black.png
+2025-05-12 18:51:57,161 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:51:57,162 - main - DEBUG - Response status: 304
+2025-05-12 18:51:57,163 - main - DEBUG - Request: GET /static/uploads/productos/1a2b4193-f045-44c3-94f0-e778f522d4aa_VASO-CAFE-ECOLOGICO-fibra-de-agave-PNG-1.png
+2025-05-12 18:51:57,163 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:51:57,165 - main - DEBUG - Request: GET /static/img/producto-default.jpg
+2025-05-12 18:51:57,165 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:51:57,168 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-12 18:51:57,168 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:51:57,168 - main - DEBUG - Response status: 304
+2025-05-12 18:51:57,168 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:51:57,169 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:51:57,169 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:51:57,170 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:51:57,172 - main - DEBUG - Response status: 304
+2025-05-12 18:51:57,174 - main - DEBUG - Response status: 304
+2025-05-12 18:51:57,175 - main - DEBUG - Response status: 304
+2025-05-12 18:51:57,246 - main - DEBUG - Request: GET /favicon.ico
+2025-05-12 18:51:57,247 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:51:57,247 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:51:58,102 - main - DEBUG - Request: GET /producto/68195747d18576e9b2bd4479
+2025-05-12 18:51:58,102 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:51:58,103 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:51:58,207 - main - DEBUG - Response status: 200
+2025-05-12 18:51:58,248 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-12 18:51:58,249 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:51:58,251 - main - DEBUG - Request: GET /static/uploads/productos/1a2b4193-f045-44c3-94f0-e778f522d4aa_VASO-CAFE-ECOLOGICO-fibra-de-agave-PNG-1.png
+2025-05-12 18:51:58,253 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:51:58,253 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-12 18:51:58,254 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:51:58,255 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:51:58,256 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:51:58,256 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:51:58,257 - main - DEBUG - Response status: 304
+2025-05-12 18:51:58,258 - main - DEBUG - Response status: 304
+2025-05-12 18:51:58,260 - main - DEBUG - Response status: 304
+2025-05-12 18:51:58,283 - main - DEBUG - Request: GET /favicon.ico
+2025-05-12 18:51:58,283 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:51:58,283 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:51:59,391 - main - DEBUG - Request: POST /cliente/agregar_al_carrito/68195747d18576e9b2bd4479
+2025-05-12 18:51:59,392 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:51:59,392 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:51:59,591 - main - DEBUG - Response status: 302
+2025-05-12 18:51:59,599 - main - DEBUG - Request: GET /cliente/carrito
+2025-05-12 18:51:59,599 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:51:59,599 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:51:59,701 - main - DEBUG - Response status: 200
+2025-05-12 18:51:59,743 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-12 18:51:59,744 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:51:59,745 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:51:59,746 - main - DEBUG - Request: GET /static/uploads/productos/1a2b4193-f045-44c3-94f0-e778f522d4aa_VASO-CAFE-ECOLOGICO-fibra-de-agave-PNG-1.png
+2025-05-12 18:51:59,747 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:51:59,748 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:51:59,748 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-12 18:51:59,748 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:51:59,749 - main - DEBUG - Response status: 304
+2025-05-12 18:51:59,749 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:51:59,749 - main - DEBUG - Response status: 304
+2025-05-12 18:51:59,753 - main - DEBUG - Response status: 304
+2025-05-12 18:51:59,771 - main - DEBUG - Request: GET /favicon.ico
+2025-05-12 18:51:59,772 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:51:59,772 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:52:06,340 - main - DEBUG - Request: GET /cliente/checkout
+2025-05-12 18:52:06,340 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:52:06,340 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:52:06,645 - main - DEBUG - Response status: 200
+2025-05-12 18:52:06,693 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-12 18:52:06,694 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:52:06,694 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-12 18:52:06,694 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:52:06,694 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:52:06,695 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:52:06,695 - main - DEBUG - Response status: 304
+2025-05-12 18:52:06,696 - main - DEBUG - Response status: 304
+2025-05-12 18:52:06,748 - main - DEBUG - Request: GET /favicon.ico
+2025-05-12 18:52:06,748 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:52:06,748 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:52:14,606 - main - DEBUG - Request: POST /cliente/checkout
+2025-05-12 18:52:14,607 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:52:14,607 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:52:15,022 - main - DEBUG - Response status: 302
+2025-05-12 18:52:15,029 - main - DEBUG - Request: GET /cliente/mis_pedidos
+2025-05-12 18:52:15,029 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:52:15,029 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:52:15,144 - main - DEBUG - Response status: 200
+2025-05-12 18:52:15,198 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-12 18:52:15,199 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:52:15,199 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:52:15,200 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-12 18:52:15,200 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:52:15,200 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:52:15,201 - main - DEBUG - Response status: 304
+2025-05-12 18:52:15,202 - main - DEBUG - Response status: 304
+2025-05-12 18:52:15,272 - main - DEBUG - Request: GET /favicon.ico
+2025-05-12 18:52:15,273 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:52:15,273 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:52:16,772 - main - DEBUG - Request: GET /cliente/pedido/682297bebf92e7e58717a3ac
+2025-05-12 18:52:16,772 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:52:16,772 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:52:16,889 - main - DEBUG - Response status: 200
+2025-05-12 18:52:16,929 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-12 18:52:16,930 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:52:16,931 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:52:16,931 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-12 18:52:16,932 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:52:16,933 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:52:16,934 - main - DEBUG - Response status: 304
+2025-05-12 18:52:16,936 - main - DEBUG - Response status: 304
+2025-05-12 18:52:16,955 - main - DEBUG - Request: GET /favicon.ico
+2025-05-12 18:52:16,956 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:52:16,956 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:52:18,973 - main - DEBUG - Request: POST /cliente/pedido/cancelar/682297bebf92e7e58717a3ac
+2025-05-12 18:52:18,973 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:52:18,973 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:52:19,381 - main - DEBUG - Response status: 302
+2025-05-12 18:52:19,389 - main - DEBUG - Request: GET /cliente/mis_pedidos
+2025-05-12 18:52:19,389 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:52:19,389 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:52:19,494 - main - DEBUG - Response status: 200
+2025-05-12 18:52:19,540 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-12 18:52:19,540 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:52:19,541 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:52:19,542 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-12 18:52:19,542 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:52:19,542 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:52:19,543 - main - DEBUG - Response status: 304
+2025-05-12 18:52:19,544 - main - DEBUG - Response status: 304
+2025-05-12 18:52:19,600 - main - DEBUG - Request: GET /favicon.ico
+2025-05-12 18:52:19,600 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:52:19,600 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:52:20,263 - main - DEBUG - Request: GET /cliente/mis_pedidos
+2025-05-12 18:52:20,264 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:52:20,264 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:52:20,377 - main - DEBUG - Response status: 200
+2025-05-12 18:52:20,409 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-12 18:52:20,410 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-12 18:52:20,410 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:52:20,410 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:52:20,410 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:52:20,411 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:52:20,412 - main - DEBUG - Response status: 304
+2025-05-12 18:52:20,412 - main - DEBUG - Response status: 304
+2025-05-12 18:52:20,440 - main - DEBUG - Request: GET /favicon.ico
+2025-05-12 18:52:20,441 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:52:20,441 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:52:22,049 - main - DEBUG - Request: GET /favicon.ico
+2025-05-12 18:52:22,049 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:52:22,050 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:52:22,482 - main - DEBUG - Request: GET /favicon.ico
+2025-05-12 18:52:22,482 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:52:22,483 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:52:24,625 - main - DEBUG - Request: GET /favicon.ico
+2025-05-12 18:52:24,625 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:52:24,625 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:52:25,443 - main - DEBUG - Request: GET /favicon.ico
+2025-05-12 18:52:25,443 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:52:25,443 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:52:28,938 - main - DEBUG - Request: GET /favicon.ico
+2025-05-12 18:52:28,938 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:52:28,938 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:52:29,538 - main - DEBUG - Request: GET /favicon.ico
+2025-05-12 18:52:29,539 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:52:29,539 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:52:31,409 - main - DEBUG - Request: GET /favicon.ico
+2025-05-12 18:52:31,409 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:52:31,409 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:52:31,763 - main - DEBUG - Request: GET /favicon.ico
+2025-05-12 18:52:31,764 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:52:31,764 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:52:33,849 - main - DEBUG - Request: GET /logout
+2025-05-12 18:52:33,849 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:52:33,849 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:52:33,850 - main - DEBUG - Response status: 302
+2025-05-12 18:52:33,856 - main - DEBUG - Request: GET /
+2025-05-12 18:52:33,856 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:52:33,958 - main - DEBUG - Response status: 200
+2025-05-12 18:52:34,002 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-12 18:52:34,002 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:52:34,004 - main - DEBUG - Request: GET /static/img/ImagenEcoShop.jpg
+2025-05-12 18:52:34,004 - main - DEBUG - Response status: 304
+2025-05-12 18:52:34,005 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:52:34,006 - main - DEBUG - Request: GET /static/uploads/productos/f46602be-fcf4-4a2e-803d-6e67c21bf80e_pepsi_black.png
+2025-05-12 18:52:34,008 - main - DEBUG - Response status: 304
+2025-05-12 18:52:34,008 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:52:34,009 - main - DEBUG - Request: GET /static/uploads/productos/1a2b4193-f045-44c3-94f0-e778f522d4aa_VASO-CAFE-ECOLOGICO-fibra-de-agave-PNG-1.png
+2025-05-12 18:52:34,011 - main - DEBUG - Request: GET /static/img/producto-default.jpg
+2025-05-12 18:52:34,012 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:52:34,013 - main - DEBUG - Response status: 304
+2025-05-12 18:52:34,014 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-12 18:52:34,016 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:52:34,017 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:52:34,018 - main - DEBUG - Response status: 304
+2025-05-12 18:52:34,021 - main - DEBUG - Response status: 304
+2025-05-12 18:52:34,022 - main - DEBUG - Response status: 304
+2025-05-12 18:52:34,292 - main - DEBUG - Request: GET /favicon.ico
+2025-05-12 18:52:34,293 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:52:35,062 - main - DEBUG - Request: GET /
+2025-05-12 18:52:35,063 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:52:35,166 - main - DEBUG - Response status: 200
+2025-05-12 18:52:35,197 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-12 18:52:35,198 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:52:35,200 - main - DEBUG - Request: GET /static/img/ImagenEcoShop.jpg
+2025-05-12 18:52:35,201 - main - DEBUG - Request: GET /static/uploads/productos/f46602be-fcf4-4a2e-803d-6e67c21bf80e_pepsi_black.png
+2025-05-12 18:52:35,201 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:52:35,202 - main - DEBUG - Response status: 304
+2025-05-12 18:52:35,203 - main - DEBUG - Request: GET /static/uploads/productos/1a2b4193-f045-44c3-94f0-e778f522d4aa_VASO-CAFE-ECOLOGICO-fibra-de-agave-PNG-1.png
+2025-05-12 18:52:35,203 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:52:35,205 - main - DEBUG - Request: GET /static/img/producto-default.jpg
+2025-05-12 18:52:35,205 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:52:35,206 - main - DEBUG - Response status: 304
+2025-05-12 18:52:35,210 - main - DEBUG - Response status: 304
+2025-05-12 18:52:35,207 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-12 18:52:35,209 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:52:35,213 - main - DEBUG - Response status: 304
+2025-05-12 18:52:35,216 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:52:35,222 - main - DEBUG - Response status: 304
+2025-05-12 18:52:35,225 - main - DEBUG - Response status: 304
+2025-05-12 18:52:35,277 - main - DEBUG - Request: GET /favicon.ico
+2025-05-12 18:52:35,278 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:52:36,572 - main - DEBUG - Request: GET /login
+2025-05-12 18:52:36,573 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:52:36,576 - main - DEBUG - Response status: 200
+2025-05-12 18:52:36,618 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-12 18:52:36,619 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-12 18:52:36,619 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:52:36,619 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:52:36,620 - main - DEBUG - Response status: 304
+2025-05-12 18:52:36,620 - main - DEBUG - Response status: 304
+2025-05-12 18:52:36,645 - main - DEBUG - Request: GET /favicon.ico
+2025-05-12 18:52:36,645 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:52:42,471 - main - DEBUG - Request: POST /login
+2025-05-12 18:52:42,471 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:52:42,873 - main - DEBUG - Response status: 302
+2025-05-12 18:52:42,880 - main - DEBUG - Request: GET /admin/dashboard
+2025-05-12 18:52:42,880 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:52:42,880 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-12 18:52:43,918 - main - DEBUG - Response status: 200
+2025-05-12 18:52:43,966 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-12 18:52:43,967 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:52:43,968 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-12 18:52:43,968 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-12 18:52:43,968 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:52:43,968 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-12 18:52:43,969 - main - DEBUG - Response status: 304
+2025-05-12 18:52:43,970 - main - DEBUG - Response status: 304
+2025-05-12 18:52:44,027 - main - DEBUG - Request: GET /favicon.ico
+2025-05-12 18:52:44,027 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:52:44,028 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-12 18:52:52,900 - main - DEBUG - Request: GET /productos
+2025-05-12 18:52:52,900 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:52:52,900 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-12 18:52:53,007 - main - DEBUG - Response status: 200
+2025-05-12 18:52:53,054 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-12 18:52:53,054 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:52:53,055 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-12 18:52:53,057 - main - DEBUG - Response status: 304
+2025-05-12 18:52:53,058 - main - DEBUG - Request: GET /static/uploads/productos/f46602be-fcf4-4a2e-803d-6e67c21bf80e_pepsi_black.png
+2025-05-12 18:52:53,059 - main - DEBUG - Request: GET /static/uploads/productos/1a2b4193-f045-44c3-94f0-e778f522d4aa_VASO-CAFE-ECOLOGICO-fibra-de-agave-PNG-1.png
+2025-05-12 18:52:53,061 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:52:53,062 - main - DEBUG - Request: GET /static/img/producto-default.jpg
+2025-05-12 18:52:53,063 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:52:53,065 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-12 18:52:53,065 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-12 18:52:53,065 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:52:53,065 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-12 18:52:53,065 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:52:53,066 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-12 18:52:53,066 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-12 18:52:53,067 - main - DEBUG - Response status: 304
+2025-05-12 18:52:53,067 - main - DEBUG - Response status: 304
+2025-05-12 18:52:53,068 - main - DEBUG - Response status: 304
+2025-05-12 18:52:53,069 - main - DEBUG - Response status: 304
+2025-05-12 18:52:53,326 - main - DEBUG - Request: GET /favicon.ico
+2025-05-12 18:52:53,326 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:52:53,326 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-12 18:52:56,126 - main - DEBUG - Request: GET /admin/dashboard
+2025-05-12 18:52:56,127 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:52:56,127 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-12 18:52:57,169 - main - DEBUG - Response status: 200
+2025-05-12 18:52:57,214 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-12 18:52:57,215 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:52:57,216 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-12 18:52:57,216 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-12 18:52:57,216 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:52:57,216 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-12 18:52:57,217 - main - DEBUG - Response status: 304
+2025-05-12 18:52:57,218 - main - DEBUG - Response status: 304
+2025-05-12 18:52:57,274 - main - DEBUG - Request: GET /favicon.ico
+2025-05-12 18:52:57,274 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:52:57,275 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-12 18:52:58,997 - main - DEBUG - Request: GET /admin/productos
+2025-05-12 18:52:58,998 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:52:58,998 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-12 18:52:59,144 - main - DEBUG - Response status: 200
+2025-05-12 18:52:59,186 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-12 18:52:59,187 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:52:59,188 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-12 18:52:59,189 - main - DEBUG - Request: GET /static/uploads/productos/f46602be-fcf4-4a2e-803d-6e67c21bf80e_pepsi_black.png
+2025-05-12 18:52:59,189 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-12 18:52:59,190 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:52:59,191 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:52:59,191 - main - DEBUG - Request: GET /static/uploads/productos/1a2b4193-f045-44c3-94f0-e778f522d4aa_VASO-CAFE-ECOLOGICO-fibra-de-agave-PNG-1.png
+2025-05-12 18:52:59,191 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-12 18:52:59,193 - main - DEBUG - Request: GET /static/img/producto-default.jpg
+2025-05-12 18:52:59,193 - main - DEBUG - Response status: 304
+2025-05-12 18:52:59,194 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-12 18:52:59,194 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:52:59,195 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:52:59,196 - main - DEBUG - Response status: 304
+2025-05-12 18:52:59,196 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-12 18:52:59,196 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-12 18:52:59,197 - main - DEBUG - Response status: 304
+2025-05-12 18:52:59,201 - main - DEBUG - Response status: 304
+2025-05-12 18:52:59,202 - main - DEBUG - Response status: 304
+2025-05-12 18:52:59,477 - main - DEBUG - Request: GET /favicon.ico
+2025-05-12 18:52:59,478 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:52:59,478 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-12 18:53:01,389 - main - DEBUG - Request: GET /admin/producto/editar/68181607c1d502027b2fe4c0
+2025-05-12 18:53:01,389 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:53:01,389 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-12 18:53:01,658 - main - DEBUG - Response status: 200
+2025-05-12 18:53:01,701 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-12 18:53:01,702 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:53:01,703 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-12 18:53:01,704 - main - DEBUG - Request: GET /static/uploads/productos/f46602be-fcf4-4a2e-803d-6e67c21bf80e_pepsi_black.png
+2025-05-12 18:53:01,705 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:53:01,705 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-12 18:53:01,706 - main - DEBUG - Response status: 304
+2025-05-12 18:53:01,706 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-12 18:53:01,707 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:53:01,707 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-12 18:53:01,708 - main - DEBUG - Response status: 304
+2025-05-12 18:53:01,711 - main - DEBUG - Response status: 304
+2025-05-12 18:53:01,774 - main - DEBUG - Request: GET /favicon.ico
+2025-05-12 18:53:01,775 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:53:01,775 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-12 18:53:04,430 - main - DEBUG - Request: GET /admin/pedidos
+2025-05-12 18:53:04,430 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:53:04,430 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-12 18:53:06,715 - main - DEBUG - Response status: 200
+2025-05-12 18:53:06,757 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-12 18:53:06,758 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:53:06,758 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-12 18:53:06,761 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-12 18:53:06,761 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:53:06,762 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-12 18:53:06,763 - main - DEBUG - Response status: 304
+2025-05-12 18:53:06,764 - main - DEBUG - Response status: 304
+2025-05-12 18:53:06,830 - main - DEBUG - Request: GET /favicon.ico
+2025-05-12 18:53:06,831 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:53:06,831 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-12 18:53:08,835 - main - DEBUG - Request: GET /favicon.ico
+2025-05-12 18:53:08,835 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:53:08,836 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-12 18:53:10,636 - main - DEBUG - Request: GET /favicon.ico
+2025-05-12 18:53:10,636 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:53:10,637 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-12 18:53:14,219 - main - DEBUG - Request: GET /favicon.ico
+2025-05-12 18:53:14,219 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:53:14,219 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-12 18:53:15,469 - main - DEBUG - Request: GET /favicon.ico
+2025-05-12 18:53:15,470 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:53:15,470 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-12 18:53:16,618 - main - DEBUG - Request: GET /favicon.ico
+2025-05-12 18:53:16,619 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:53:16,619 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-12 18:53:18,530 - main - DEBUG - Request: GET /favicon.ico
+2025-05-12 18:53:18,530 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:53:18,530 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-12 18:53:22,006 - main - DEBUG - Request: GET /admin/proveedores
+2025-05-12 18:53:22,007 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:53:22,007 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-12 18:53:22,428 - main - DEBUG - Response status: 200
+2025-05-12 18:53:22,465 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-12 18:53:22,466 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:53:22,468 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-12 18:53:22,468 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-12 18:53:22,468 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:53:22,469 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-12 18:53:22,469 - main - DEBUG - Response status: 304
+2025-05-12 18:53:22,470 - main - DEBUG - Response status: 304
+2025-05-12 18:53:22,530 - main - DEBUG - Request: GET /favicon.ico
+2025-05-12 18:53:22,530 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:53:22,530 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-12 18:53:26,070 - main - DEBUG - Request: GET /logout
+2025-05-12 18:53:26,070 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:53:26,070 - main - DEBUG - User in session: 6815d4474ebe047f4ca766e6
+2025-05-12 18:53:26,071 - main - DEBUG - Response status: 302
+2025-05-12 18:53:26,079 - main - DEBUG - Request: GET /
+2025-05-12 18:53:26,079 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:53:26,171 - main - DEBUG - Response status: 200
+2025-05-12 18:53:26,215 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-12 18:53:26,216 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:53:26,217 - main - DEBUG - Request: GET /static/img/ImagenEcoShop.jpg
+2025-05-12 18:53:26,218 - main - DEBUG - Request: GET /static/uploads/productos/f46602be-fcf4-4a2e-803d-6e67c21bf80e_pepsi_black.png
+2025-05-12 18:53:26,218 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:53:26,219 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:53:26,220 - main - DEBUG - Request: GET /static/uploads/productos/1a2b4193-f045-44c3-94f0-e778f522d4aa_VASO-CAFE-ECOLOGICO-fibra-de-agave-PNG-1.png
+2025-05-12 18:53:26,221 - main - DEBUG - Response status: 304
+2025-05-12 18:53:26,222 - main - DEBUG - Response status: 304
+2025-05-12 18:53:26,224 - main - DEBUG - Request: GET /static/img/producto-default.jpg
+2025-05-12 18:53:26,225 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:53:26,226 - main - DEBUG - Response status: 304
+2025-05-12 18:53:26,227 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:53:26,228 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-12 18:53:26,232 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:53:26,234 - main - DEBUG - Response status: 304
+2025-05-12 18:53:26,236 - main - DEBUG - Response status: 304
+2025-05-12 18:53:26,237 - main - DEBUG - Response status: 304
+2025-05-12 18:53:26,534 - main - DEBUG - Request: GET /favicon.ico
+2025-05-12 18:53:26,534 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:53:28,270 - main - DEBUG - Request: GET /login
+2025-05-12 18:53:28,270 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:53:28,271 - main - DEBUG - Response status: 200
+2025-05-12 18:53:28,328 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-12 18:53:28,329 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:53:28,330 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-12 18:53:28,336 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:53:28,337 - main - DEBUG - Response status: 304
+2025-05-12 18:53:28,339 - main - DEBUG - Response status: 304
+2025-05-12 18:53:28,365 - main - DEBUG - Request: GET /favicon.ico
+2025-05-12 18:53:28,365 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:53:33,709 - main - DEBUG - Request: POST /login
+2025-05-12 18:53:33,709 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:53:34,088 - main - DEBUG - Response status: 302
+2025-05-12 18:53:34,095 - main - DEBUG - Request: GET /cliente/perfil
+2025-05-12 18:53:34,095 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:53:34,095 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:53:34,297 - main - DEBUG - Response status: 200
+2025-05-12 18:53:34,352 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-12 18:53:34,352 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:53:34,352 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:53:34,357 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-12 18:53:34,358 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:53:34,358 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:53:34,359 - main - DEBUG - Response status: 304
+2025-05-12 18:53:34,360 - main - DEBUG - Response status: 304
+2025-05-12 18:53:34,424 - main - DEBUG - Request: GET /favicon.ico
+2025-05-12 18:53:34,424 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:53:34,425 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:53:39,543 - main - DEBUG - Request: POST /cliente/eliminar_tarjeta
+2025-05-12 18:53:39,543 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:53:39,543 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:53:39,744 - main - DEBUG - Response status: 302
+2025-05-12 18:53:39,751 - main - DEBUG - Request: GET /cliente/perfil
+2025-05-12 18:53:39,751 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:53:39,751 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:53:39,940 - main - DEBUG - Response status: 200
+2025-05-12 18:53:39,975 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-12 18:53:39,975 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:53:39,976 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:53:39,977 - main - DEBUG - Response status: 304
+2025-05-12 18:53:39,988 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-12 18:53:39,988 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:53:39,989 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:53:39,990 - main - DEBUG - Response status: 304
+2025-05-12 18:53:40,019 - main - DEBUG - Request: GET /favicon.ico
+2025-05-12 18:53:40,019 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:53:40,021 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:53:42,813 - main - DEBUG - Request: GET /productos
+2025-05-12 18:53:42,813 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:53:42,813 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:53:42,908 - main - DEBUG - Response status: 200
+2025-05-12 18:53:42,954 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-12 18:53:42,955 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:53:42,955 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:53:42,956 - main - DEBUG - Request: GET /static/uploads/productos/f46602be-fcf4-4a2e-803d-6e67c21bf80e_pepsi_black.png
+2025-05-12 18:53:42,958 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:53:42,959 - main - DEBUG - Response status: 304
+2025-05-12 18:53:42,959 - main - DEBUG - Request: GET /static/uploads/productos/1a2b4193-f045-44c3-94f0-e778f522d4aa_VASO-CAFE-ECOLOGICO-fibra-de-agave-PNG-1.png
+2025-05-12 18:53:42,959 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:53:42,961 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:53:42,964 - main - DEBUG - Request: GET /static/img/producto-default.jpg
+2025-05-12 18:53:42,965 - main - DEBUG - Response status: 304
+2025-05-12 18:53:42,965 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:53:42,965 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:53:42,966 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-12 18:53:42,967 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:53:42,968 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:53:42,969 - main - DEBUG - Response status: 304
+2025-05-12 18:53:42,970 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:53:42,971 - main - DEBUG - Response status: 304
+2025-05-12 18:53:42,973 - main - DEBUG - Response status: 304
+2025-05-12 18:53:43,249 - main - DEBUG - Request: GET /favicon.ico
+2025-05-12 18:53:43,249 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:53:43,249 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:53:45,046 - main - DEBUG - Request: GET /producto/68195747d18576e9b2bd4479
+2025-05-12 18:53:45,046 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:53:45,046 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:53:45,140 - main - DEBUG - Response status: 200
+2025-05-12 18:53:45,180 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-12 18:53:45,181 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:53:45,182 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:53:45,184 - main - DEBUG - Request: GET /static/uploads/productos/1a2b4193-f045-44c3-94f0-e778f522d4aa_VASO-CAFE-ECOLOGICO-fibra-de-agave-PNG-1.png
+2025-05-12 18:53:45,187 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:53:45,187 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-12 18:53:45,187 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:53:45,187 - main - DEBUG - Response status: 304
+2025-05-12 18:53:45,188 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:53:45,188 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:53:45,190 - main - DEBUG - Response status: 304
+2025-05-12 18:53:45,191 - main - DEBUG - Response status: 304
+2025-05-12 18:53:45,212 - main - DEBUG - Request: GET /favicon.ico
+2025-05-12 18:53:45,212 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:53:45,212 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:53:46,301 - main - DEBUG - Request: POST /cliente/agregar_al_carrito/68195747d18576e9b2bd4479
+2025-05-12 18:53:46,301 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:53:46,301 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:53:46,488 - main - DEBUG - Response status: 302
+2025-05-12 18:53:46,494 - main - DEBUG - Request: GET /cliente/carrito
+2025-05-12 18:53:46,495 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:53:46,495 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:53:46,589 - main - DEBUG - Response status: 200
+2025-05-12 18:53:46,640 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-12 18:53:46,641 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:53:46,642 - main - DEBUG - Request: GET /static/uploads/productos/1a2b4193-f045-44c3-94f0-e778f522d4aa_VASO-CAFE-ECOLOGICO-fibra-de-agave-PNG-1.png
+2025-05-12 18:53:46,642 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:53:46,644 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-12 18:53:46,644 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:53:46,644 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:53:46,645 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:53:46,645 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:53:46,645 - main - DEBUG - Response status: 304
+2025-05-12 18:53:46,647 - main - DEBUG - Response status: 304
+2025-05-12 18:53:46,648 - main - DEBUG - Response status: 304
+2025-05-12 18:53:46,984 - main - DEBUG - Request: GET /favicon.ico
+2025-05-12 18:53:46,986 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:53:46,987 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:53:47,440 - main - DEBUG - Request: GET /cliente/checkout
+2025-05-12 18:53:47,441 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:53:47,441 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:53:47,735 - main - DEBUG - Response status: 200
+2025-05-12 18:53:47,777 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-12 18:53:47,778 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:53:47,779 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-12 18:53:47,779 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:53:47,779 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:53:47,780 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:53:47,781 - main - DEBUG - Response status: 304
+2025-05-12 18:53:47,781 - main - DEBUG - Response status: 304
+2025-05-12 18:53:47,816 - main - DEBUG - Request: GET /favicon.ico
+2025-05-12 18:53:47,817 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:53:47,817 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:53:50,407 - main - DEBUG - Request: GET /cliente/carrito
+2025-05-12 18:53:50,407 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:53:50,407 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:53:50,501 - main - DEBUG - Response status: 200
+2025-05-12 18:53:50,544 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-12 18:53:50,545 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:53:50,545 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:53:50,547 - main - DEBUG - Request: GET /static/uploads/productos/1a2b4193-f045-44c3-94f0-e778f522d4aa_VASO-CAFE-ECOLOGICO-fibra-de-agave-PNG-1.png
+2025-05-12 18:53:50,548 - main - DEBUG - Response status: 304
+2025-05-12 18:53:50,548 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-12 18:53:50,549 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:53:50,549 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:53:50,550 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:53:50,550 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:53:50,553 - main - DEBUG - Response status: 304
+2025-05-12 18:53:50,554 - main - DEBUG - Response status: 304
+2025-05-12 18:53:50,796 - main - DEBUG - Request: GET /favicon.ico
+2025-05-12 18:53:50,796 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:53:50,796 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:53:52,054 - main - DEBUG - Request: GET /cliente/eliminar_del_carrito/68195747d18576e9b2bd4479
+2025-05-12 18:53:52,054 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:53:52,054 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:53:52,055 - main - DEBUG - Response status: 302
+2025-05-12 18:53:52,063 - main - DEBUG - Request: GET /cliente/carrito
+2025-05-12 18:53:52,063 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:53:52,063 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:53:52,064 - main - DEBUG - Response status: 200
+2025-05-12 18:53:52,100 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-12 18:53:52,100 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:53:52,100 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:53:52,102 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-12 18:53:52,102 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:53:52,102 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:53:52,103 - main - DEBUG - Response status: 304
+2025-05-12 18:53:52,104 - main - DEBUG - Response status: 304
+2025-05-12 18:53:52,127 - main - DEBUG - Request: GET /favicon.ico
+2025-05-12 18:53:52,128 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:53:52,128 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:53:53,587 - main - DEBUG - Request: GET /productos
+2025-05-12 18:53:53,588 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:53:53,588 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:53:53,682 - main - DEBUG - Response status: 200
+2025-05-12 18:53:53,727 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-12 18:53:53,728 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:53:53,728 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:53:53,730 - main - DEBUG - Request: GET /static/uploads/productos/f46602be-fcf4-4a2e-803d-6e67c21bf80e_pepsi_black.png
+2025-05-12 18:53:53,730 - main - DEBUG - Response status: 304
+2025-05-12 18:53:53,731 - main - DEBUG - Request: GET /static/uploads/productos/1a2b4193-f045-44c3-94f0-e778f522d4aa_VASO-CAFE-ECOLOGICO-fibra-de-agave-PNG-1.png
+2025-05-12 18:53:53,731 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:53:53,732 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:53:53,732 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:53:53,736 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-12 18:53:53,736 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:53:53,737 - main - DEBUG - Request: GET /static/img/producto-default.jpg
+2025-05-12 18:53:53,737 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:53:53,738 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:53:53,738 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:53:53,738 - main - DEBUG - Response status: 304
+2025-05-12 18:53:53,738 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:53:53,739 - main - DEBUG - Response status: 304
+2025-05-12 18:53:53,740 - main - DEBUG - Response status: 304
+2025-05-12 18:53:53,743 - main - DEBUG - Response status: 304
+2025-05-12 18:53:54,090 - main - DEBUG - Request: GET /favicon.ico
+2025-05-12 18:53:54,090 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:53:54,090 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:53:54,524 - main - DEBUG - Request: GET /
+2025-05-12 18:53:54,525 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:53:54,525 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:53:54,621 - main - DEBUG - Response status: 200
+2025-05-12 18:53:54,678 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-12 18:53:54,680 - main - DEBUG - Request: GET /static/img/ImagenEcoShop.jpg
+2025-05-12 18:53:54,680 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:53:54,681 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:53:54,682 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:53:54,683 - main - DEBUG - Request: GET /static/uploads/productos/f46602be-fcf4-4a2e-803d-6e67c21bf80e_pepsi_black.png
+2025-05-12 18:53:54,683 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:53:54,685 - main - DEBUG - Request: GET /static/uploads/productos/1a2b4193-f045-44c3-94f0-e778f522d4aa_VASO-CAFE-ECOLOGICO-fibra-de-agave-PNG-1.png
+2025-05-12 18:53:54,686 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:53:54,687 - main - DEBUG - Response status: 304
+2025-05-12 18:53:54,687 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:53:54,688 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:53:54,689 - main - DEBUG - Request: GET /static/img/producto-default.jpg
+2025-05-12 18:53:54,690 - main - DEBUG - Response status: 304
+2025-05-12 18:53:54,690 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:53:54,693 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-12 18:53:54,694 - main - DEBUG - Response status: 304
+2025-05-12 18:53:54,695 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:53:54,696 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:53:54,699 - main - DEBUG - Response status: 304
+2025-05-12 18:53:54,699 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:53:54,700 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:53:54,703 - main - DEBUG - Response status: 304
+2025-05-12 18:53:54,708 - main - DEBUG - Response status: 304
+2025-05-12 18:53:54,985 - main - DEBUG - Request: GET /favicon.ico
+2025-05-12 18:53:54,986 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:53:54,986 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:53:56,846 - main - DEBUG - Request: GET /productos
+2025-05-12 18:53:56,846 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:53:56,846 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:53:56,942 - main - DEBUG - Response status: 200
+2025-05-12 18:53:56,988 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-12 18:53:56,989 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:53:56,991 - main - DEBUG - Request: GET /static/uploads/productos/f46602be-fcf4-4a2e-803d-6e67c21bf80e_pepsi_black.png
+2025-05-12 18:53:56,991 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:53:56,991 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:53:56,992 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:53:56,993 - main - DEBUG - Request: GET /static/uploads/productos/1a2b4193-f045-44c3-94f0-e778f522d4aa_VASO-CAFE-ECOLOGICO-fibra-de-agave-PNG-1.png
+2025-05-12 18:53:56,994 - main - DEBUG - Response status: 304
+2025-05-12 18:53:56,994 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:53:56,994 - main - DEBUG - Response status: 304
+2025-05-12 18:53:56,996 - main - DEBUG - Request: GET /static/img/producto-default.jpg
+2025-05-12 18:53:56,996 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:53:56,998 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-12 18:53:56,999 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:53:57,003 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:53:57,003 - main - DEBUG - Response status: 304
+2025-05-12 18:53:57,003 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:53:57,004 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:53:57,005 - main - DEBUG - Response status: 304
+2025-05-12 18:53:57,009 - main - DEBUG - Response status: 304
+2025-05-12 18:53:57,309 - main - DEBUG - Request: GET /favicon.ico
+2025-05-12 18:53:57,310 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:53:57,310 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:53:58,512 - main - DEBUG - Request: GET /cliente/mis_pedidos
+2025-05-12 18:53:58,512 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:53:58,512 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:53:58,606 - main - DEBUG - Response status: 200
+2025-05-12 18:53:58,649 - main - DEBUG - Request: GET /static/css/styles.css
+2025-05-12 18:53:58,650 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:53:58,651 - main - DEBUG - Request: GET /static/js/main.js
+2025-05-12 18:53:58,652 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:53:58,652 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:53:58,652 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:53:58,653 - main - DEBUG - Response status: 304
+2025-05-12 18:53:58,653 - main - DEBUG - Response status: 304
+2025-05-12 18:53:58,707 - main - DEBUG - Request: GET /favicon.ico
+2025-05-12 18:53:58,708 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:53:58,708 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:54:00,134 - main - DEBUG - Request: GET /favicon.ico
+2025-05-12 18:54:00,135 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:54:00,135 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:54:00,596 - main - DEBUG - Request: GET /favicon.ico
+2025-05-12 18:54:00,597 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:54:00,597 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:54:01,157 - main - DEBUG - Request: GET /favicon.ico
+2025-05-12 18:54:01,157 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:54:01,158 - main - DEBUG - User in session: 681873718e4ab2e18781a08c
+2025-05-12 18:54:31,518 - main - DEBUG - Request: GET /favicon.ico
+2025-05-12 18:54:31,518 - main - DEBUG - Request args: ImmutableMultiDict([])
+2025-05-12 18:54:31,519 - main - DEBUG - User in session: 681873718e4ab2e18781a08c

@@ -101,3 +101,116 @@ main {
         font-size: 1.2rem;
     }
 }
+/* Estilos para los radio buttons y opciones de método de pago */
+.payment-method-option {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    transition: background-color 0.2s;
+}
+
+.payment-method-option:hover {
+    background-color: #e9ecef;
+}
+
+.tarjeta-option {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 10px 15px;
+    margin-bottom: 8px;
+    transition: background-color 0.2s;
+}
+
+.tarjeta-option:hover {
+    background-color: #e9ecef;
+}
+
+.save-card-option {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 10px 15px;
+}
+
+/* Estilos para los botones de eliminar tarjeta */
+.btn-eliminar-tarjeta {
+    color: #dc3545;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.btn-eliminar-tarjeta:hover {
+    color: #bd2130;
+}
+
+/* Estilos para los radio buttons y opciones de método de pago */
+.payment-method-option {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    transition: background-color 0.2s;
+}
+
+.payment-method-option:hover {
+    background-color: #e9ecef;
+}
+
+.tarjeta-option {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 10px 15px;
+    margin-bottom: 8px;
+    transition: background-color 0.2s;
+}
+
+.tarjeta-option:hover {
+    background-color: #e9ecef;
+}
+
+.save-card-option {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 10px 15px;
+}
+
+/* Estilos para los botones de eliminar tarjeta */
+.btn-eliminar-tarjeta {
+    color: #dc3545;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.btn-eliminar-tarjeta:hover {
+    color: #bd2130;
+}
+
+/* Estilos mejorados para los radio buttons y checkboxes */
+.form-check-input[type="radio"],
+.form-check-input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #4e73df;
+    background-color: #fff;
+    box-shadow: 0 0 0 1px rgba(0,0,0,.1);
+}
+
+.form-check-input[type="radio"]:checked,
+.form-check-input[type="checkbox"]:checked {
+    background-color: #4e73df;
+    border-color: #4e73df;
+}
+
+.form-check-input:focus {
+    box-shadow: 0 0 0 0.25rem rgba(78, 115, 223, 0.25);
+}
+
+.form-check-label {
+    padding-left: 5px;
+}

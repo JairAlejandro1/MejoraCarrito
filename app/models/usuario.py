@@ -15,6 +15,7 @@ class Usuario:
         self._id = _id
         self.fecha_registro = datetime.now()
         self.activo = True
+        self.tarjetas = []
 
     def _hash_password(self, password):
         return bcrypt.hashpw(password.encode('utf-8'), bcrypt.gensalt())
@@ -45,7 +46,8 @@ class Usuario:
             "direccion": self.direccion,
             "telefono": self.telefono,
             "fecha_registro": self.fecha_registro,
-            "activo": self.activo
+            "activo": self.activo,
+            "tarjetas": self.tarjetas
         }
 
     @classmethod
@@ -73,3 +75,33 @@ class Usuario:
             {"_id": usuario_id},
             {"$set": {"activo": False}}
         )
+
+    @classmethod
+    def guardar_tarjeta(cls, usuario_id, tarjeta):
+        """
+        Guarda una tarjeta para un usuario
+        """
+        # Solo guardamos los últimos 4 dígitos y la información esencial por seguridad
+        tarjeta_guardada = {
+            "ultimos_digitos": tarjeta["card_number"][-4:],
+            "tipo": cls._determinar_tipo_tarjeta(tarjeta["card_number"]),
+            "expiry": tarjeta["card_expiry"]
+        }
+
+        # Actualizar el usuario en la base de datos
+        get_db().usuarios.update_one(
+            {"_id": usuario_id},
+            {"$push": {"tarjetas": tarjeta_guardada}}
+        )
+
+    @staticmethod
+    def _determinar_tipo_tarjeta(numero):
+        """Determina el tipo de tarjeta basado en el número"""
+        if numero.startswith('4'):
+            return 'Visa'
+        elif numero.startswith(('51', '52', '53', '54', '55')):
+            return 'MasterCard'
+        elif numero.startswith(('34', '37')):
+            return 'American Express'
+        else:
+            return 'Tarjeta'
